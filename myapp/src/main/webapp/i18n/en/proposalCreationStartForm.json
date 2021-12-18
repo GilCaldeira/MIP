@@ -1,0 +1,24 @@
+{
+  "myappApp": {
+    "proposalCreationStartForm": {
+      "home": {
+        "title": "Proposal Creation Start Forms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Proposal Creation Start Form",
+        "createOrEditLabel": "Create or edit a Proposal Creation Start Form",
+        "notFound": "No Proposal Creation Start Forms found"
+      },
+      "created": "A new Proposal Creation Start Form is created with identifier {{ param }}",
+      "updated": "A Proposal Creation Start Form is updated with identifier {{ param }}",
+      "deleted": "A Proposal Creation Start Form is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Proposal Creation Start Form {{ id }}?"
+      },
+      "detail": {
+        "title": "Proposal Creation Start Form"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

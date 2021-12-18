@@ -1,0 +1,20 @@
+{
+  "myappApp": {
+    "proposal": {
+      "home": {
+        "title": "Proposals",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Proposals found"
+      },
+      "detail": {
+        "title": "Proposal"
+      },
+      "id": "ID",
+      "name": "Name",
+      "customerName": "Customer Name",
+      "customerEmail": "Customer Email",
+      "state": "State",
+      "travelServices": "Travel Services"
+    }
+  }
+}

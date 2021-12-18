@@ -1,0 +1,28 @@
+{
+  "myappApp": {
+    "proposalCreationProcess": {
+      "home": {
+        "title": "Proposal Creation Processes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Proposal Creation Process",
+        "createOrEditLabel": "Create or edit a Proposal Creation Process",
+        "notFound": "No Proposal Creation Processes found"
+      },
+      "created": "A new Proposal Creation Process is created with identifier {{ param }}",
+      "updated": "A Proposal Creation Process is updated with identifier {{ param }}",
+      "deleted": "A Proposal Creation Process is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Proposal Creation Process {{ id }}?"
+      },
+      "detail": {
+        "title": "Proposal Creation Process"
+      },
+      "id": "ID",
+      "name": "Name",
+      "customerName": "Customer Name",
+      "customerEmail": "Customer Email",
+      "state": "State",
+      "travelServices": "Travel Services"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "myappApp": {
+    "taskSendProposal": {
+      "home": {
+        "title": "Task Send Proposals",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Task Send Proposal",
+        "createOrEditLabel": "Create or edit a Task Send Proposal",
+        "notFound": "No Task Send Proposals found"
+      },
+      "created": "A new Task Send Proposal is created with identifier {{ param }}",
+      "updated": "A Task Send Proposal is updated with identifier {{ param }}",
+      "deleted": "A Task Send Proposal is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Task Send Proposal {{ id }}?"
+      },
+      "detail": {
+        "title": "Task Send Proposal"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

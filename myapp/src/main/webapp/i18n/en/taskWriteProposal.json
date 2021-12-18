@@ -1,0 +1,24 @@
+{
+  "myappApp": {
+    "taskWriteProposal": {
+      "home": {
+        "title": "Task Write Proposals",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Task Write Proposal",
+        "createOrEditLabel": "Create or edit a Task Write Proposal",
+        "notFound": "No Task Write Proposals found"
+      },
+      "created": "A new Task Write Proposal is created with identifier {{ param }}",
+      "updated": "A Task Write Proposal is updated with identifier {{ param }}",
+      "deleted": "A Task Write Proposal is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Task Write Proposal {{ id }}?"
+      },
+      "detail": {
+        "title": "Task Write Proposal"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

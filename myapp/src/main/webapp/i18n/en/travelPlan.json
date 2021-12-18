@@ -1,0 +1,28 @@
+{
+  "myappApp": {
+    "travelPlan": {
+      "home": {
+        "title": "Travel Plans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Travel Plan",
+        "createOrEditLabel": "Create or edit a Travel Plan",
+        "notFound": "No Travel Plans found"
+      },
+      "created": "A new Travel Plan is created with identifier {{ param }}",
+      "updated": "A Travel Plan is updated with identifier {{ param }}",
+      "deleted": "A Travel Plan is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Travel Plan {{ id }}?"
+      },
+      "detail": {
+        "title": "Travel Plan"
+      },
+      "id": "ID",
+      "travelName": "Travel Name",
+      "travelStartDate": "Travel Start Date",
+      "travelEndDate": "Travel End Date",
+      "customerName": "Customer Name",
+      "travelServices": "Travel Services"
+    }
+  }
+}

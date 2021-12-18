@@ -1,0 +1,24 @@
+{
+  "myappApp": {
+    "taskCheckTravelPlan": {
+      "home": {
+        "title": "Task Check Travel Plans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Task Check Travel Plan",
+        "createOrEditLabel": "Create or edit a Task Check Travel Plan",
+        "notFound": "No Task Check Travel Plans found"
+      },
+      "created": "A new Task Check Travel Plan is created with identifier {{ param }}",
+      "updated": "A Task Check Travel Plan is updated with identifier {{ param }}",
+      "deleted": "A Task Check Travel Plan is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Task Check Travel Plan {{ id }}?"
+      },
+      "detail": {
+        "title": "Task Check Travel Plan"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

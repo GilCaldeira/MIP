@@ -1,0 +1,23 @@
+{
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    }
+  ],
+  "relationships": [],
+  "entityType": "user-task-form",
+  "processBpmnId": "ProposalCreationProcess",
+  "processEntityName": "ProposalCreationProcess",
+  "taskBpmnId": "CheckTravelPlan",
+  "domainEntityName": "Proposal",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "skipFakeData": true,
+  "name": "TaskCheckTravelPlan",
+  "changelogDate": "20210401000004"
+}

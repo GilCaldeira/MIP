@@ -12,6 +12,13 @@
         "processInstance": "Process Instances",
         "taskInstance": "All Tasks",
         "myCandidateTasks": "My Tasks",
+        "travelPlan": "Travel Plan",
+        "proposal": "Proposal",
+        "proposalCreationProcess": "Proposal Creation Process",
+        "proposalCreationStartForm": "Proposal Creation Start Form",
+        "taskCheckTravelPlan": "Task Check Travel Plan",
+        "taskSendProposal": "Task Send Proposal",
+        "taskWriteProposal": "Task Write Proposal",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
