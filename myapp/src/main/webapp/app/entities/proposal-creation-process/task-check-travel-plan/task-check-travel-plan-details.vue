@@ -9,15 +9,27 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.name')">name</label>
+              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.customerName')">customerName</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="name"
-                id="proposal-name"
-                data-cy="name"
-                v-model="taskContext.proposalCreationProcess.proposal.name"
+                name="customerName"
+                id="proposal-customerName"
+                data-cy="customerName"
+                v-model="taskContext.proposalCreationProcess.proposal.customerName"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.customerEmail')">customerEmail</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="customerEmail"
+                id="proposal-customerEmail"
+                data-cy="customerEmail"
+                v-model="taskContext.proposalCreationProcess.proposal.customerEmail"
               />
             </div>
           </template>

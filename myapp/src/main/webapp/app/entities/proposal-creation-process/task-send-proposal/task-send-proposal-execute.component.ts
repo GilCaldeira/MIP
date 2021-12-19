@@ -8,6 +8,8 @@ const validations: any = {
     proposalCreationProcess: {
       proposal: {
         name: {},
+        customerName: {},
+        customerEmail: {},
       },
     },
   },

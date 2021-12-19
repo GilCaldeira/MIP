@@ -18,7 +18,9 @@
         "title": "Task Send Proposal"
       },
       "id": "ID",
-      "name": "Name"
+      "name": "Name",
+      "customerName": "Customer Name",
+      "customerEmail": "Customer Email"
     }
   }
 }

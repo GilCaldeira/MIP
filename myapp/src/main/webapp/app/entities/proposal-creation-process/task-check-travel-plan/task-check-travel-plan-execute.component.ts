@@ -7,7 +7,8 @@ const validations: any = {
   taskContext: {
     proposalCreationProcess: {
       proposal: {
-        name: {},
+        customerName: {},
+        customerEmail: {},
       },
     },
   },

@@ -4,6 +4,16 @@
       "fieldName": "name",
       "fieldType": "String",
       "fieldReadOnly": true
+    },
+    {
+      "fieldName": "customerName",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "customerEmail",
+      "fieldType": "String",
+      "fieldReadOnly": true
     }
   ],
   "relationships": [],

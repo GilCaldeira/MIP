@@ -9,21 +9,43 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.name')" for="task-check-travel-plan-name"
-                >Name</label
+              <label
+                class="form-control-label"
+                v-text="$t('myappApp.taskCheckTravelPlan.customerName')"
+                for="task-check-travel-plan-customerName"
+                >Customer Name</label
               >
               <input
                 type="text"
                 class="form-control"
-                name="name"
-                id="task-check-travel-plan-name"
-                readonly
-                data-cy="name"
+                name="customerName"
+                id="task-check-travel-plan-customerName"
+                data-cy="customerName"
                 :class="{
-                  valid: !$v.taskContext.proposalCreationProcess.proposal.name.$invalid,
-                  invalid: $v.taskContext.proposalCreationProcess.proposal.name.$invalid,
+                  valid: !$v.taskContext.proposalCreationProcess.proposal.customerName.$invalid,
+                  invalid: $v.taskContext.proposalCreationProcess.proposal.customerName.$invalid,
                 }"
-                v-model="$v.taskContext.proposalCreationProcess.proposal.name.$model"
+                v-model="$v.taskContext.proposalCreationProcess.proposal.customerName.$model"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-control-label"
+                v-text="$t('myappApp.taskCheckTravelPlan.customerEmail')"
+                for="task-check-travel-plan-customerEmail"
+                >Customer Email</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="customerEmail"
+                id="task-check-travel-plan-customerEmail"
+                data-cy="customerEmail"
+                :class="{
+                  valid: !$v.taskContext.proposalCreationProcess.proposal.customerEmail.$invalid,
+                  invalid: $v.taskContext.proposalCreationProcess.proposal.customerEmail.$invalid,
+                }"
+                v-model="$v.taskContext.proposalCreationProcess.proposal.customerEmail.$model"
               />
             </div>
           </template>

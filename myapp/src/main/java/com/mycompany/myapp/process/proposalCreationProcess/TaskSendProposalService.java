@@ -74,6 +74,8 @@ public class TaskSendProposalService {
             .findOne(taskSendProposalContext.getProposalCreationProcess().getProposal().getId())
             .orElseThrow();
         proposalDTO.setName(taskSendProposalContext.getProposalCreationProcess().getProposal().getName());
+        proposalDTO.setCustomerName(taskSendProposalContext.getProposalCreationProcess().getProposal().getCustomerName());
+        proposalDTO.setCustomerEmail(taskSendProposalContext.getProposalCreationProcess().getProposal().getCustomerEmail());
         proposalService.save(proposalDTO);
     }
 

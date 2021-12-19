@@ -18,7 +18,8 @@
         "title": "Task Check Travel Plan"
       },
       "id": "ID",
-      "name": "Name"
+      "customerName": "Customer Name",
+      "customerEmail": "Customer Email"
     }
   }
 }

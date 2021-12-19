@@ -24,6 +24,45 @@
                 v-model="$v.taskContext.proposalCreationProcess.proposal.name.$model"
               />
             </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskSendProposal.customerName')" for="task-send-proposal-customerName"
+                >Customer Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="customerName"
+                id="task-send-proposal-customerName"
+                readonly
+                data-cy="customerName"
+                :class="{
+                  valid: !$v.taskContext.proposalCreationProcess.proposal.customerName.$invalid,
+                  invalid: $v.taskContext.proposalCreationProcess.proposal.customerName.$invalid,
+                }"
+                v-model="$v.taskContext.proposalCreationProcess.proposal.customerName.$model"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-control-label"
+                v-text="$t('myappApp.taskSendProposal.customerEmail')"
+                for="task-send-proposal-customerEmail"
+                >Customer Email</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="customerEmail"
+                id="task-send-proposal-customerEmail"
+                readonly
+                data-cy="customerEmail"
+                :class="{
+                  valid: !$v.taskContext.proposalCreationProcess.proposal.customerEmail.$invalid,
+                  invalid: $v.taskContext.proposalCreationProcess.proposal.customerEmail.$invalid,
+                }"
+                v-model="$v.taskContext.proposalCreationProcess.proposal.customerEmail.$model"
+              />
+            </div>
           </template>
         </akip-show-task-instance>
         <br />

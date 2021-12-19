@@ -20,6 +20,30 @@
                 v-model="taskContext.proposalCreationProcess.proposal.name"
               />
             </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskSendProposal.customerName')">customerName</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="customerName"
+                id="proposal-customerName"
+                data-cy="customerName"
+                v-model="taskContext.proposalCreationProcess.proposal.customerName"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskSendProposal.customerEmail')">customerEmail</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="customerEmail"
+                id="proposal-customerEmail"
+                data-cy="customerEmail"
+                v-model="taskContext.proposalCreationProcess.proposal.customerEmail"
+              />
+            </div>
           </template>
         </akip-show-task-instance>
         <br />

@@ -73,7 +73,8 @@ public class TaskCheckTravelPlanService {
         ProposalDTO proposalDTO = proposalService
             .findOne(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getId())
             .orElseThrow();
-        proposalDTO.setName(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getName());
+        proposalDTO.setCustomerName(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getCustomerName());
+        proposalDTO.setCustomerEmail(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getCustomerEmail());
         proposalService.save(proposalDTO);
     }
 

@@ -1,9 +1,12 @@
 {
   "fields": [
     {
-      "fieldName": "name",
-      "fieldType": "String",
-      "fieldReadOnly": true
+      "fieldName": "customerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerEmail",
+      "fieldType": "String"
     }
   ],
   "relationships": [],

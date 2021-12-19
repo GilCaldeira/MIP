@@ -17,5 +17,7 @@ public interface TaskSendProposalMapper {
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
     @Mapping(target = "name", source = "name")
+    @Mapping(target = "customerName", source = "customerName")
+    @Mapping(target = "customerEmail", source = "customerEmail")
     ProposalDTO toProposalDTO(Proposal proposal);
 }
