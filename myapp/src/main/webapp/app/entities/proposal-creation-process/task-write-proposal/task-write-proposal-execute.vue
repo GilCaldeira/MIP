@@ -24,6 +24,23 @@
                 v-model="$v.taskContext.proposalCreationProcess.proposal.name.$model"
               />
             </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskWriteProposal.state')" for="task-write-proposal-state"
+                >State</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="state"
+                id="task-write-proposal-state"
+                data-cy="state"
+                :class="{
+                  valid: !$v.taskContext.proposalCreationProcess.proposal.state.$invalid,
+                  invalid: $v.taskContext.proposalCreationProcess.proposal.state.$invalid,
+                }"
+                v-model="$v.taskContext.proposalCreationProcess.proposal.state.$model"
+              />
+            </div>
           </template>
         </akip-show-task-instance>
         <br />

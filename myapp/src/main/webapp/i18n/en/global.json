@@ -19,6 +19,7 @@
         "taskCheckTravelPlan": "Task Check Travel Plan",
         "taskSendProposal": "Task Send Proposal",
         "taskWriteProposal": "Task Write Proposal",
+        "taskAnalyzeCustomerFeedback": "Task Analyze Customer Feedback",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

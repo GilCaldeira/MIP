@@ -10,13 +10,15 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring", uses = { ProcessInstanceMapper.class })
-public interface TaskWriteProposalMapper {
+public interface TaskAnalyzeCustomerFeedbackMapper {
     @Mapping(target = "processInstance", source = "processInstance", qualifiedByName = "loadTaskContext")
     ProposalCreationProcessDTO toProposalCreationProcessDTO(ProposalCreationProcess proposalCreationProcess);
 
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
     @Mapping(target = "name", source = "name")
+    @Mapping(target = "customerName", source = "customerName")
+    @Mapping(target = "customerEmail", source = "customerEmail")
     @Mapping(target = "state", source = "state")
     ProposalDTO toProposalDTO(Proposal proposal);
 }

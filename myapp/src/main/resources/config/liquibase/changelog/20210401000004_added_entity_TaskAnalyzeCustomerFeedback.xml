@@ -7,14 +7,20 @@
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!--
-        Added the entity TaskWriteProposal.
+        Added the entity TaskAnalyzeCustomerFeedback.
     -->
     <changeSet id="20210401000004-1" author="jhipster">
-        <createTable tableName="task_write_proposal">
+        <createTable tableName="task_analyze_customer_feedback">
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_email" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="state" type="varchar(255)">

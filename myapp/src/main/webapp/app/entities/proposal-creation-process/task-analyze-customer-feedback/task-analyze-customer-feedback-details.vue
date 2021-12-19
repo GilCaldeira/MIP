@@ -9,7 +9,7 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('myappApp.taskWriteProposal.name')">name</label>
+              <label class="form-control-label" v-text="$t('myappApp.taskAnalyzeCustomerFeedback.name')">name</label>
               <input
                 readonly
                 type="text"
@@ -21,7 +21,31 @@
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('myappApp.taskWriteProposal.state')">state</label>
+              <label class="form-control-label" v-text="$t('myappApp.taskAnalyzeCustomerFeedback.customerName')">customerName</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="customerName"
+                id="proposal-customerName"
+                data-cy="customerName"
+                v-model="taskContext.proposalCreationProcess.proposal.customerName"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskAnalyzeCustomerFeedback.customerEmail')">customerEmail</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="customerEmail"
+                id="proposal-customerEmail"
+                data-cy="customerEmail"
+                v-model="taskContext.proposalCreationProcess.proposal.customerEmail"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskAnalyzeCustomerFeedback.state')">state</label>
               <input
                 readonly
                 type="text"
@@ -41,7 +65,7 @@
 
         <router-link
           v-if="taskContext.taskInstance.status == 'NEW' || taskContext.taskInstance.status == 'ASSIGNED'"
-          :to="`/process-definition/ProposalCreationProcess/task/WriteProposal/${taskContext.taskInstance.id}/execute`"
+          :to="`/process-definition/ProposalCreationProcess/task/AnalyzeCustomerFeedback/${taskContext.taskInstance.id}/execute`"
           tag="button"
           class="btn btn-primary"
           data-cy="entityDetailsButton"
@@ -53,4 +77,4 @@
   </div>
 </template>
 
-<script lang="ts" src="./task-write-proposal-details.component.ts"></script>
+<script lang="ts" src="./task-analyze-customer-feedback-details.component.ts"></script>

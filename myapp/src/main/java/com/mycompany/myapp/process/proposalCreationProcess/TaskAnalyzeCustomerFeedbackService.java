@@ -12,7 +12,7 @@ import org.akip.service.mapper.TaskInstanceMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TaskWriteProposalService {
+public class TaskAnalyzeCustomerFeedbackService {
 
     private final TaskInstanceService taskInstanceService;
 
@@ -24,17 +24,17 @@ public class TaskWriteProposalService {
 
     private final TaskInstanceMapper taskInstanceMapper;
 
-    private final TaskWriteProposalMapper taskWriteProposalMapper;
+    private final TaskAnalyzeCustomerFeedbackMapper taskAnalyzeCustomerFeedbackMapper;
 
     private final ProposalCreationProcessMapper proposalCreationProcessMapper;
 
-    public TaskWriteProposalService(
+    public TaskAnalyzeCustomerFeedbackService(
         TaskInstanceService taskInstanceService,
         ProposalService proposalService,
         TaskInstanceRepository taskInstanceRepository,
         ProposalCreationProcessRepository proposalCreationProcessRepository,
         TaskInstanceMapper taskInstanceMapper,
-        TaskWriteProposalMapper taskWriteProposalMapper,
+        TaskAnalyzeCustomerFeedbackMapper taskAnalyzeCustomerFeedbackMapper,
         ProposalCreationProcessMapper proposalCreationProcessMapper
     ) {
         this.taskInstanceService = taskInstanceService;
@@ -42,11 +42,11 @@ public class TaskWriteProposalService {
         this.taskInstanceRepository = taskInstanceRepository;
         this.proposalCreationProcessRepository = proposalCreationProcessRepository;
         this.taskInstanceMapper = taskInstanceMapper;
-        this.taskWriteProposalMapper = taskWriteProposalMapper;
+        this.taskAnalyzeCustomerFeedbackMapper = taskAnalyzeCustomerFeedbackMapper;
         this.proposalCreationProcessMapper = proposalCreationProcessMapper;
     }
 
-    public TaskWriteProposalContextDTO loadContext(Long taskInstanceId) {
+    public TaskAnalyzeCustomerFeedbackContextDTO loadContext(Long taskInstanceId) {
         TaskInstanceDTO taskInstanceDTO = taskInstanceRepository
             .findById(taskInstanceId)
             .map(taskInstanceMapper::toDTOLoadTaskContext)
@@ -54,36 +54,38 @@ public class TaskWriteProposalService {
 
         ProposalCreationProcessDTO proposalCreationProcess = proposalCreationProcessRepository
             .findByProcessInstanceId(taskInstanceDTO.getProcessInstance().getId())
-            .map(taskWriteProposalMapper::toProposalCreationProcessDTO)
+            .map(taskAnalyzeCustomerFeedbackMapper::toProposalCreationProcessDTO)
             .orElseThrow();
 
-        TaskWriteProposalContextDTO taskWriteProposalContext = new TaskWriteProposalContextDTO();
-        taskWriteProposalContext.setTaskInstance(taskInstanceDTO);
-        taskWriteProposalContext.setProposalCreationProcess(proposalCreationProcess);
+        TaskAnalyzeCustomerFeedbackContextDTO taskAnalyzeCustomerFeedbackContext = new TaskAnalyzeCustomerFeedbackContextDTO();
+        taskAnalyzeCustomerFeedbackContext.setTaskInstance(taskInstanceDTO);
+        taskAnalyzeCustomerFeedbackContext.setProposalCreationProcess(proposalCreationProcess);
 
-        return taskWriteProposalContext;
+        return taskAnalyzeCustomerFeedbackContext;
     }
 
-    public TaskWriteProposalContextDTO claim(Long taskInstanceId) {
+    public TaskAnalyzeCustomerFeedbackContextDTO claim(Long taskInstanceId) {
         taskInstanceService.claim(taskInstanceId);
         return loadContext(taskInstanceId);
     }
 
-    public void save(TaskWriteProposalContextDTO taskWriteProposalContext) {
+    public void save(TaskAnalyzeCustomerFeedbackContextDTO taskAnalyzeCustomerFeedbackContext) {
         ProposalDTO proposalDTO = proposalService
-            .findOne(taskWriteProposalContext.getProposalCreationProcess().getProposal().getId())
+            .findOne(taskAnalyzeCustomerFeedbackContext.getProposalCreationProcess().getProposal().getId())
             .orElseThrow();
-        proposalDTO.setName(taskWriteProposalContext.getProposalCreationProcess().getProposal().getName());
-        proposalDTO.setState(taskWriteProposalContext.getProposalCreationProcess().getProposal().getState());
+        proposalDTO.setName(taskAnalyzeCustomerFeedbackContext.getProposalCreationProcess().getProposal().getName());
+        proposalDTO.setCustomerName(taskAnalyzeCustomerFeedbackContext.getProposalCreationProcess().getProposal().getCustomerName());
+        proposalDTO.setCustomerEmail(taskAnalyzeCustomerFeedbackContext.getProposalCreationProcess().getProposal().getCustomerEmail());
+        proposalDTO.setState(taskAnalyzeCustomerFeedbackContext.getProposalCreationProcess().getProposal().getState());
         proposalService.save(proposalDTO);
     }
 
-    public void complete(TaskWriteProposalContextDTO taskWriteProposalContext) {
-        save(taskWriteProposalContext);
+    public void complete(TaskAnalyzeCustomerFeedbackContextDTO taskAnalyzeCustomerFeedbackContext) {
+        save(taskAnalyzeCustomerFeedbackContext);
         ProposalCreationProcessDTO proposalCreationProcess = proposalCreationProcessRepository
-            .findByProcessInstanceId(taskWriteProposalContext.getProposalCreationProcess().getProcessInstance().getId())
+            .findByProcessInstanceId(taskAnalyzeCustomerFeedbackContext.getProposalCreationProcess().getProcessInstance().getId())
             .map(proposalCreationProcessMapper::toDto)
             .orElseThrow();
-        taskInstanceService.complete(taskWriteProposalContext.getTaskInstance(), proposalCreationProcess);
+        taskInstanceService.complete(taskAnalyzeCustomerFeedbackContext.getTaskInstance(), proposalCreationProcess);
     }
 }

@@ -34,6 +34,10 @@ const ProposalCreationProcess_TaskSendProposalExecute = () => import('@/entities
 const ProposalCreationProcess_TaskWriteProposalDetails = () => import('@/entities/proposal-creation-process/task-write-proposal/task-write-proposal-details.vue');
 // prettier-ignore
 const ProposalCreationProcess_TaskWriteProposalExecute = () => import('@/entities/proposal-creation-process/task-write-proposal/task-write-proposal-execute.vue');
+// prettier-ignore
+const ProposalCreationProcess_TaskAnalyzeCustomerFeedbackDetails = () => import('@/entities/proposal-creation-process/task-analyze-customer-feedback/task-analyze-customer-feedback-details.vue');
+// prettier-ignore
+const ProposalCreationProcess_TaskAnalyzeCustomerFeedbackExecute = () => import('@/entities/proposal-creation-process/task-analyze-customer-feedback/task-analyze-customer-feedback-execute.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -113,6 +117,18 @@ export default [
     path: '/process-definition/ProposalCreationProcess/task/WriteProposal/:taskInstanceId/execute',
     name: 'ProposalCreationProcess_TaskWriteProposalExecute',
     component: ProposalCreationProcess_TaskWriteProposalExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/ProposalCreationProcess/task/AnalyzeCustomerFeedback/:taskInstanceId/view',
+    name: 'ProposalCreationProcess_TaskAnalyzeCustomerFeedbackDetails',
+    component: ProposalCreationProcess_TaskAnalyzeCustomerFeedbackDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/ProposalCreationProcess/task/AnalyzeCustomerFeedback/:taskInstanceId/execute',
+    name: 'ProposalCreationProcess_TaskAnalyzeCustomerFeedbackExecute',
+    component: ProposalCreationProcess_TaskAnalyzeCustomerFeedbackExecute,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

@@ -1,13 +1,15 @@
 import { Component, Vue, Inject } from 'vue-property-decorator';
 
-import TaskWriteProposalService from './task-write-proposal.service';
-import { TaskWriteProposalContext } from './task-write-proposal.model';
+import TaskAnalyzeCustomerFeedbackService from './task-analyze-customer-feedback.service';
+import { TaskAnalyzeCustomerFeedbackContext } from './task-analyze-customer-feedback.model';
 
 const validations: any = {
   taskContext: {
     proposalCreationProcess: {
       proposal: {
         name: {},
+        customerName: {},
+        customerEmail: {},
         state: {},
       },
     },
@@ -17,9 +19,9 @@ const validations: any = {
 @Component({
   validations,
 })
-export default class TaskWriteProposalExecuteComponent extends Vue {
-  private taskWriteProposalService: TaskWriteProposalService = new TaskWriteProposalService();
-  private taskContext: TaskWriteProposalContext = {};
+export default class TaskAnalyzeCustomerFeedbackExecuteComponent extends Vue {
+  private taskAnalyzeCustomerFeedbackService: TaskAnalyzeCustomerFeedbackService = new TaskAnalyzeCustomerFeedbackService();
+  private taskContext: TaskAnalyzeCustomerFeedbackContext = {};
   public isSaving = false;
 
   beforeRouteEnter(to, from, next) {
@@ -31,7 +33,7 @@ export default class TaskWriteProposalExecuteComponent extends Vue {
   }
 
   public claimTaskInstance(taskInstanceId) {
-    this.taskWriteProposalService.claim(taskInstanceId).then(res => {
+    this.taskAnalyzeCustomerFeedbackService.claim(taskInstanceId).then(res => {
       this.taskContext = res;
     });
   }
@@ -41,7 +43,7 @@ export default class TaskWriteProposalExecuteComponent extends Vue {
   }
 
   public complete() {
-    this.taskWriteProposalService.complete(this.taskContext).then(res => {
+    this.taskAnalyzeCustomerFeedbackService.complete(this.taskContext).then(res => {
       this.$router.go(-1);
     });
   }

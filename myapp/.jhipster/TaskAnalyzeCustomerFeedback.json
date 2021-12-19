@@ -6,15 +6,26 @@
       "fieldReadOnly": true
     },
     {
+      "fieldName": "customerName",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "customerEmail",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
       "fieldName": "state",
-      "fieldType": "String"
+      "fieldType": "String",
+      "fieldReadOnly": true
     }
   ],
   "relationships": [],
   "entityType": "user-task-form",
   "processBpmnId": "ProposalCreationProcess",
   "processEntityName": "ProposalCreationProcess",
-  "taskBpmnId": "WriteProposal",
+  "taskBpmnId": "AnalyzeCustomerFeedback",
   "domainEntityName": "Proposal",
   "service": "serviceClass",
   "dto": "mapstruct",
@@ -22,6 +33,6 @@
   "readOnly": false,
   "pagination": "no",
   "skipFakeData": true,
-  "name": "TaskWriteProposal",
+  "name": "TaskAnalyzeCustomerFeedback",
   "changelogDate": "20210401000004"
 }

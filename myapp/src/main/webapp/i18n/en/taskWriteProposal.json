@@ -18,7 +18,8 @@
         "title": "Task Write Proposal"
       },
       "id": "ID",
-      "name": "Name"
+      "name": "Name",
+      "state": "State"
     }
   }
 }
