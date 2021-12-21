@@ -13,7 +13,7 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 @Component
-public class EmailProposalSummaryDelegate implements JavaDelegate {
+public class ProposalSummaryEmailDelegate implements JavaDelegate {
 
     @Autowired
     MailService mailService;
