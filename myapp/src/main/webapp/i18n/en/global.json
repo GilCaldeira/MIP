@@ -23,6 +23,7 @@
         "customer": "Customer",
         "hotel": "Hotel",
         "airlineCompany": "Airline Company",
+        "taskProposalReview": "Task Proposal Review",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

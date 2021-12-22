@@ -22,6 +22,6 @@ public class ProposalRegistrationDelegate implements JavaDelegate {
 
         proposalService.save(proposal);
 
-        System.out.println("Proposal successfully registered");
+        System.out.println("Proposal " + proposal.getId() + " successfully registered.");
     }
 }

@@ -34,9 +34,5 @@ public class CustomerResponseMessageDelegate implements JavaDelegate {
         }
 
         proposalService.save(proposal);
-
-        System.out.println(proposal);
-
-        System.out.println("Aquiiii!");
     }
 }

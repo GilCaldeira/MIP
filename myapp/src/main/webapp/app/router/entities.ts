@@ -88,6 +88,10 @@ const AirlineCompany = () => import('@/entities/airline-company/airline-company.
 const AirlineCompanyUpdate = () => import('@/entities/airline-company/airline-company-update.vue');
 // prettier-ignore
 const AirlineCompanyDetails = () => import('@/entities/airline-company/airline-company-details.vue');
+// prettier-ignore
+const ProposalCreationProcess_TaskProposalReviewDetails = () => import('@/entities/proposal-creation-process/task-proposal-review/task-proposal-review-details.vue');
+// prettier-ignore
+const ProposalCreationProcess_TaskProposalReviewExecute = () => import('@/entities/proposal-creation-process/task-proposal-review/task-proposal-review-execute.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -317,6 +321,18 @@ export default [
     path: '/airline-company/:airlineCompanyId/view',
     name: 'AirlineCompanyView',
     component: AirlineCompanyDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/ProposalCreationProcess/task/ProposalReview/:taskInstanceId/view',
+    name: 'ProposalCreationProcess_TaskProposalReviewDetails',
+    component: ProposalCreationProcess_TaskProposalReviewDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/ProposalCreationProcess/task/ProposalReview/:taskInstanceId/execute',
+    name: 'ProposalCreationProcess_TaskProposalReviewExecute',
+    component: ProposalCreationProcess_TaskProposalReviewExecute,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

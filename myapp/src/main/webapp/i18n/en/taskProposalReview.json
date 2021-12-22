@@ -1,0 +1,32 @@
+{
+  "myappApp": {
+    "taskProposalReview": {
+      "home": {
+        "title": "Task Proposal Reviews",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Task Proposal Review",
+        "createOrEditLabel": "Create or edit a Task Proposal Review",
+        "notFound": "No Task Proposal Reviews found"
+      },
+      "created": "A new Task Proposal Review is created with identifier {{ param }}",
+      "updated": "A Task Proposal Review is updated with identifier {{ param }}",
+      "deleted": "A Task Proposal Review is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Task Proposal Review {{ id }}?"
+      },
+      "detail": {
+        "title": "Task Proposal Review"
+      },
+      "id": "ID",
+      "name": "Name",
+      "travelName": "Travel Name",
+      "customerName": "Customer Name",
+      "travelStartDate": "Travel Start Date",
+      "travelEndDate": "Travel End Date",
+      "travelType": "Travel Type",
+      "examplesOtherTravelServices": "Examples Other Travel Services",
+      "airlineCompany": "Airline Company",
+      "hotel": "Hotel"
+    }
+  }
+}
