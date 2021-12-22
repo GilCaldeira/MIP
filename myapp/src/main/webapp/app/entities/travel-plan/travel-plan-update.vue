@@ -87,32 +87,71 @@
             </b-input-group>
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('myappApp.travelPlan.customerName')" for="travel-plan-customerName"
-              >Customer Name</label
-            >
+            <label class="form-control-label" v-text="$t('myappApp.travelPlan.travelType')" for="travel-plan-travelType">Travel Type</label>
             <input
               type="text"
               class="form-control"
-              name="customerName"
-              id="travel-plan-customerName"
-              data-cy="customerName"
-              :class="{ valid: !$v.travelPlan.customerName.$invalid, invalid: $v.travelPlan.customerName.$invalid }"
-              v-model="$v.travelPlan.customerName.$model"
+              name="travelType"
+              id="travel-plan-travelType"
+              data-cy="travelType"
+              :class="{ valid: !$v.travelPlan.travelType.$invalid, invalid: $v.travelPlan.travelType.$invalid }"
+              v-model="$v.travelPlan.travelType.$model"
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('myappApp.travelPlan.travelServices')" for="travel-plan-travelServices"
-              >Travel Services</label
+            <label class="form-control-label" v-text="$t('myappApp.travelPlan.suggestedAirlines')" for="travel-plan-suggestedAirlines"
+              >Suggested Airlines</label
             >
             <input
               type="text"
               class="form-control"
-              name="travelServices"
-              id="travel-plan-travelServices"
-              data-cy="travelServices"
-              :class="{ valid: !$v.travelPlan.travelServices.$invalid, invalid: $v.travelPlan.travelServices.$invalid }"
-              v-model="$v.travelPlan.travelServices.$model"
+              name="suggestedAirlines"
+              id="travel-plan-suggestedAirlines"
+              data-cy="suggestedAirlines"
+              :class="{ valid: !$v.travelPlan.suggestedAirlines.$invalid, invalid: $v.travelPlan.suggestedAirlines.$invalid }"
+              v-model="$v.travelPlan.suggestedAirlines.$model"
             />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('myappApp.travelPlan.suggestedHotels')" for="travel-plan-suggestedHotels"
+              >Suggested Hotels</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="suggestedHotels"
+              id="travel-plan-suggestedHotels"
+              data-cy="suggestedHotels"
+              :class="{ valid: !$v.travelPlan.suggestedHotels.$invalid, invalid: $v.travelPlan.suggestedHotels.$invalid }"
+              v-model="$v.travelPlan.suggestedHotels.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('myappApp.travelPlan.otherTravelServices')" for="travel-plan-otherTravelServices"
+              >Other Travel Services</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="otherTravelServices"
+              id="travel-plan-otherTravelServices"
+              data-cy="otherTravelServices"
+              :class="{ valid: !$v.travelPlan.otherTravelServices.$invalid, invalid: $v.travelPlan.otherTravelServices.$invalid }"
+              v-model="$v.travelPlan.otherTravelServices.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('myappApp.travelPlan.customer')" for="travel-plan-customer">Customer</label>
+            <select class="form-control" id="travel-plan-customer" data-cy="customer" name="customer" v-model="travelPlan.customer">
+              <option v-bind:value="null"></option>
+              <option
+                v-bind:value="travelPlan.customer && customerOption.id === travelPlan.customer.id ? travelPlan.customer : customerOption"
+                v-for="customerOption in customers"
+                :key="customerOption.id"
+              >
+                {{ customerOption.name }}
+              </option>
+            </select>
           </div>
         </div>
         <div>

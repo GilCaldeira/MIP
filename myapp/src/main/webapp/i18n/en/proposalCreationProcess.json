@@ -21,8 +21,16 @@
       "name": "Name",
       "customerName": "Customer Name",
       "customerEmail": "Customer Email",
+      "travelName": "Travel Name",
+      "travelStartDate": "Travel Start Date",
+      "travelEndDate": "Travel End Date",
+      "travelType": "Travel Type",
+      "suggestedAirlines": "Suggested Airlines",
+      "suggestedHotels": "Suggested Hotels",
+      "otherTravelServices": "Other Travel Services",
       "state": "State",
-      "travelServices": "Travel Services"
+      "customer": "Customer",
+      "travelPlan": "Travel Plan"
     }
   }
 }

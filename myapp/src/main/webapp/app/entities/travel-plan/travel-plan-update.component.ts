@@ -1,5 +1,8 @@
 import { Component, Vue, Inject } from 'vue-property-decorator';
 
+import CustomerService from '@/entities/customer/customer.service';
+import { ICustomer } from '@/shared/model/customer.model';
+
 import { ITravelPlan, TravelPlan } from '@/shared/model/travel-plan.model';
 import TravelPlanService from './travel-plan.service';
 
@@ -8,8 +11,10 @@ const validations: any = {
     travelName: {},
     travelStartDate: {},
     travelEndDate: {},
-    customerName: {},
-    travelServices: {},
+    travelType: {},
+    suggestedAirlines: {},
+    suggestedHotels: {},
+    otherTravelServices: {},
   },
 };
 
@@ -19,6 +24,10 @@ const validations: any = {
 export default class TravelPlanUpdate extends Vue {
   @Inject('travelPlanService') private travelPlanService: () => TravelPlanService;
   public travelPlan: ITravelPlan = new TravelPlan();
+
+  @Inject('customerService') private customerService: () => CustomerService;
+
+  public customers: ICustomer[] = [];
   public isSaving = false;
   public currentLanguage = '';
 
@@ -27,6 +36,7 @@ export default class TravelPlanUpdate extends Vue {
       if (to.params.travelPlanId) {
         vm.retrieveTravelPlan(to.params.travelPlanId);
       }
+      vm.initRelationships();
     });
   }
 
@@ -87,5 +97,11 @@ export default class TravelPlanUpdate extends Vue {
     this.$router.go(-1);
   }
 
-  public initRelationships(): void {}
+  public initRelationships(): void {
+    this.customerService()
+      .retrieve()
+      .then(res => {
+        this.customers = res.data;
+      });
+  }
 }

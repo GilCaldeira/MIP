@@ -10,6 +10,8 @@ import com.mycompany.myapp.domain.Proposal;
 import com.mycompany.myapp.repository.ProposalRepository;
 import com.mycompany.myapp.service.dto.ProposalDTO;
 import com.mycompany.myapp.service.mapper.ProposalMapper;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
@@ -40,11 +42,29 @@ class ProposalResourceIT {
     private static final String DEFAULT_CUSTOMER_EMAIL = "AAAAAAAAAA";
     private static final String UPDATED_CUSTOMER_EMAIL = "BBBBBBBBBB";
 
+    private static final String DEFAULT_TRAVEL_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_TRAVEL_NAME = "BBBBBBBBBB";
+
+    private static final LocalDate DEFAULT_TRAVEL_START_DATE = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_TRAVEL_START_DATE = LocalDate.now(ZoneId.systemDefault());
+
+    private static final LocalDate DEFAULT_TRAVEL_END_DATE = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_TRAVEL_END_DATE = LocalDate.now(ZoneId.systemDefault());
+
+    private static final String DEFAULT_TRAVEL_TYPE = "AAAAAAAAAA";
+    private static final String UPDATED_TRAVEL_TYPE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUGGESTED_AIRLINES = "AAAAAAAAAA";
+    private static final String UPDATED_SUGGESTED_AIRLINES = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUGGESTED_HOTELS = "AAAAAAAAAA";
+    private static final String UPDATED_SUGGESTED_HOTELS = "BBBBBBBBBB";
+
+    private static final String DEFAULT_OTHER_TRAVEL_SERVICES = "AAAAAAAAAA";
+    private static final String UPDATED_OTHER_TRAVEL_SERVICES = "BBBBBBBBBB";
+
     private static final String DEFAULT_STATE = "AAAAAAAAAA";
     private static final String UPDATED_STATE = "BBBBBBBBBB";
-
-    private static final String DEFAULT_TRAVEL_SERVICES = "AAAAAAAAAA";
-    private static final String UPDATED_TRAVEL_SERVICES = "BBBBBBBBBB";
 
     private static final String ENTITY_API_URL = "/api/proposals";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -77,8 +97,14 @@ class ProposalResourceIT {
             .name(DEFAULT_NAME)
             .customerName(DEFAULT_CUSTOMER_NAME)
             .customerEmail(DEFAULT_CUSTOMER_EMAIL)
-            .state(DEFAULT_STATE)
-            .travelServices(DEFAULT_TRAVEL_SERVICES);
+            .travelName(DEFAULT_TRAVEL_NAME)
+            .travelStartDate(DEFAULT_TRAVEL_START_DATE)
+            .travelEndDate(DEFAULT_TRAVEL_END_DATE)
+            .travelType(DEFAULT_TRAVEL_TYPE)
+            .suggestedAirlines(DEFAULT_SUGGESTED_AIRLINES)
+            .suggestedHotels(DEFAULT_SUGGESTED_HOTELS)
+            .otherTravelServices(DEFAULT_OTHER_TRAVEL_SERVICES)
+            .state(DEFAULT_STATE);
         return proposal;
     }
 
@@ -93,8 +119,14 @@ class ProposalResourceIT {
             .name(UPDATED_NAME)
             .customerName(UPDATED_CUSTOMER_NAME)
             .customerEmail(UPDATED_CUSTOMER_EMAIL)
-            .state(UPDATED_STATE)
-            .travelServices(UPDATED_TRAVEL_SERVICES);
+            .travelName(UPDATED_TRAVEL_NAME)
+            .travelStartDate(UPDATED_TRAVEL_START_DATE)
+            .travelEndDate(UPDATED_TRAVEL_END_DATE)
+            .travelType(UPDATED_TRAVEL_TYPE)
+            .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
+            .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
+            .otherTravelServices(UPDATED_OTHER_TRAVEL_SERVICES)
+            .state(UPDATED_STATE);
         return proposal;
     }
 
@@ -118,8 +150,14 @@ class ProposalResourceIT {
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].customerName").value(hasItem(DEFAULT_CUSTOMER_NAME)))
             .andExpect(jsonPath("$.[*].customerEmail").value(hasItem(DEFAULT_CUSTOMER_EMAIL)))
-            .andExpect(jsonPath("$.[*].state").value(hasItem(DEFAULT_STATE)))
-            .andExpect(jsonPath("$.[*].travelServices").value(hasItem(DEFAULT_TRAVEL_SERVICES)));
+            .andExpect(jsonPath("$.[*].travelName").value(hasItem(DEFAULT_TRAVEL_NAME)))
+            .andExpect(jsonPath("$.[*].travelStartDate").value(hasItem(DEFAULT_TRAVEL_START_DATE.toString())))
+            .andExpect(jsonPath("$.[*].travelEndDate").value(hasItem(DEFAULT_TRAVEL_END_DATE.toString())))
+            .andExpect(jsonPath("$.[*].travelType").value(hasItem(DEFAULT_TRAVEL_TYPE)))
+            .andExpect(jsonPath("$.[*].suggestedAirlines").value(hasItem(DEFAULT_SUGGESTED_AIRLINES)))
+            .andExpect(jsonPath("$.[*].suggestedHotels").value(hasItem(DEFAULT_SUGGESTED_HOTELS)))
+            .andExpect(jsonPath("$.[*].otherTravelServices").value(hasItem(DEFAULT_OTHER_TRAVEL_SERVICES)))
+            .andExpect(jsonPath("$.[*].state").value(hasItem(DEFAULT_STATE)));
     }
 
     @Test
@@ -137,8 +175,14 @@ class ProposalResourceIT {
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
             .andExpect(jsonPath("$.customerName").value(DEFAULT_CUSTOMER_NAME))
             .andExpect(jsonPath("$.customerEmail").value(DEFAULT_CUSTOMER_EMAIL))
-            .andExpect(jsonPath("$.state").value(DEFAULT_STATE))
-            .andExpect(jsonPath("$.travelServices").value(DEFAULT_TRAVEL_SERVICES));
+            .andExpect(jsonPath("$.travelName").value(DEFAULT_TRAVEL_NAME))
+            .andExpect(jsonPath("$.travelStartDate").value(DEFAULT_TRAVEL_START_DATE.toString()))
+            .andExpect(jsonPath("$.travelEndDate").value(DEFAULT_TRAVEL_END_DATE.toString()))
+            .andExpect(jsonPath("$.travelType").value(DEFAULT_TRAVEL_TYPE))
+            .andExpect(jsonPath("$.suggestedAirlines").value(DEFAULT_SUGGESTED_AIRLINES))
+            .andExpect(jsonPath("$.suggestedHotels").value(DEFAULT_SUGGESTED_HOTELS))
+            .andExpect(jsonPath("$.otherTravelServices").value(DEFAULT_OTHER_TRAVEL_SERVICES))
+            .andExpect(jsonPath("$.state").value(DEFAULT_STATE));
     }
 
     @Test

@@ -11,6 +11,27 @@
             <div class="form-group">
               <label
                 class="form-control-label"
+                v-text="$t('myappApp.taskCheckTravelPlan.travelName')"
+                for="task-check-travel-plan-travelName"
+                >Travel Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="travelName"
+                id="task-check-travel-plan-travelName"
+                readonly
+                data-cy="travelName"
+                :class="{
+                  valid: !$v.taskContext.proposalCreationProcess.proposal.travelName.$invalid,
+                  invalid: $v.taskContext.proposalCreationProcess.proposal.travelName.$invalid,
+                }"
+                v-model="$v.taskContext.proposalCreationProcess.proposal.travelName.$model"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-control-label"
                 v-text="$t('myappApp.taskCheckTravelPlan.customerName')"
                 for="task-check-travel-plan-customerName"
                 >Customer Name</label
@@ -20,6 +41,7 @@
                 class="form-control"
                 name="customerName"
                 id="task-check-travel-plan-customerName"
+                readonly
                 data-cy="customerName"
                 :class="{
                   valid: !$v.taskContext.proposalCreationProcess.proposal.customerName.$invalid,
@@ -31,21 +53,131 @@
             <div class="form-group">
               <label
                 class="form-control-label"
-                v-text="$t('myappApp.taskCheckTravelPlan.customerEmail')"
-                for="task-check-travel-plan-customerEmail"
-                >Customer Email</label
+                v-text="$t('myappApp.taskCheckTravelPlan.travelStartDate')"
+                for="task-check-travel-plan-travelStartDate"
+                >Travel Start Date</label
+              >
+              <b-input-group class="mb-3">
+                <b-form-input
+                  id="task-check-travel-plan-travelStartDate"
+                  readonly
+                  data-cy="travelStartDate"
+                  type="text"
+                  class="form-control"
+                  name="travelStartDate"
+                  :class="{
+                    valid: !$v.taskContext.proposalCreationProcess.proposal.travelStartDate.$invalid,
+                    invalid: $v.taskContext.proposalCreationProcess.proposal.travelStartDate.$invalid,
+                  }"
+                  v-model="$v.taskContext.proposalCreationProcess.proposal.travelStartDate.$model"
+                />
+              </b-input-group>
+            </div>
+            <div class="form-group">
+              <label
+                class="form-control-label"
+                v-text="$t('myappApp.taskCheckTravelPlan.travelEndDate')"
+                for="task-check-travel-plan-travelEndDate"
+                >Travel End Date</label
+              >
+              <b-input-group class="mb-3">
+                <b-form-input
+                  id="task-check-travel-plan-travelEndDate"
+                  readonly
+                  data-cy="travelEndDate"
+                  type="text"
+                  class="form-control"
+                  name="travelEndDate"
+                  :class="{
+                    valid: !$v.taskContext.proposalCreationProcess.proposal.travelEndDate.$invalid,
+                    invalid: $v.taskContext.proposalCreationProcess.proposal.travelEndDate.$invalid,
+                  }"
+                  v-model="$v.taskContext.proposalCreationProcess.proposal.travelEndDate.$model"
+                />
+              </b-input-group>
+            </div>
+            <div class="form-group">
+              <label
+                class="form-control-label"
+                v-text="$t('myappApp.taskCheckTravelPlan.travelType')"
+                for="task-check-travel-plan-travelType"
+                >Travel Type</label
               >
               <input
                 type="text"
                 class="form-control"
-                name="customerEmail"
-                id="task-check-travel-plan-customerEmail"
-                data-cy="customerEmail"
+                name="travelType"
+                id="task-check-travel-plan-travelType"
+                readonly
+                data-cy="travelType"
                 :class="{
-                  valid: !$v.taskContext.proposalCreationProcess.proposal.customerEmail.$invalid,
-                  invalid: $v.taskContext.proposalCreationProcess.proposal.customerEmail.$invalid,
+                  valid: !$v.taskContext.proposalCreationProcess.proposal.travelType.$invalid,
+                  invalid: $v.taskContext.proposalCreationProcess.proposal.travelType.$invalid,
                 }"
-                v-model="$v.taskContext.proposalCreationProcess.proposal.customerEmail.$model"
+                v-model="$v.taskContext.proposalCreationProcess.proposal.travelType.$model"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-control-label"
+                v-text="$t('myappApp.taskCheckTravelPlan.suggestedAirlines')"
+                for="task-check-travel-plan-suggestedAirlines"
+                >Suggested Airlines</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="suggestedAirlines"
+                id="task-check-travel-plan-suggestedAirlines"
+                readonly
+                data-cy="suggestedAirlines"
+                :class="{
+                  valid: !$v.taskContext.proposalCreationProcess.proposal.suggestedAirlines.$invalid,
+                  invalid: $v.taskContext.proposalCreationProcess.proposal.suggestedAirlines.$invalid,
+                }"
+                v-model="$v.taskContext.proposalCreationProcess.proposal.suggestedAirlines.$model"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-control-label"
+                v-text="$t('myappApp.taskCheckTravelPlan.suggestedHotels')"
+                for="task-check-travel-plan-suggestedHotels"
+                >Suggested Hotels</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="suggestedHotels"
+                id="task-check-travel-plan-suggestedHotels"
+                readonly
+                data-cy="suggestedHotels"
+                :class="{
+                  valid: !$v.taskContext.proposalCreationProcess.proposal.suggestedHotels.$invalid,
+                  invalid: $v.taskContext.proposalCreationProcess.proposal.suggestedHotels.$invalid,
+                }"
+                v-model="$v.taskContext.proposalCreationProcess.proposal.suggestedHotels.$model"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-control-label"
+                v-text="$t('myappApp.taskCheckTravelPlan.otherTravelServices')"
+                for="task-check-travel-plan-otherTravelServices"
+                >Other Travel Services</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="otherTravelServices"
+                id="task-check-travel-plan-otherTravelServices"
+                readonly
+                data-cy="otherTravelServices"
+                :class="{
+                  valid: !$v.taskContext.proposalCreationProcess.proposal.otherTravelServices.$invalid,
+                  invalid: $v.taskContext.proposalCreationProcess.proposal.otherTravelServices.$invalid,
+                }"
+                v-model="$v.taskContext.proposalCreationProcess.proposal.otherTravelServices.$model"
               />
             </div>
           </template>

@@ -18,8 +18,14 @@
         "title": "Task Check Travel Plan"
       },
       "id": "ID",
+      "travelName": "Travel Name",
       "customerName": "Customer Name",
-      "customerEmail": "Customer Email"
+      "travelStartDate": "Travel Start Date",
+      "travelEndDate": "Travel End Date",
+      "travelType": "Travel Type",
+      "suggestedAirlines": "Suggested Airlines",
+      "suggestedHotels": "Suggested Hotels",
+      "otherTravelServices": "Other Travel Services"
     }
   }
 }

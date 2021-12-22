@@ -8,6 +8,8 @@ import TravelPlanUpdateComponent from '@/entities/travel-plan/travel-plan-update
 import TravelPlanClass from '@/entities/travel-plan/travel-plan-update.component';
 import TravelPlanService from '@/entities/travel-plan/travel-plan.service';
 
+import CustomerService from '@/entities/customer/customer.service';
+
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
@@ -37,6 +39,8 @@ describe('Component Tests', () => {
         router,
         provide: {
           travelPlanService: () => travelPlanServiceStub,
+
+          customerService: () => new CustomerService(),
         },
       });
       comp = wrapper.vm;

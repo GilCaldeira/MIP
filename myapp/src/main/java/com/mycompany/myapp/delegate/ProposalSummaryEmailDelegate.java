@@ -26,6 +26,10 @@ public class ProposalSummaryEmailDelegate implements JavaDelegate {
         ProposalCreationProcessDTO proposalCreationProcess = (ProposalCreationProcessDTO) delegateExecution.getVariable("processInstance");
         ProposalDTO proposal = proposalCreationProcess.getProposal();
 
+        System.out.println("Aquiiiiii");
+        System.out.println(proposalCreationProcess);
+        System.out.println(proposal);
+
         String to = proposal.getCustomerEmail();
         String subject = "[AgileKip] Summary of your travel " + proposal.getName();
 

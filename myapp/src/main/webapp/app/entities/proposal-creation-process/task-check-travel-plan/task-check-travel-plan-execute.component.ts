@@ -7,8 +7,14 @@ const validations: any = {
   taskContext: {
     proposalCreationProcess: {
       proposal: {
+        travelName: {},
         customerName: {},
-        customerEmail: {},
+        travelStartDate: {},
+        travelEndDate: {},
+        travelType: {},
+        suggestedAirlines: {},
+        suggestedHotels: {},
+        otherTravelServices: {},
       },
     },
   },

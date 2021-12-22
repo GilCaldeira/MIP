@@ -1,7 +1,9 @@
 /* tslint:disable max-line-length */
 import axios from 'axios';
 import sinon from 'sinon';
+import dayjs from 'dayjs';
 
+import { DATE_FORMAT } from '@/shared/date/filters';
 import ProposalService from '@/entities/proposal/proposal.service';
 import { Proposal } from '@/shared/model/proposal.model';
 
@@ -26,15 +28,36 @@ describe('Service Tests', () => {
   describe('Proposal Service', () => {
     let service: ProposalService;
     let elemDefault;
+    let currentDate: Date;
 
     beforeEach(() => {
       service = new ProposalService();
-      elemDefault = new Proposal(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      currentDate = new Date();
+      elemDefault = new Proposal(
+        0,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        currentDate,
+        currentDate,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA'
+      );
     });
 
     describe('Service methods', () => {
       it('should find an element', async () => {
-        const returnedFromService = Object.assign({}, elemDefault);
+        const returnedFromService = Object.assign(
+          {
+            travelStartDate: dayjs(currentDate).format(DATE_FORMAT),
+            travelEndDate: dayjs(currentDate).format(DATE_FORMAT),
+          },
+          elemDefault
+        );
         axiosStub.get.resolves({ data: returnedFromService });
 
         return service.find(123).then(res => {
@@ -58,12 +81,24 @@ describe('Service Tests', () => {
             name: 'BBBBBB',
             customerName: 'BBBBBB',
             customerEmail: 'BBBBBB',
+            travelName: 'BBBBBB',
+            travelStartDate: dayjs(currentDate).format(DATE_FORMAT),
+            travelEndDate: dayjs(currentDate).format(DATE_FORMAT),
+            travelType: 'BBBBBB',
+            suggestedAirlines: 'BBBBBB',
+            suggestedHotels: 'BBBBBB',
+            otherTravelServices: 'BBBBBB',
             state: 'BBBBBB',
-            travelServices: 'BBBBBB',
           },
           elemDefault
         );
-        const expected = Object.assign({}, returnedFromService);
+        const expected = Object.assign(
+          {
+            travelStartDate: currentDate,
+            travelEndDate: currentDate,
+          },
+          returnedFromService
+        );
         axiosStub.get.resolves([returnedFromService]);
         return service.retrieve().then(res => {
           expect(res).toContainEqual(expected);

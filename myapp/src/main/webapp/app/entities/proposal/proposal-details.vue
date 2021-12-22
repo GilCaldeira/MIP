@@ -25,16 +25,72 @@
             <span>{{ proposal.customerEmail }}</span>
           </dd>
           <dt>
+            <span v-text="$t('myappApp.proposal.travelName')">Travel Name</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.travelName }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.travelStartDate')">Travel Start Date</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.travelStartDate }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.travelEndDate')">Travel End Date</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.travelEndDate }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.travelType')">Travel Type</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.travelType }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.suggestedAirlines')">Suggested Airlines</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.suggestedAirlines }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.suggestedHotels')">Suggested Hotels</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.suggestedHotels }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.otherTravelServices')">Other Travel Services</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.otherTravelServices }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('myappApp.proposal.state')">State</span>
           </dt>
           <dd>
             <span>{{ proposal.state }}</span>
           </dd>
           <dt>
-            <span v-text="$t('myappApp.proposal.travelServices')">Travel Services</span>
+            <span v-text="$t('myappApp.proposal.customer')">Customer</span>
           </dt>
           <dd>
-            <span>{{ proposal.travelServices }}</span>
+            <div v-if="proposal.customer">
+              <router-link :to="{ name: 'CustomerView', params: { customerId: proposal.customer.id } }">{{
+                proposal.customer.name
+              }}</router-link>
+            </div>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.travelPlan')">Travel Plan</span>
+          </dt>
+          <dd>
+            <div v-if="proposal.travelPlan">
+              <router-link :to="{ name: 'TravelPlanView', params: { travelPlanId: proposal.travelPlan.id } }">{{
+                proposal.travelPlan.travelName
+              }}</router-link>
+            </div>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

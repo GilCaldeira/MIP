@@ -18,7 +18,9 @@
         "title": "Proposal Creation Start Form"
       },
       "id": "ID",
-      "name": "Name"
+      "name": "Name",
+      "customer": "Customer",
+      "travelPlan": "Travel Plan"
     }
   }
 }

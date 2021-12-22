@@ -16,7 +16,13 @@ public interface TaskCheckTravelPlanMapper {
 
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
+    @Mapping(target = "travelName", source = "travelName")
     @Mapping(target = "customerName", source = "customerName")
-    @Mapping(target = "customerEmail", source = "customerEmail")
+    @Mapping(target = "travelStartDate", source = "travelStartDate")
+    @Mapping(target = "travelEndDate", source = "travelEndDate")
+    @Mapping(target = "travelType", source = "travelType")
+    @Mapping(target = "suggestedAirlines", source = "suggestedAirlines")
+    @Mapping(target = "suggestedHotels", source = "suggestedHotels")
+    @Mapping(target = "otherTravelServices", source = "otherTravelServices")
     ProposalDTO toProposalDTO(Proposal proposal);
 }

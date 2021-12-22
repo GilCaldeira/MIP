@@ -13,15 +13,52 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "state",
+      "fieldName": "travelName",
       "fieldType": "String"
     },
     {
-      "fieldName": "travelServices",
+      "fieldName": "travelStartDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "travelEndDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "travelType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "suggestedAirlines",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "suggestedHotels",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "otherTravelServices",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "state",
       "fieldType": "String"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipName": "customer",
+      "otherEntityName": "customer",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipName": "travelPlan",
+      "otherEntityName": "travelPlan",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "travelName"
+    }
+  ],
   "entityType": "domain",
   "service": "serviceClass",
   "dto": "mapstruct",

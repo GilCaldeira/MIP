@@ -5,7 +5,20 @@
       "fieldType": "String"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipName": "customer",
+      "otherEntityName": "customer",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipName": "travelPlan",
+      "otherEntityName": "travelPlan",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "travelName"
+    }
+  ],
   "entityType": "start-form",
   "processBpmnId": "ProposalCreationProcess",
   "processEntityName": "ProposalCreationProcess",

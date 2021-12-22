@@ -17,35 +17,25 @@ import org.springframework.stereotype.Component;
 public class CustomerResponseMessageDelegate implements JavaDelegate {
 
     @Autowired
-    private RuntimeService runtimeService;
+    ProposalService proposalService;
 
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         ProposalCreationProcessDTO proposalCreationProcess = (ProposalCreationProcessDTO) delegateExecution.getVariable("processInstance");
         ProposalDTO proposal = proposalCreationProcess.getProposal();
+        String state = proposal.getState();
+        // Random rand = new Random();
+        // int randomNumber = rand.nextInt(1000);
 
-        // EventSubscription subscription = runtimeService.createEventSubscriptionQuery()
-        //     .processInstanceId(proposalCreationProcess.getId().toString()).eventType("message").singleResult();
-
-        // runtimeService.messageEventReceived(subscription.getEventName(), subscription.getExecutionId());
-
-        // Execution execution = runtimeService.createExecutionQuery()
-        // .messageEventSubscriptionName("CustomerResponseMessage")
-        // .processVariableValueEquals("orderId", message.getOrderId())
-        // .singleResult();
-
-        // System.out.println(execution);
-
-        Random rand = new Random();
-        int randomNumber = rand.nextInt(1000);
-
-        if (randomNumber % 2 == 0) {
-            proposal.setState("Approved");
-        } else {
+        if (state == null) {
             proposal.setState("Refused");
+        } else {
+            proposal.setState("Approved");
         }
 
-        System.out.println(randomNumber);
+        proposalService.save(proposal);
+
+        System.out.println(proposal);
 
         System.out.println("Aquiiii!");
         // String businessKey = execution.getProcessBusinessKey();

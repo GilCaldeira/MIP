@@ -34,6 +34,63 @@
                     v-model="$v.proposalCreationProcess.proposal.name.$model"
                   />
                 </div>
+                <div class="form-group">
+                  <label
+                    class="form-control-label"
+                    v-text="$t('myappApp.proposalCreationStartForm.customer')"
+                    for="proposal-creation-start-form-customer"
+                    >Customer</label
+                  >
+                  <select
+                    class="form-control"
+                    id="proposal-creation-start-form-customer"
+                    data-cy="customer"
+                    name="customer"
+                    v-model="proposalCreationProcess.proposal.customer"
+                  >
+                    <option v-bind:value="null"></option>
+                    <option
+                      v-bind:value="
+                        proposalCreationProcess.proposal.customer && customerOption.id === proposalCreationProcess.proposal.customer.id
+                          ? proposalCreationProcess.proposal.customer
+                          : customerOption
+                      "
+                      v-for="customerOption in customers"
+                      :key="customerOption.id"
+                    >
+                      {{ customerOption.name }}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label
+                    class="form-control-label"
+                    v-text="$t('myappApp.proposalCreationStartForm.travelPlan')"
+                    for="proposal-creation-start-form-travelPlan"
+                    >Travel Plan</label
+                  >
+                  <select
+                    class="form-control"
+                    id="proposal-creation-start-form-travelPlan"
+                    data-cy="travelPlan"
+                    name="travelPlan"
+                    v-model="proposalCreationProcess.proposal.travelPlan"
+                  >
+                    <option v-bind:value="null"></option>
+                    <option
+                      v-bind:value="
+                        proposalCreationProcess.proposal.travelPlan &&
+                        travelPlanOption.id === proposalCreationProcess.proposal.travelPlan.id
+                          ? proposalCreationProcess.proposal.travelPlan
+                          : travelPlanOption
+                      "
+                      v-for="travelPlanOption in travelPlans"
+                      :key="travelPlanOption.id"
+                    >
+                      {{ travelPlanOption.travelName }}
+                    </option>
+                  </select>
+                </div>
               </div>
             </template>
           </akip-show-process-definition>

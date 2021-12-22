@@ -73,8 +73,14 @@ public class TaskCheckTravelPlanService {
         ProposalDTO proposalDTO = proposalService
             .findOne(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getId())
             .orElseThrow();
+        proposalDTO.setTravelName(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getTravelName());
         proposalDTO.setCustomerName(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getCustomerName());
-        proposalDTO.setCustomerEmail(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getCustomerEmail());
+        proposalDTO.setTravelStartDate(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getTravelStartDate());
+        proposalDTO.setTravelEndDate(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getTravelEndDate());
+        proposalDTO.setTravelType(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getTravelType());
+        proposalDTO.setSuggestedAirlines(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getSuggestedAirlines());
+        proposalDTO.setSuggestedHotels(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getSuggestedHotels());
+        proposalDTO.setOtherTravelServices(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getOtherTravelServices());
         proposalService.save(proposalDTO);
     }
 

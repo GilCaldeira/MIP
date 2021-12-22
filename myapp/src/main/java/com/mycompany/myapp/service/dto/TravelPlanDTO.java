@@ -17,9 +17,15 @@ public class TravelPlanDTO implements Serializable {
 
     private LocalDate travelEndDate;
 
-    private String customerName;
+    private String travelType;
 
-    private String travelServices;
+    private String suggestedAirlines;
+
+    private String suggestedHotels;
+
+    private String otherTravelServices;
+
+    private CustomerDTO customer;
 
     public Long getId() {
         return id;
@@ -53,20 +59,44 @@ public class TravelPlanDTO implements Serializable {
         this.travelEndDate = travelEndDate;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public String getTravelType() {
+        return travelType;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setTravelType(String travelType) {
+        this.travelType = travelType;
     }
 
-    public String getTravelServices() {
-        return travelServices;
+    public String getSuggestedAirlines() {
+        return suggestedAirlines;
     }
 
-    public void setTravelServices(String travelServices) {
-        this.travelServices = travelServices;
+    public void setSuggestedAirlines(String suggestedAirlines) {
+        this.suggestedAirlines = suggestedAirlines;
+    }
+
+    public String getSuggestedHotels() {
+        return suggestedHotels;
+    }
+
+    public void setSuggestedHotels(String suggestedHotels) {
+        this.suggestedHotels = suggestedHotels;
+    }
+
+    public String getOtherTravelServices() {
+        return otherTravelServices;
+    }
+
+    public void setOtherTravelServices(String otherTravelServices) {
+        this.otherTravelServices = otherTravelServices;
+    }
+
+    public CustomerDTO getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(CustomerDTO customer) {
+        this.customer = customer;
     }
 
     @Override
@@ -98,8 +128,11 @@ public class TravelPlanDTO implements Serializable {
             ", travelName='" + getTravelName() + "'" +
             ", travelStartDate='" + getTravelStartDate() + "'" +
             ", travelEndDate='" + getTravelEndDate() + "'" +
-            ", customerName='" + getCustomerName() + "'" +
-            ", travelServices='" + getTravelServices() + "'" +
+            ", travelType='" + getTravelType() + "'" +
+            ", suggestedAirlines='" + getSuggestedAirlines() + "'" +
+            ", suggestedHotels='" + getSuggestedHotels() + "'" +
+            ", otherTravelServices='" + getOtherTravelServices() + "'" +
+            ", customer=" + getCustomer() +
             "}";
     }
 }

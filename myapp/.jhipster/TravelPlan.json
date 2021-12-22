@@ -13,15 +13,30 @@
       "fieldType": "LocalDate"
     },
     {
-      "fieldName": "customerName",
+      "fieldName": "travelType",
       "fieldType": "String"
     },
     {
-      "fieldName": "travelServices",
+      "fieldName": "suggestedAirlines",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "suggestedHotels",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "otherTravelServices",
       "fieldType": "String"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipName": "customer",
+      "otherEntityName": "customer",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name"
+    }
+  ],
   "entityType": "domain",
   "service": "serviceClass",
   "dto": "mapstruct",

@@ -25,16 +25,38 @@
             <span>{{ travelPlan.travelEndDate }}</span>
           </dd>
           <dt>
-            <span v-text="$t('myappApp.travelPlan.customerName')">Customer Name</span>
+            <span v-text="$t('myappApp.travelPlan.travelType')">Travel Type</span>
           </dt>
           <dd>
-            <span>{{ travelPlan.customerName }}</span>
+            <span>{{ travelPlan.travelType }}</span>
           </dd>
           <dt>
-            <span v-text="$t('myappApp.travelPlan.travelServices')">Travel Services</span>
+            <span v-text="$t('myappApp.travelPlan.suggestedAirlines')">Suggested Airlines</span>
           </dt>
           <dd>
-            <span>{{ travelPlan.travelServices }}</span>
+            <span>{{ travelPlan.suggestedAirlines }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.travelPlan.suggestedHotels')">Suggested Hotels</span>
+          </dt>
+          <dd>
+            <span>{{ travelPlan.suggestedHotels }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.travelPlan.otherTravelServices')">Other Travel Services</span>
+          </dt>
+          <dd>
+            <span>{{ travelPlan.otherTravelServices }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.travelPlan.customer')">Customer</span>
+          </dt>
+          <dd>
+            <div v-if="travelPlan.customer">
+              <router-link :to="{ name: 'CustomerView', params: { customerId: travelPlan.customer.id } }">{{
+                travelPlan.customer.name
+              }}</router-link>
+            </div>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

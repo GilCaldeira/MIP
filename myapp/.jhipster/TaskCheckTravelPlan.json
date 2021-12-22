@@ -1,12 +1,44 @@
 {
   "fields": [
     {
-      "fieldName": "customerName",
-      "fieldType": "String"
+      "fieldName": "travelName",
+      "fieldType": "String",
+      "fieldReadOnly": true
     },
     {
-      "fieldName": "customerEmail",
-      "fieldType": "String"
+      "fieldName": "customerName",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "travelStartDate",
+      "fieldType": "LocalDate",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "travelEndDate",
+      "fieldType": "LocalDate",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "travelType",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "suggestedAirlines",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "suggestedHotels",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "otherTravelServices",
+      "fieldType": "String",
+      "fieldReadOnly": true
     }
   ],
   "relationships": [],

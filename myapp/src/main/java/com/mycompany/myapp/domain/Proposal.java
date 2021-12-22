@@ -1,6 +1,8 @@
 package com.mycompany.myapp.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.time.LocalDate;
 import javax.persistence.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -29,11 +31,36 @@ public class Proposal implements Serializable {
     @Column(name = "customer_email")
     private String customerEmail;
 
+    @Column(name = "travel_name")
+    private String travelName;
+
+    @Column(name = "travel_start_date")
+    private LocalDate travelStartDate;
+
+    @Column(name = "travel_end_date")
+    private LocalDate travelEndDate;
+
+    @Column(name = "travel_type")
+    private String travelType;
+
+    @Column(name = "suggested_airlines")
+    private String suggestedAirlines;
+
+    @Column(name = "suggested_hotels")
+    private String suggestedHotels;
+
+    @Column(name = "other_travel_services")
+    private String otherTravelServices;
+
     @Column(name = "state")
     private String state;
 
-    @Column(name = "travel_services")
-    private String travelServices;
+    @ManyToOne
+    private Customer customer;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = { "customer" }, allowSetters = true)
+    private TravelPlan travelPlan;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -88,6 +115,97 @@ public class Proposal implements Serializable {
         this.customerEmail = customerEmail;
     }
 
+    public String getTravelName() {
+        return this.travelName;
+    }
+
+    public Proposal travelName(String travelName) {
+        this.travelName = travelName;
+        return this;
+    }
+
+    public void setTravelName(String travelName) {
+        this.travelName = travelName;
+    }
+
+    public LocalDate getTravelStartDate() {
+        return this.travelStartDate;
+    }
+
+    public Proposal travelStartDate(LocalDate travelStartDate) {
+        this.travelStartDate = travelStartDate;
+        return this;
+    }
+
+    public void setTravelStartDate(LocalDate travelStartDate) {
+        this.travelStartDate = travelStartDate;
+    }
+
+    public LocalDate getTravelEndDate() {
+        return this.travelEndDate;
+    }
+
+    public Proposal travelEndDate(LocalDate travelEndDate) {
+        this.travelEndDate = travelEndDate;
+        return this;
+    }
+
+    public void setTravelEndDate(LocalDate travelEndDate) {
+        this.travelEndDate = travelEndDate;
+    }
+
+    public String getTravelType() {
+        return this.travelType;
+    }
+
+    public Proposal travelType(String travelType) {
+        this.travelType = travelType;
+        return this;
+    }
+
+    public void setTravelType(String travelType) {
+        this.travelType = travelType;
+    }
+
+    public String getSuggestedAirlines() {
+        return this.suggestedAirlines;
+    }
+
+    public Proposal suggestedAirlines(String suggestedAirlines) {
+        this.suggestedAirlines = suggestedAirlines;
+        return this;
+    }
+
+    public void setSuggestedAirlines(String suggestedAirlines) {
+        this.suggestedAirlines = suggestedAirlines;
+    }
+
+    public String getSuggestedHotels() {
+        return this.suggestedHotels;
+    }
+
+    public Proposal suggestedHotels(String suggestedHotels) {
+        this.suggestedHotels = suggestedHotels;
+        return this;
+    }
+
+    public void setSuggestedHotels(String suggestedHotels) {
+        this.suggestedHotels = suggestedHotels;
+    }
+
+    public String getOtherTravelServices() {
+        return this.otherTravelServices;
+    }
+
+    public Proposal otherTravelServices(String otherTravelServices) {
+        this.otherTravelServices = otherTravelServices;
+        return this;
+    }
+
+    public void setOtherTravelServices(String otherTravelServices) {
+        this.otherTravelServices = otherTravelServices;
+    }
+
     public String getState() {
         return this.state;
     }
@@ -101,17 +219,30 @@ public class Proposal implements Serializable {
         this.state = state;
     }
 
-    public String getTravelServices() {
-        return this.travelServices;
+    public Customer getCustomer() {
+        return this.customer;
     }
 
-    public Proposal travelServices(String travelServices) {
-        this.travelServices = travelServices;
+    public Proposal customer(Customer customer) {
+        this.setCustomer(customer);
         return this;
     }
 
-    public void setTravelServices(String travelServices) {
-        this.travelServices = travelServices;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public TravelPlan getTravelPlan() {
+        return this.travelPlan;
+    }
+
+    public Proposal travelPlan(TravelPlan travelPlan) {
+        this.setTravelPlan(travelPlan);
+        return this;
+    }
+
+    public void setTravelPlan(TravelPlan travelPlan) {
+        this.travelPlan = travelPlan;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -141,8 +272,14 @@ public class Proposal implements Serializable {
             ", name='" + getName() + "'" +
             ", customerName='" + getCustomerName() + "'" +
             ", customerEmail='" + getCustomerEmail() + "'" +
+            ", travelName='" + getTravelName() + "'" +
+            ", travelStartDate='" + getTravelStartDate() + "'" +
+            ", travelEndDate='" + getTravelEndDate() + "'" +
+            ", travelType='" + getTravelType() + "'" +
+            ", suggestedAirlines='" + getSuggestedAirlines() + "'" +
+            ", suggestedHotels='" + getSuggestedHotels() + "'" +
+            ", otherTravelServices='" + getOtherTravelServices() + "'" +
             ", state='" + getState() + "'" +
-            ", travelServices='" + getTravelServices() + "'" +
             "}";
     }
 }

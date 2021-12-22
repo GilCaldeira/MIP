@@ -9,6 +9,18 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.travelName')">travelName</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="travelName"
+                id="proposal-travelName"
+                data-cy="travelName"
+                v-model="taskContext.proposalCreationProcess.proposal.travelName"
+              />
+            </div>
+            <div class="form-group">
               <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.customerName')">customerName</label>
               <input
                 readonly
@@ -21,15 +33,75 @@
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.customerEmail')">customerEmail</label>
+              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.travelStartDate')">travelStartDate</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="customerEmail"
-                id="proposal-customerEmail"
-                data-cy="customerEmail"
-                v-model="taskContext.proposalCreationProcess.proposal.customerEmail"
+                name="travelStartDate"
+                id="proposal-travelStartDate"
+                data-cy="travelStartDate"
+                v-model="taskContext.proposalCreationProcess.proposal.travelStartDate"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.travelEndDate')">travelEndDate</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="travelEndDate"
+                id="proposal-travelEndDate"
+                data-cy="travelEndDate"
+                v-model="taskContext.proposalCreationProcess.proposal.travelEndDate"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.travelType')">travelType</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="travelType"
+                id="proposal-travelType"
+                data-cy="travelType"
+                v-model="taskContext.proposalCreationProcess.proposal.travelType"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.suggestedAirlines')">suggestedAirlines</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="suggestedAirlines"
+                id="proposal-suggestedAirlines"
+                data-cy="suggestedAirlines"
+                v-model="taskContext.proposalCreationProcess.proposal.suggestedAirlines"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.suggestedHotels')">suggestedHotels</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="suggestedHotels"
+                id="proposal-suggestedHotels"
+                data-cy="suggestedHotels"
+                v-model="taskContext.proposalCreationProcess.proposal.suggestedHotels"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.otherTravelServices')">otherTravelServices</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="otherTravelServices"
+                id="proposal-otherTravelServices"
+                data-cy="otherTravelServices"
+                v-model="taskContext.proposalCreationProcess.proposal.otherTravelServices"
               />
             </div>
           </template>

@@ -42,11 +42,17 @@ class TravelPlanResourceIT {
     private static final LocalDate DEFAULT_TRAVEL_END_DATE = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_TRAVEL_END_DATE = LocalDate.now(ZoneId.systemDefault());
 
-    private static final String DEFAULT_CUSTOMER_NAME = "AAAAAAAAAA";
-    private static final String UPDATED_CUSTOMER_NAME = "BBBBBBBBBB";
+    private static final String DEFAULT_TRAVEL_TYPE = "AAAAAAAAAA";
+    private static final String UPDATED_TRAVEL_TYPE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_TRAVEL_SERVICES = "AAAAAAAAAA";
-    private static final String UPDATED_TRAVEL_SERVICES = "BBBBBBBBBB";
+    private static final String DEFAULT_SUGGESTED_AIRLINES = "AAAAAAAAAA";
+    private static final String UPDATED_SUGGESTED_AIRLINES = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUGGESTED_HOTELS = "AAAAAAAAAA";
+    private static final String UPDATED_SUGGESTED_HOTELS = "BBBBBBBBBB";
+
+    private static final String DEFAULT_OTHER_TRAVEL_SERVICES = "AAAAAAAAAA";
+    private static final String UPDATED_OTHER_TRAVEL_SERVICES = "BBBBBBBBBB";
 
     private static final String ENTITY_API_URL = "/api/travel-plans";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -79,8 +85,10 @@ class TravelPlanResourceIT {
             .travelName(DEFAULT_TRAVEL_NAME)
             .travelStartDate(DEFAULT_TRAVEL_START_DATE)
             .travelEndDate(DEFAULT_TRAVEL_END_DATE)
-            .customerName(DEFAULT_CUSTOMER_NAME)
-            .travelServices(DEFAULT_TRAVEL_SERVICES);
+            .travelType(DEFAULT_TRAVEL_TYPE)
+            .suggestedAirlines(DEFAULT_SUGGESTED_AIRLINES)
+            .suggestedHotels(DEFAULT_SUGGESTED_HOTELS)
+            .otherTravelServices(DEFAULT_OTHER_TRAVEL_SERVICES);
         return travelPlan;
     }
 
@@ -95,8 +103,10 @@ class TravelPlanResourceIT {
             .travelName(UPDATED_TRAVEL_NAME)
             .travelStartDate(UPDATED_TRAVEL_START_DATE)
             .travelEndDate(UPDATED_TRAVEL_END_DATE)
-            .customerName(UPDATED_CUSTOMER_NAME)
-            .travelServices(UPDATED_TRAVEL_SERVICES);
+            .travelType(UPDATED_TRAVEL_TYPE)
+            .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
+            .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
+            .otherTravelServices(UPDATED_OTHER_TRAVEL_SERVICES);
         return travelPlan;
     }
 
@@ -122,8 +132,10 @@ class TravelPlanResourceIT {
         assertThat(testTravelPlan.getTravelName()).isEqualTo(DEFAULT_TRAVEL_NAME);
         assertThat(testTravelPlan.getTravelStartDate()).isEqualTo(DEFAULT_TRAVEL_START_DATE);
         assertThat(testTravelPlan.getTravelEndDate()).isEqualTo(DEFAULT_TRAVEL_END_DATE);
-        assertThat(testTravelPlan.getCustomerName()).isEqualTo(DEFAULT_CUSTOMER_NAME);
-        assertThat(testTravelPlan.getTravelServices()).isEqualTo(DEFAULT_TRAVEL_SERVICES);
+        assertThat(testTravelPlan.getTravelType()).isEqualTo(DEFAULT_TRAVEL_TYPE);
+        assertThat(testTravelPlan.getSuggestedAirlines()).isEqualTo(DEFAULT_SUGGESTED_AIRLINES);
+        assertThat(testTravelPlan.getSuggestedHotels()).isEqualTo(DEFAULT_SUGGESTED_HOTELS);
+        assertThat(testTravelPlan.getOtherTravelServices()).isEqualTo(DEFAULT_OTHER_TRAVEL_SERVICES);
     }
 
     @Test
@@ -160,8 +172,10 @@ class TravelPlanResourceIT {
             .andExpect(jsonPath("$.[*].travelName").value(hasItem(DEFAULT_TRAVEL_NAME)))
             .andExpect(jsonPath("$.[*].travelStartDate").value(hasItem(DEFAULT_TRAVEL_START_DATE.toString())))
             .andExpect(jsonPath("$.[*].travelEndDate").value(hasItem(DEFAULT_TRAVEL_END_DATE.toString())))
-            .andExpect(jsonPath("$.[*].customerName").value(hasItem(DEFAULT_CUSTOMER_NAME)))
-            .andExpect(jsonPath("$.[*].travelServices").value(hasItem(DEFAULT_TRAVEL_SERVICES)));
+            .andExpect(jsonPath("$.[*].travelType").value(hasItem(DEFAULT_TRAVEL_TYPE)))
+            .andExpect(jsonPath("$.[*].suggestedAirlines").value(hasItem(DEFAULT_SUGGESTED_AIRLINES)))
+            .andExpect(jsonPath("$.[*].suggestedHotels").value(hasItem(DEFAULT_SUGGESTED_HOTELS)))
+            .andExpect(jsonPath("$.[*].otherTravelServices").value(hasItem(DEFAULT_OTHER_TRAVEL_SERVICES)));
     }
 
     @Test
@@ -179,8 +193,10 @@ class TravelPlanResourceIT {
             .andExpect(jsonPath("$.travelName").value(DEFAULT_TRAVEL_NAME))
             .andExpect(jsonPath("$.travelStartDate").value(DEFAULT_TRAVEL_START_DATE.toString()))
             .andExpect(jsonPath("$.travelEndDate").value(DEFAULT_TRAVEL_END_DATE.toString()))
-            .andExpect(jsonPath("$.customerName").value(DEFAULT_CUSTOMER_NAME))
-            .andExpect(jsonPath("$.travelServices").value(DEFAULT_TRAVEL_SERVICES));
+            .andExpect(jsonPath("$.travelType").value(DEFAULT_TRAVEL_TYPE))
+            .andExpect(jsonPath("$.suggestedAirlines").value(DEFAULT_SUGGESTED_AIRLINES))
+            .andExpect(jsonPath("$.suggestedHotels").value(DEFAULT_SUGGESTED_HOTELS))
+            .andExpect(jsonPath("$.otherTravelServices").value(DEFAULT_OTHER_TRAVEL_SERVICES));
     }
 
     @Test
@@ -206,8 +222,10 @@ class TravelPlanResourceIT {
             .travelName(UPDATED_TRAVEL_NAME)
             .travelStartDate(UPDATED_TRAVEL_START_DATE)
             .travelEndDate(UPDATED_TRAVEL_END_DATE)
-            .customerName(UPDATED_CUSTOMER_NAME)
-            .travelServices(UPDATED_TRAVEL_SERVICES);
+            .travelType(UPDATED_TRAVEL_TYPE)
+            .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
+            .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
+            .otherTravelServices(UPDATED_OTHER_TRAVEL_SERVICES);
         TravelPlanDTO travelPlanDTO = travelPlanMapper.toDto(updatedTravelPlan);
 
         restTravelPlanMockMvc
@@ -225,8 +243,10 @@ class TravelPlanResourceIT {
         assertThat(testTravelPlan.getTravelName()).isEqualTo(UPDATED_TRAVEL_NAME);
         assertThat(testTravelPlan.getTravelStartDate()).isEqualTo(UPDATED_TRAVEL_START_DATE);
         assertThat(testTravelPlan.getTravelEndDate()).isEqualTo(UPDATED_TRAVEL_END_DATE);
-        assertThat(testTravelPlan.getCustomerName()).isEqualTo(UPDATED_CUSTOMER_NAME);
-        assertThat(testTravelPlan.getTravelServices()).isEqualTo(UPDATED_TRAVEL_SERVICES);
+        assertThat(testTravelPlan.getTravelType()).isEqualTo(UPDATED_TRAVEL_TYPE);
+        assertThat(testTravelPlan.getSuggestedAirlines()).isEqualTo(UPDATED_SUGGESTED_AIRLINES);
+        assertThat(testTravelPlan.getSuggestedHotels()).isEqualTo(UPDATED_SUGGESTED_HOTELS);
+        assertThat(testTravelPlan.getOtherTravelServices()).isEqualTo(UPDATED_OTHER_TRAVEL_SERVICES);
     }
 
     @Test
@@ -306,7 +326,11 @@ class TravelPlanResourceIT {
         TravelPlan partialUpdatedTravelPlan = new TravelPlan();
         partialUpdatedTravelPlan.setId(travelPlan.getId());
 
-        partialUpdatedTravelPlan.customerName(UPDATED_CUSTOMER_NAME).travelServices(UPDATED_TRAVEL_SERVICES);
+        partialUpdatedTravelPlan
+            .travelType(UPDATED_TRAVEL_TYPE)
+            .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
+            .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
+            .otherTravelServices(UPDATED_OTHER_TRAVEL_SERVICES);
 
         restTravelPlanMockMvc
             .perform(
@@ -323,8 +347,10 @@ class TravelPlanResourceIT {
         assertThat(testTravelPlan.getTravelName()).isEqualTo(DEFAULT_TRAVEL_NAME);
         assertThat(testTravelPlan.getTravelStartDate()).isEqualTo(DEFAULT_TRAVEL_START_DATE);
         assertThat(testTravelPlan.getTravelEndDate()).isEqualTo(DEFAULT_TRAVEL_END_DATE);
-        assertThat(testTravelPlan.getCustomerName()).isEqualTo(UPDATED_CUSTOMER_NAME);
-        assertThat(testTravelPlan.getTravelServices()).isEqualTo(UPDATED_TRAVEL_SERVICES);
+        assertThat(testTravelPlan.getTravelType()).isEqualTo(UPDATED_TRAVEL_TYPE);
+        assertThat(testTravelPlan.getSuggestedAirlines()).isEqualTo(UPDATED_SUGGESTED_AIRLINES);
+        assertThat(testTravelPlan.getSuggestedHotels()).isEqualTo(UPDATED_SUGGESTED_HOTELS);
+        assertThat(testTravelPlan.getOtherTravelServices()).isEqualTo(UPDATED_OTHER_TRAVEL_SERVICES);
     }
 
     @Test
@@ -343,8 +369,10 @@ class TravelPlanResourceIT {
             .travelName(UPDATED_TRAVEL_NAME)
             .travelStartDate(UPDATED_TRAVEL_START_DATE)
             .travelEndDate(UPDATED_TRAVEL_END_DATE)
-            .customerName(UPDATED_CUSTOMER_NAME)
-            .travelServices(UPDATED_TRAVEL_SERVICES);
+            .travelType(UPDATED_TRAVEL_TYPE)
+            .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
+            .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
+            .otherTravelServices(UPDATED_OTHER_TRAVEL_SERVICES);
 
         restTravelPlanMockMvc
             .perform(
@@ -361,8 +389,10 @@ class TravelPlanResourceIT {
         assertThat(testTravelPlan.getTravelName()).isEqualTo(UPDATED_TRAVEL_NAME);
         assertThat(testTravelPlan.getTravelStartDate()).isEqualTo(UPDATED_TRAVEL_START_DATE);
         assertThat(testTravelPlan.getTravelEndDate()).isEqualTo(UPDATED_TRAVEL_END_DATE);
-        assertThat(testTravelPlan.getCustomerName()).isEqualTo(UPDATED_CUSTOMER_NAME);
-        assertThat(testTravelPlan.getTravelServices()).isEqualTo(UPDATED_TRAVEL_SERVICES);
+        assertThat(testTravelPlan.getTravelType()).isEqualTo(UPDATED_TRAVEL_TYPE);
+        assertThat(testTravelPlan.getSuggestedAirlines()).isEqualTo(UPDATED_SUGGESTED_AIRLINES);
+        assertThat(testTravelPlan.getSuggestedHotels()).isEqualTo(UPDATED_SUGGESTED_HOTELS);
+        assertThat(testTravelPlan.getOtherTravelServices()).isEqualTo(UPDATED_OTHER_TRAVEL_SERVICES);
     }
 
     @Test

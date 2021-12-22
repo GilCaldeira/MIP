@@ -33,7 +33,7 @@ describe('Service Tests', () => {
     beforeEach(() => {
       service = new TravelPlanService();
       currentDate = new Date();
-      elemDefault = new TravelPlan(0, 'AAAAAAA', currentDate, currentDate, 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new TravelPlan(0, 'AAAAAAA', currentDate, currentDate, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -102,8 +102,10 @@ describe('Service Tests', () => {
             travelName: 'BBBBBB',
             travelStartDate: dayjs(currentDate).format(DATE_FORMAT),
             travelEndDate: dayjs(currentDate).format(DATE_FORMAT),
-            customerName: 'BBBBBB',
-            travelServices: 'BBBBBB',
+            travelType: 'BBBBBB',
+            suggestedAirlines: 'BBBBBB',
+            suggestedHotels: 'BBBBBB',
+            otherTravelServices: 'BBBBBB',
           },
           elemDefault
         );
@@ -136,8 +138,10 @@ describe('Service Tests', () => {
       it('should partial update a TravelPlan', async () => {
         const patchObject = Object.assign(
           {
-            customerName: 'BBBBBB',
-            travelServices: 'BBBBBB',
+            travelType: 'BBBBBB',
+            suggestedAirlines: 'BBBBBB',
+            suggestedHotels: 'BBBBBB',
+            otherTravelServices: 'BBBBBB',
           },
           new TravelPlan()
         );
@@ -174,8 +178,10 @@ describe('Service Tests', () => {
             travelName: 'BBBBBB',
             travelStartDate: dayjs(currentDate).format(DATE_FORMAT),
             travelEndDate: dayjs(currentDate).format(DATE_FORMAT),
-            customerName: 'BBBBBB',
-            travelServices: 'BBBBBB',
+            travelType: 'BBBBBB',
+            suggestedAirlines: 'BBBBBB',
+            suggestedHotels: 'BBBBBB',
+            otherTravelServices: 'BBBBBB',
           },
           elemDefault
         );

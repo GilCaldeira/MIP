@@ -30,11 +30,20 @@ public class TravelPlan implements Serializable {
     @Column(name = "travel_end_date")
     private LocalDate travelEndDate;
 
-    @Column(name = "customer_name")
-    private String customerName;
+    @Column(name = "travel_type")
+    private String travelType;
 
-    @Column(name = "travel_services")
-    private String travelServices;
+    @Column(name = "suggested_airlines")
+    private String suggestedAirlines;
+
+    @Column(name = "suggested_hotels")
+    private String suggestedHotels;
+
+    @Column(name = "other_travel_services")
+    private String otherTravelServices;
+
+    @ManyToOne
+    private Customer customer;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -89,30 +98,69 @@ public class TravelPlan implements Serializable {
         this.travelEndDate = travelEndDate;
     }
 
-    public String getCustomerName() {
-        return this.customerName;
+    public String getTravelType() {
+        return this.travelType;
     }
 
-    public TravelPlan customerName(String customerName) {
-        this.customerName = customerName;
+    public TravelPlan travelType(String travelType) {
+        this.travelType = travelType;
         return this;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setTravelType(String travelType) {
+        this.travelType = travelType;
     }
 
-    public String getTravelServices() {
-        return this.travelServices;
+    public String getSuggestedAirlines() {
+        return this.suggestedAirlines;
     }
 
-    public TravelPlan travelServices(String travelServices) {
-        this.travelServices = travelServices;
+    public TravelPlan suggestedAirlines(String suggestedAirlines) {
+        this.suggestedAirlines = suggestedAirlines;
         return this;
     }
 
-    public void setTravelServices(String travelServices) {
-        this.travelServices = travelServices;
+    public void setSuggestedAirlines(String suggestedAirlines) {
+        this.suggestedAirlines = suggestedAirlines;
+    }
+
+    public String getSuggestedHotels() {
+        return this.suggestedHotels;
+    }
+
+    public TravelPlan suggestedHotels(String suggestedHotels) {
+        this.suggestedHotels = suggestedHotels;
+        return this;
+    }
+
+    public void setSuggestedHotels(String suggestedHotels) {
+        this.suggestedHotels = suggestedHotels;
+    }
+
+    public String getOtherTravelServices() {
+        return this.otherTravelServices;
+    }
+
+    public TravelPlan otherTravelServices(String otherTravelServices) {
+        this.otherTravelServices = otherTravelServices;
+        return this;
+    }
+
+    public void setOtherTravelServices(String otherTravelServices) {
+        this.otherTravelServices = otherTravelServices;
+    }
+
+    public Customer getCustomer() {
+        return this.customer;
+    }
+
+    public TravelPlan customer(Customer customer) {
+        this.setCustomer(customer);
+        return this;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -142,8 +190,10 @@ public class TravelPlan implements Serializable {
             ", travelName='" + getTravelName() + "'" +
             ", travelStartDate='" + getTravelStartDate() + "'" +
             ", travelEndDate='" + getTravelEndDate() + "'" +
-            ", customerName='" + getCustomerName() + "'" +
-            ", travelServices='" + getTravelServices() + "'" +
+            ", travelType='" + getTravelType() + "'" +
+            ", suggestedAirlines='" + getSuggestedAirlines() + "'" +
+            ", suggestedHotels='" + getSuggestedHotels() + "'" +
+            ", otherTravelServices='" + getOtherTravelServices() + "'" +
             "}";
     }
 }

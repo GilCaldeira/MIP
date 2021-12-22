@@ -21,8 +21,16 @@
             <th scope="row"><span v-text="$t('myappApp.proposal.name')">Name</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.customerName')">Customer Name</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.customerEmail')">Customer Email</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.travelName')">Travel Name</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.travelStartDate')">Travel Start Date</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.travelEndDate')">Travel End Date</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.travelType')">Travel Type</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.suggestedAirlines')">Suggested Airlines</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.suggestedHotels')">Suggested Hotels</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.otherTravelServices')">Other Travel Services</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.state')">State</span></th>
-            <th scope="row"><span v-text="$t('myappApp.proposal.travelServices')">Travel Services</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.customer')">Customer</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.travelPlan')">Travel Plan</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -34,8 +42,28 @@
             <td>{{ proposal.name }}</td>
             <td>{{ proposal.customerName }}</td>
             <td>{{ proposal.customerEmail }}</td>
+            <td>{{ proposal.travelName }}</td>
+            <td>{{ proposal.travelStartDate }}</td>
+            <td>{{ proposal.travelEndDate }}</td>
+            <td>{{ proposal.travelType }}</td>
+            <td>{{ proposal.suggestedAirlines }}</td>
+            <td>{{ proposal.suggestedHotels }}</td>
+            <td>{{ proposal.otherTravelServices }}</td>
             <td>{{ proposal.state }}</td>
-            <td>{{ proposal.travelServices }}</td>
+            <td>
+              <div v-if="proposal.customer">
+                <router-link :to="{ name: 'CustomerView', params: { customerId: proposal.customer.id } }">{{
+                  proposal.customer.name
+                }}</router-link>
+              </div>
+            </td>
+            <td>
+              <div v-if="proposal.travelPlan">
+                <router-link :to="{ name: 'TravelPlanView', params: { travelPlanId: proposal.travelPlan.id } }">{{
+                  proposal.travelPlan.travelName
+                }}</router-link>
+              </div>
+            </td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'ProposalView', params: { proposalId: proposal.id } }" custom v-slot="{ navigate }">

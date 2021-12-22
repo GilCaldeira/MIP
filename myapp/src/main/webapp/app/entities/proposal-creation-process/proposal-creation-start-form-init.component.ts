@@ -1,5 +1,11 @@
 import { Component, Vue, Inject } from 'vue-property-decorator';
 
+import CustomerService from '@/entities/customer/customer.service'; //
+import { ICustomer } from '@/shared/model/customer.model';
+
+import TravelPlanService from '@/entities/travel-plan/travel-plan.service'; //
+import { ITravelPlan } from '@/shared/model/travel-plan.model';
+
 import { IProposalCreationProcess, ProposalCreationProcess } from '@/shared/model/proposal-creation-process.model';
 
 import { ProcessInstance, ProcessDefinitionService } from 'akip-vue-community';
@@ -25,6 +31,14 @@ export default class ProposalCreationStartFormInitComponent extends Vue {
 
   public bpmnProcessDefinitionId: string = 'ProposalCreationProcess';
   public proposalCreationProcess: IProposalCreationProcess = new ProposalCreationProcess();
+
+  @Inject('customerService') private customerService: () => CustomerService;
+
+  public customers: ICustomer[] = [];
+
+  @Inject('travelPlanService') private travelPlanService: () => TravelPlanService;
+
+  public travelPlans: ITravelPlan[] = [];
 
   public isSaving = false;
   public currentLanguage = '';
@@ -78,5 +92,15 @@ export default class ProposalCreationStartFormInitComponent extends Vue {
       this.proposalCreationProcess.processInstance = new ProcessInstance();
       this.proposalCreationProcess.processInstance.processDefinition = res;
     });
+    this.customerService()
+      .retrieve()
+      .then(res => {
+        this.customers = res.data;
+      });
+    this.travelPlanService()
+      .retrieve()
+      .then(res => {
+        this.travelPlans = res.data;
+      });
   }
 }
