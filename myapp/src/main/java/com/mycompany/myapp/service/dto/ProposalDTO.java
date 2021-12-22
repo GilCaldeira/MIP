@@ -29,13 +29,21 @@ public class ProposalDTO implements Serializable {
 
     private String suggestedHotels;
 
-    private String otherTravelServices;
+    private String otherSuggestedTravelServices;
 
     private String state;
+
+    private String customerFeedback;
+
+    private String examplesOtherTravelServices;
 
     private CustomerDTO customer;
 
     private TravelPlanDTO travelPlan;
+
+    private AirlineCompanyDTO airlineCompany;
+
+    private HotelDTO hotel;
 
     public Long getId() {
         return id;
@@ -117,12 +125,12 @@ public class ProposalDTO implements Serializable {
         this.suggestedHotels = suggestedHotels;
     }
 
-    public String getOtherTravelServices() {
-        return otherTravelServices;
+    public String getOtherSuggestedTravelServices() {
+        return otherSuggestedTravelServices;
     }
 
-    public void setOtherTravelServices(String otherTravelServices) {
-        this.otherTravelServices = otherTravelServices;
+    public void setOtherSuggestedTravelServices(String otherSuggestedTravelServices) {
+        this.otherSuggestedTravelServices = otherSuggestedTravelServices;
     }
 
     public String getState() {
@@ -131,6 +139,22 @@ public class ProposalDTO implements Serializable {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getCustomerFeedback() {
+        return customerFeedback;
+    }
+
+    public void setCustomerFeedback(String customerFeedback) {
+        this.customerFeedback = customerFeedback;
+    }
+
+    public String getExamplesOtherTravelServices() {
+        return examplesOtherTravelServices;
+    }
+
+    public void setExamplesOtherTravelServices(String examplesOtherTravelServices) {
+        this.examplesOtherTravelServices = examplesOtherTravelServices;
     }
 
     public CustomerDTO getCustomer() {
@@ -147,6 +171,22 @@ public class ProposalDTO implements Serializable {
 
     public void setTravelPlan(TravelPlanDTO travelPlan) {
         this.travelPlan = travelPlan;
+    }
+
+    public AirlineCompanyDTO getAirlineCompany() {
+        return airlineCompany;
+    }
+
+    public void setAirlineCompany(AirlineCompanyDTO airlineCompany) {
+        this.airlineCompany = airlineCompany;
+    }
+
+    public HotelDTO getHotel() {
+        return hotel;
+    }
+
+    public void setHotel(HotelDTO hotel) {
+        this.hotel = hotel;
     }
 
     @Override
@@ -184,10 +224,14 @@ public class ProposalDTO implements Serializable {
             ", travelType='" + getTravelType() + "'" +
             ", suggestedAirlines='" + getSuggestedAirlines() + "'" +
             ", suggestedHotels='" + getSuggestedHotels() + "'" +
-            ", otherTravelServices='" + getOtherTravelServices() + "'" +
+            ", otherSuggestedTravelServices='" + getOtherSuggestedTravelServices() + "'" +
             ", state='" + getState() + "'" +
+            ", customerFeedback='" + getCustomerFeedback() + "'" +
+            ", examplesOtherTravelServices='" + getExamplesOtherTravelServices() + "'" +
             ", customer=" + getCustomer() +
             ", travelPlan=" + getTravelPlan() +
+            ", airlineCompany=" + getAirlineCompany() +
+            ", hotel=" + getHotel() +
             "}";
     }
 }

@@ -105,7 +105,7 @@ describe('Service Tests', () => {
             travelType: 'BBBBBB',
             suggestedAirlines: 'BBBBBB',
             suggestedHotels: 'BBBBBB',
-            otherTravelServices: 'BBBBBB',
+            otherSuggestedTravelServices: 'BBBBBB',
           },
           elemDefault
         );
@@ -141,7 +141,7 @@ describe('Service Tests', () => {
             travelType: 'BBBBBB',
             suggestedAirlines: 'BBBBBB',
             suggestedHotels: 'BBBBBB',
-            otherTravelServices: 'BBBBBB',
+            otherSuggestedTravelServices: 'BBBBBB',
           },
           new TravelPlan()
         );
@@ -181,7 +181,7 @@ describe('Service Tests', () => {
             travelType: 'BBBBBB',
             suggestedAirlines: 'BBBBBB',
             suggestedHotels: 'BBBBBB',
-            otherTravelServices: 'BBBBBB',
+            otherSuggestedTravelServices: 'BBBBBB',
           },
           elemDefault
         );

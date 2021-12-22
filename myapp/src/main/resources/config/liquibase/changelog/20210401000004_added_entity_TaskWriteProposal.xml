@@ -14,10 +14,25 @@
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="varchar(255)">
+            <column name="travel_name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="state" type="varchar(255)">
+            <column name="customer_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="travel_start_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="travel_end_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="examples_other_travel_services" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="airline_company_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="hotel_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->

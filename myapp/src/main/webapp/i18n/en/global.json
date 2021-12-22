@@ -21,6 +21,8 @@
         "taskWriteProposal": "Task Write Proposal",
         "taskAnalyzeCustomerFeedback": "Task Analyze Customer Feedback",
         "customer": "Customer",
+        "hotel": "Hotel",
+        "airlineCompany": "Airline Company",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

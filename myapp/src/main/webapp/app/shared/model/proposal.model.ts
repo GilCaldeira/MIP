@@ -1,5 +1,7 @@
 import { ICustomer } from '@/shared/model/customer.model';
 import { ITravelPlan } from '@/shared/model/travel-plan.model';
+import { IAirlineCompany } from '@/shared/model/airline-company.model';
+import { IHotel } from '@/shared/model/hotel.model';
 
 export interface IProposal {
   id?: number;
@@ -12,10 +14,14 @@ export interface IProposal {
   travelType?: string | null;
   suggestedAirlines?: string | null;
   suggestedHotels?: string | null;
-  otherTravelServices?: string | null;
+  otherSuggestedTravelServices?: string | null;
   state?: string | null;
+  customerFeedback?: string | null;
+  examplesOtherTravelServices?: string | null;
   customer?: ICustomer | null;
   travelPlan?: ITravelPlan | null;
+  airlineCompany?: IAirlineCompany | null;
+  hotel?: IHotel | null;
 }
 
 export class Proposal implements IProposal {
@@ -30,9 +36,13 @@ export class Proposal implements IProposal {
     public travelType?: string | null,
     public suggestedAirlines?: string | null,
     public suggestedHotels?: string | null,
-    public otherTravelServices?: string | null,
+    public otherSuggestedTravelServices?: string | null,
     public state?: string | null,
+    public customerFeedback?: string | null,
+    public examplesOtherTravelServices?: string | null,
     public customer?: ICustomer | null,
-    public travelPlan?: ITravelPlan | null
+    public travelPlan?: ITravelPlan | null,
+    public airlineCompany?: IAirlineCompany | null,
+    public hotel?: IHotel | null
   ) {}
 }

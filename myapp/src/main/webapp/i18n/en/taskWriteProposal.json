@@ -18,8 +18,13 @@
         "title": "Task Write Proposal"
       },
       "id": "ID",
-      "name": "Name",
-      "state": "State"
+      "travelName": "Travel Name",
+      "customerName": "Customer Name",
+      "travelStartDate": "Travel Start Date",
+      "travelEndDate": "Travel End Date",
+      "examplesOtherTravelServices": "Examples Other Travel Services",
+      "airlineCompany": "Airline Company",
+      "hotel": "Hotel"
     }
   }
 }

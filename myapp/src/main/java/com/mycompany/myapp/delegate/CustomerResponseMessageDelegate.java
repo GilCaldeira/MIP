@@ -24,13 +24,13 @@ public class CustomerResponseMessageDelegate implements JavaDelegate {
         ProposalCreationProcessDTO proposalCreationProcess = (ProposalCreationProcessDTO) delegateExecution.getVariable("processInstance");
         ProposalDTO proposal = proposalCreationProcess.getProposal();
         String state = proposal.getState();
-        // Random rand = new Random();
-        // int randomNumber = rand.nextInt(1000);
 
         if (state == null) {
             proposal.setState("Refused");
+            proposal.setCustomerFeedback("Pretendo outra companhia aérea.");
         } else {
             proposal.setState("Approved");
+            proposal.setCustomerFeedback("Concordo com a proposta apresentada.");
         }
 
         proposalService.save(proposal);
@@ -38,13 +38,5 @@ public class CustomerResponseMessageDelegate implements JavaDelegate {
         System.out.println(proposal);
 
         System.out.println("Aquiiii!");
-        // String businessKey = execution.getProcessBusinessKey();
-        // System.out.println(businessKey);
-
-        // execution.getProcessEngineServices().getRuntimeService()
-        //   .createMessageCorrelation("CustomerResponseMessage")
-        //   .processInstanceBusinessKey(businessKey)
-        //   .setVariable("CANCEL_REASON", "someReason")
-        //   .correlate();
     }
 }

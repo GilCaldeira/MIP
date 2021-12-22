@@ -77,6 +77,9 @@ public class TaskAnalyzeCustomerFeedbackService {
         proposalDTO.setCustomerName(taskAnalyzeCustomerFeedbackContext.getProposalCreationProcess().getProposal().getCustomerName());
         proposalDTO.setCustomerEmail(taskAnalyzeCustomerFeedbackContext.getProposalCreationProcess().getProposal().getCustomerEmail());
         proposalDTO.setState(taskAnalyzeCustomerFeedbackContext.getProposalCreationProcess().getProposal().getState());
+        proposalDTO.setCustomerFeedback(
+            taskAnalyzeCustomerFeedbackContext.getProposalCreationProcess().getProposal().getCustomerFeedback()
+        );
         proposalService.save(proposalDTO);
     }
 

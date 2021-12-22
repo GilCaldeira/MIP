@@ -32,7 +32,7 @@
             <column name="suggested_hotels" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="other_travel_services" type="varchar(255)">
+            <column name="other_suggested_travel_services" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="customer_id" type="bigint">

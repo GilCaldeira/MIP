@@ -45,6 +45,8 @@ describe('Service Tests', () => {
         'AAAAAAA',
         'AAAAAAA',
         'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
         'AAAAAAA'
       );
     });
@@ -87,8 +89,10 @@ describe('Service Tests', () => {
             travelType: 'BBBBBB',
             suggestedAirlines: 'BBBBBB',
             suggestedHotels: 'BBBBBB',
-            otherTravelServices: 'BBBBBB',
+            otherSuggestedTravelServices: 'BBBBBB',
             state: 'BBBBBB',
+            customerFeedback: 'BBBBBB',
+            examplesOtherTravelServices: 'BBBBBB',
           },
           elemDefault
         );

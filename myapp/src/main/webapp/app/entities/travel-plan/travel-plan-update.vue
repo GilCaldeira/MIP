@@ -127,17 +127,23 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('myappApp.travelPlan.otherTravelServices')" for="travel-plan-otherTravelServices"
-              >Other Travel Services</label
+            <label
+              class="form-control-label"
+              v-text="$t('myappApp.travelPlan.otherSuggestedTravelServices')"
+              for="travel-plan-otherSuggestedTravelServices"
+              >Other Suggested Travel Services</label
             >
             <input
               type="text"
               class="form-control"
-              name="otherTravelServices"
-              id="travel-plan-otherTravelServices"
-              data-cy="otherTravelServices"
-              :class="{ valid: !$v.travelPlan.otherTravelServices.$invalid, invalid: $v.travelPlan.otherTravelServices.$invalid }"
-              v-model="$v.travelPlan.otherTravelServices.$model"
+              name="otherSuggestedTravelServices"
+              id="travel-plan-otherSuggestedTravelServices"
+              data-cy="otherSuggestedTravelServices"
+              :class="{
+                valid: !$v.travelPlan.otherSuggestedTravelServices.$invalid,
+                invalid: $v.travelPlan.otherSuggestedTravelServices.$invalid,
+              }"
+              v-model="$v.travelPlan.otherSuggestedTravelServices.$model"
             />
           </div>
           <div class="form-group">

@@ -19,6 +19,11 @@
       "fieldName": "state",
       "fieldType": "String",
       "fieldReadOnly": true
+    },
+    {
+      "fieldName": "customerFeedback",
+      "fieldType": "String",
+      "fieldReadOnly": true
     }
   ],
   "relationships": [],

@@ -61,16 +61,28 @@
             <span>{{ proposal.suggestedHotels }}</span>
           </dd>
           <dt>
-            <span v-text="$t('myappApp.proposal.otherTravelServices')">Other Travel Services</span>
+            <span v-text="$t('myappApp.proposal.otherSuggestedTravelServices')">Other Suggested Travel Services</span>
           </dt>
           <dd>
-            <span>{{ proposal.otherTravelServices }}</span>
+            <span>{{ proposal.otherSuggestedTravelServices }}</span>
           </dd>
           <dt>
             <span v-text="$t('myappApp.proposal.state')">State</span>
           </dt>
           <dd>
             <span>{{ proposal.state }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.customerFeedback')">Customer Feedback</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.customerFeedback }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.examplesOtherTravelServices')">Examples Other Travel Services</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.examplesOtherTravelServices }}</span>
           </dd>
           <dt>
             <span v-text="$t('myappApp.proposal.customer')">Customer</span>
@@ -90,6 +102,24 @@
               <router-link :to="{ name: 'TravelPlanView', params: { travelPlanId: proposal.travelPlan.id } }">{{
                 proposal.travelPlan.travelName
               }}</router-link>
+            </div>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.airlineCompany')">Airline Company</span>
+          </dt>
+          <dd>
+            <div v-if="proposal.airlineCompany">
+              <router-link :to="{ name: 'AirlineCompanyView', params: { airlineCompanyId: proposal.airlineCompany.id } }">{{
+                proposal.airlineCompany.name
+              }}</router-link>
+            </div>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.hotel')">Hotel</span>
+          </dt>
+          <dd>
+            <div v-if="proposal.hotel">
+              <router-link :to="{ name: 'HotelView', params: { hotelId: proposal.hotel.id } }">{{ proposal.hotel.name }}</router-link>
             </div>
           </dd>
         </dl>

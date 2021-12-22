@@ -73,8 +73,15 @@ public class TaskWriteProposalService {
         ProposalDTO proposalDTO = proposalService
             .findOne(taskWriteProposalContext.getProposalCreationProcess().getProposal().getId())
             .orElseThrow();
-        proposalDTO.setName(taskWriteProposalContext.getProposalCreationProcess().getProposal().getName());
-        proposalDTO.setState(taskWriteProposalContext.getProposalCreationProcess().getProposal().getState());
+        proposalDTO.setTravelName(taskWriteProposalContext.getProposalCreationProcess().getProposal().getTravelName());
+        proposalDTO.setCustomerName(taskWriteProposalContext.getProposalCreationProcess().getProposal().getCustomerName());
+        proposalDTO.setTravelStartDate(taskWriteProposalContext.getProposalCreationProcess().getProposal().getTravelStartDate());
+        proposalDTO.setTravelEndDate(taskWriteProposalContext.getProposalCreationProcess().getProposal().getTravelEndDate());
+        proposalDTO.setExamplesOtherTravelServices(
+            taskWriteProposalContext.getProposalCreationProcess().getProposal().getExamplesOtherTravelServices()
+        );
+        proposalDTO.setAirlineCompany(taskWriteProposalContext.getProposalCreationProcess().getProposal().getAirlineCompany());
+        proposalDTO.setHotel(taskWriteProposalContext.getProposalCreationProcess().getProposal().getHotel());
         proposalService.save(proposalDTO);
     }
 

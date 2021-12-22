@@ -19,5 +19,17 @@
                                  constraintName="fk_proposal__travel_plan_id"
                                  referencedColumnNames="id"
                                  referencedTableName="travel_plan"/>
+
+        <addForeignKeyConstraint baseColumnNames="airline_company_id"
+                                 baseTableName="proposal"
+                                 constraintName="fk_proposal__airline_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="airline_company"/>
+
+        <addForeignKeyConstraint baseColumnNames="hotel_id"
+                                 baseTableName="proposal"
+                                 constraintName="fk_proposal__hotel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hotel"/>
     </changeSet>
 </databaseChangeLog>

@@ -92,6 +92,27 @@
                 v-model="$v.taskContext.proposalCreationProcess.proposal.state.$model"
               />
             </div>
+            <div class="form-group">
+              <label
+                class="form-control-label"
+                v-text="$t('myappApp.taskAnalyzeCustomerFeedback.customerFeedback')"
+                for="task-analyze-customer-feedback-customerFeedback"
+                >Customer Feedback</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="customerFeedback"
+                id="task-analyze-customer-feedback-customerFeedback"
+                readonly
+                data-cy="customerFeedback"
+                :class="{
+                  valid: !$v.taskContext.proposalCreationProcess.proposal.customerFeedback.$invalid,
+                  invalid: $v.taskContext.proposalCreationProcess.proposal.customerFeedback.$invalid,
+                }"
+                v-model="$v.taskContext.proposalCreationProcess.proposal.customerFeedback.$model"
+              />
+            </div>
           </template>
         </akip-show-task-instance>
         <br />

@@ -162,22 +162,22 @@
             <div class="form-group">
               <label
                 class="form-control-label"
-                v-text="$t('myappApp.taskCheckTravelPlan.otherTravelServices')"
-                for="task-check-travel-plan-otherTravelServices"
-                >Other Travel Services</label
+                v-text="$t('myappApp.taskCheckTravelPlan.otherSuggestedTravelServices')"
+                for="task-check-travel-plan-otherSuggestedTravelServices"
+                >Other Suggested Travel Services</label
               >
               <input
                 type="text"
                 class="form-control"
-                name="otherTravelServices"
-                id="task-check-travel-plan-otherTravelServices"
+                name="otherSuggestedTravelServices"
+                id="task-check-travel-plan-otherSuggestedTravelServices"
                 readonly
-                data-cy="otherTravelServices"
+                data-cy="otherSuggestedTravelServices"
                 :class="{
-                  valid: !$v.taskContext.proposalCreationProcess.proposal.otherTravelServices.$invalid,
-                  invalid: $v.taskContext.proposalCreationProcess.proposal.otherTravelServices.$invalid,
+                  valid: !$v.taskContext.proposalCreationProcess.proposal.otherSuggestedTravelServices.$invalid,
+                  invalid: $v.taskContext.proposalCreationProcess.proposal.otherSuggestedTravelServices.$invalid,
                 }"
-                v-model="$v.taskContext.proposalCreationProcess.proposal.otherTravelServices.$model"
+                v-model="$v.taskContext.proposalCreationProcess.proposal.otherSuggestedTravelServices.$model"
               />
             </div>
           </template>

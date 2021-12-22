@@ -23,6 +23,6 @@ public interface TaskCheckTravelPlanMapper {
     @Mapping(target = "travelType", source = "travelType")
     @Mapping(target = "suggestedAirlines", source = "suggestedAirlines")
     @Mapping(target = "suggestedHotels", source = "suggestedHotels")
-    @Mapping(target = "otherTravelServices", source = "otherTravelServices")
+    @Mapping(target = "otherSuggestedTravelServices", source = "otherSuggestedTravelServices")
     ProposalDTO toProposalDTO(Proposal proposal);
 }

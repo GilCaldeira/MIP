@@ -23,7 +23,7 @@ public class TravelPlanDTO implements Serializable {
 
     private String suggestedHotels;
 
-    private String otherTravelServices;
+    private String otherSuggestedTravelServices;
 
     private CustomerDTO customer;
 
@@ -83,12 +83,12 @@ public class TravelPlanDTO implements Serializable {
         this.suggestedHotels = suggestedHotels;
     }
 
-    public String getOtherTravelServices() {
-        return otherTravelServices;
+    public String getOtherSuggestedTravelServices() {
+        return otherSuggestedTravelServices;
     }
 
-    public void setOtherTravelServices(String otherTravelServices) {
-        this.otherTravelServices = otherTravelServices;
+    public void setOtherSuggestedTravelServices(String otherSuggestedTravelServices) {
+        this.otherSuggestedTravelServices = otherSuggestedTravelServices;
     }
 
     public CustomerDTO getCustomer() {
@@ -131,7 +131,7 @@ public class TravelPlanDTO implements Serializable {
             ", travelType='" + getTravelType() + "'" +
             ", suggestedAirlines='" + getSuggestedAirlines() + "'" +
             ", suggestedHotels='" + getSuggestedHotels() + "'" +
-            ", otherTravelServices='" + getOtherTravelServices() + "'" +
+            ", otherSuggestedTravelServices='" + getOtherSuggestedTravelServices() + "'" +
             ", customer=" + getCustomer() +
             "}";
     }

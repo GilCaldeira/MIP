@@ -51,8 +51,8 @@ class TravelPlanResourceIT {
     private static final String DEFAULT_SUGGESTED_HOTELS = "AAAAAAAAAA";
     private static final String UPDATED_SUGGESTED_HOTELS = "BBBBBBBBBB";
 
-    private static final String DEFAULT_OTHER_TRAVEL_SERVICES = "AAAAAAAAAA";
-    private static final String UPDATED_OTHER_TRAVEL_SERVICES = "BBBBBBBBBB";
+    private static final String DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES = "AAAAAAAAAA";
+    private static final String UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES = "BBBBBBBBBB";
 
     private static final String ENTITY_API_URL = "/api/travel-plans";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -88,7 +88,7 @@ class TravelPlanResourceIT {
             .travelType(DEFAULT_TRAVEL_TYPE)
             .suggestedAirlines(DEFAULT_SUGGESTED_AIRLINES)
             .suggestedHotels(DEFAULT_SUGGESTED_HOTELS)
-            .otherTravelServices(DEFAULT_OTHER_TRAVEL_SERVICES);
+            .otherSuggestedTravelServices(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES);
         return travelPlan;
     }
 
@@ -106,7 +106,7 @@ class TravelPlanResourceIT {
             .travelType(UPDATED_TRAVEL_TYPE)
             .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
             .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
-            .otherTravelServices(UPDATED_OTHER_TRAVEL_SERVICES);
+            .otherSuggestedTravelServices(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
         return travelPlan;
     }
 
@@ -135,7 +135,7 @@ class TravelPlanResourceIT {
         assertThat(testTravelPlan.getTravelType()).isEqualTo(DEFAULT_TRAVEL_TYPE);
         assertThat(testTravelPlan.getSuggestedAirlines()).isEqualTo(DEFAULT_SUGGESTED_AIRLINES);
         assertThat(testTravelPlan.getSuggestedHotels()).isEqualTo(DEFAULT_SUGGESTED_HOTELS);
-        assertThat(testTravelPlan.getOtherTravelServices()).isEqualTo(DEFAULT_OTHER_TRAVEL_SERVICES);
+        assertThat(testTravelPlan.getOtherSuggestedTravelServices()).isEqualTo(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES);
     }
 
     @Test
@@ -175,7 +175,7 @@ class TravelPlanResourceIT {
             .andExpect(jsonPath("$.[*].travelType").value(hasItem(DEFAULT_TRAVEL_TYPE)))
             .andExpect(jsonPath("$.[*].suggestedAirlines").value(hasItem(DEFAULT_SUGGESTED_AIRLINES)))
             .andExpect(jsonPath("$.[*].suggestedHotels").value(hasItem(DEFAULT_SUGGESTED_HOTELS)))
-            .andExpect(jsonPath("$.[*].otherTravelServices").value(hasItem(DEFAULT_OTHER_TRAVEL_SERVICES)));
+            .andExpect(jsonPath("$.[*].otherSuggestedTravelServices").value(hasItem(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES)));
     }
 
     @Test
@@ -196,7 +196,7 @@ class TravelPlanResourceIT {
             .andExpect(jsonPath("$.travelType").value(DEFAULT_TRAVEL_TYPE))
             .andExpect(jsonPath("$.suggestedAirlines").value(DEFAULT_SUGGESTED_AIRLINES))
             .andExpect(jsonPath("$.suggestedHotels").value(DEFAULT_SUGGESTED_HOTELS))
-            .andExpect(jsonPath("$.otherTravelServices").value(DEFAULT_OTHER_TRAVEL_SERVICES));
+            .andExpect(jsonPath("$.otherSuggestedTravelServices").value(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES));
     }
 
     @Test
@@ -225,7 +225,7 @@ class TravelPlanResourceIT {
             .travelType(UPDATED_TRAVEL_TYPE)
             .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
             .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
-            .otherTravelServices(UPDATED_OTHER_TRAVEL_SERVICES);
+            .otherSuggestedTravelServices(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
         TravelPlanDTO travelPlanDTO = travelPlanMapper.toDto(updatedTravelPlan);
 
         restTravelPlanMockMvc
@@ -246,7 +246,7 @@ class TravelPlanResourceIT {
         assertThat(testTravelPlan.getTravelType()).isEqualTo(UPDATED_TRAVEL_TYPE);
         assertThat(testTravelPlan.getSuggestedAirlines()).isEqualTo(UPDATED_SUGGESTED_AIRLINES);
         assertThat(testTravelPlan.getSuggestedHotels()).isEqualTo(UPDATED_SUGGESTED_HOTELS);
-        assertThat(testTravelPlan.getOtherTravelServices()).isEqualTo(UPDATED_OTHER_TRAVEL_SERVICES);
+        assertThat(testTravelPlan.getOtherSuggestedTravelServices()).isEqualTo(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
     }
 
     @Test
@@ -330,7 +330,7 @@ class TravelPlanResourceIT {
             .travelType(UPDATED_TRAVEL_TYPE)
             .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
             .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
-            .otherTravelServices(UPDATED_OTHER_TRAVEL_SERVICES);
+            .otherSuggestedTravelServices(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
 
         restTravelPlanMockMvc
             .perform(
@@ -350,7 +350,7 @@ class TravelPlanResourceIT {
         assertThat(testTravelPlan.getTravelType()).isEqualTo(UPDATED_TRAVEL_TYPE);
         assertThat(testTravelPlan.getSuggestedAirlines()).isEqualTo(UPDATED_SUGGESTED_AIRLINES);
         assertThat(testTravelPlan.getSuggestedHotels()).isEqualTo(UPDATED_SUGGESTED_HOTELS);
-        assertThat(testTravelPlan.getOtherTravelServices()).isEqualTo(UPDATED_OTHER_TRAVEL_SERVICES);
+        assertThat(testTravelPlan.getOtherSuggestedTravelServices()).isEqualTo(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
     }
 
     @Test
@@ -372,7 +372,7 @@ class TravelPlanResourceIT {
             .travelType(UPDATED_TRAVEL_TYPE)
             .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
             .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
-            .otherTravelServices(UPDATED_OTHER_TRAVEL_SERVICES);
+            .otherSuggestedTravelServices(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
 
         restTravelPlanMockMvc
             .perform(
@@ -392,7 +392,7 @@ class TravelPlanResourceIT {
         assertThat(testTravelPlan.getTravelType()).isEqualTo(UPDATED_TRAVEL_TYPE);
         assertThat(testTravelPlan.getSuggestedAirlines()).isEqualTo(UPDATED_SUGGESTED_AIRLINES);
         assertThat(testTravelPlan.getSuggestedHotels()).isEqualTo(UPDATED_SUGGESTED_HOTELS);
-        assertThat(testTravelPlan.getOtherTravelServices()).isEqualTo(UPDATED_OTHER_TRAVEL_SERVICES);
+        assertThat(testTravelPlan.getOtherSuggestedTravelServices()).isEqualTo(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
     }
 
     @Test

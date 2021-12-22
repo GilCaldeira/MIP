@@ -60,11 +60,17 @@ class ProposalResourceIT {
     private static final String DEFAULT_SUGGESTED_HOTELS = "AAAAAAAAAA";
     private static final String UPDATED_SUGGESTED_HOTELS = "BBBBBBBBBB";
 
-    private static final String DEFAULT_OTHER_TRAVEL_SERVICES = "AAAAAAAAAA";
-    private static final String UPDATED_OTHER_TRAVEL_SERVICES = "BBBBBBBBBB";
+    private static final String DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES = "AAAAAAAAAA";
+    private static final String UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES = "BBBBBBBBBB";
 
     private static final String DEFAULT_STATE = "AAAAAAAAAA";
     private static final String UPDATED_STATE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_CUSTOMER_FEEDBACK = "AAAAAAAAAA";
+    private static final String UPDATED_CUSTOMER_FEEDBACK = "BBBBBBBBBB";
+
+    private static final String DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES = "AAAAAAAAAA";
+    private static final String UPDATED_EXAMPLES_OTHER_TRAVEL_SERVICES = "BBBBBBBBBB";
 
     private static final String ENTITY_API_URL = "/api/proposals";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -103,8 +109,10 @@ class ProposalResourceIT {
             .travelType(DEFAULT_TRAVEL_TYPE)
             .suggestedAirlines(DEFAULT_SUGGESTED_AIRLINES)
             .suggestedHotels(DEFAULT_SUGGESTED_HOTELS)
-            .otherTravelServices(DEFAULT_OTHER_TRAVEL_SERVICES)
-            .state(DEFAULT_STATE);
+            .otherSuggestedTravelServices(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES)
+            .state(DEFAULT_STATE)
+            .customerFeedback(DEFAULT_CUSTOMER_FEEDBACK)
+            .examplesOtherTravelServices(DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES);
         return proposal;
     }
 
@@ -125,8 +133,10 @@ class ProposalResourceIT {
             .travelType(UPDATED_TRAVEL_TYPE)
             .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
             .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
-            .otherTravelServices(UPDATED_OTHER_TRAVEL_SERVICES)
-            .state(UPDATED_STATE);
+            .otherSuggestedTravelServices(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES)
+            .state(UPDATED_STATE)
+            .customerFeedback(UPDATED_CUSTOMER_FEEDBACK)
+            .examplesOtherTravelServices(UPDATED_EXAMPLES_OTHER_TRAVEL_SERVICES);
         return proposal;
     }
 
@@ -156,8 +166,10 @@ class ProposalResourceIT {
             .andExpect(jsonPath("$.[*].travelType").value(hasItem(DEFAULT_TRAVEL_TYPE)))
             .andExpect(jsonPath("$.[*].suggestedAirlines").value(hasItem(DEFAULT_SUGGESTED_AIRLINES)))
             .andExpect(jsonPath("$.[*].suggestedHotels").value(hasItem(DEFAULT_SUGGESTED_HOTELS)))
-            .andExpect(jsonPath("$.[*].otherTravelServices").value(hasItem(DEFAULT_OTHER_TRAVEL_SERVICES)))
-            .andExpect(jsonPath("$.[*].state").value(hasItem(DEFAULT_STATE)));
+            .andExpect(jsonPath("$.[*].otherSuggestedTravelServices").value(hasItem(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES)))
+            .andExpect(jsonPath("$.[*].state").value(hasItem(DEFAULT_STATE)))
+            .andExpect(jsonPath("$.[*].customerFeedback").value(hasItem(DEFAULT_CUSTOMER_FEEDBACK)))
+            .andExpect(jsonPath("$.[*].examplesOtherTravelServices").value(hasItem(DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES)));
     }
 
     @Test
@@ -181,8 +193,10 @@ class ProposalResourceIT {
             .andExpect(jsonPath("$.travelType").value(DEFAULT_TRAVEL_TYPE))
             .andExpect(jsonPath("$.suggestedAirlines").value(DEFAULT_SUGGESTED_AIRLINES))
             .andExpect(jsonPath("$.suggestedHotels").value(DEFAULT_SUGGESTED_HOTELS))
-            .andExpect(jsonPath("$.otherTravelServices").value(DEFAULT_OTHER_TRAVEL_SERVICES))
-            .andExpect(jsonPath("$.state").value(DEFAULT_STATE));
+            .andExpect(jsonPath("$.otherSuggestedTravelServices").value(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES))
+            .andExpect(jsonPath("$.state").value(DEFAULT_STATE))
+            .andExpect(jsonPath("$.customerFeedback").value(DEFAULT_CUSTOMER_FEEDBACK))
+            .andExpect(jsonPath("$.examplesOtherTravelServices").value(DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES));
     }
 
     @Test

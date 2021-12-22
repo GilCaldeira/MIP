@@ -35,6 +35,8 @@ import TravelPlanService from '@/entities/travel-plan/travel-plan.service';
 import ProposalService from '@/entities/proposal/proposal.service';
 import ProposalCreationProcessService from '@/entities/proposal-creation-process/proposal-creation-process.service';
 import CustomerService from '@/entities/customer/customer.service';
+import HotelService from '@/entities/hotel/hotel.service';
+import AirlineCompanyService from '@/entities/airline-company/airline-company.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -102,6 +104,8 @@ new Vue({
     proposalService: () => new ProposalService(),
     proposalCreationProcessService: () => new ProposalCreationProcessService(),
     customerService: () => new CustomerService(),
+    hotelService: () => new HotelService(),
+    airlineCompanyService: () => new AirlineCompanyService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

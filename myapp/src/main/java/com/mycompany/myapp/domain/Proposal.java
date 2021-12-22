@@ -49,11 +49,17 @@ public class Proposal implements Serializable {
     @Column(name = "suggested_hotels")
     private String suggestedHotels;
 
-    @Column(name = "other_travel_services")
-    private String otherTravelServices;
+    @Column(name = "other_suggested_travel_services")
+    private String otherSuggestedTravelServices;
 
     @Column(name = "state")
     private String state;
+
+    @Column(name = "customer_feedback")
+    private String customerFeedback;
+
+    @Column(name = "examples_other_travel_services")
+    private String examplesOtherTravelServices;
 
     @ManyToOne
     private Customer customer;
@@ -61,6 +67,12 @@ public class Proposal implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties(value = { "customer" }, allowSetters = true)
     private TravelPlan travelPlan;
+
+    @ManyToOne
+    private AirlineCompany airlineCompany;
+
+    @ManyToOne
+    private Hotel hotel;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -193,17 +205,17 @@ public class Proposal implements Serializable {
         this.suggestedHotels = suggestedHotels;
     }
 
-    public String getOtherTravelServices() {
-        return this.otherTravelServices;
+    public String getOtherSuggestedTravelServices() {
+        return this.otherSuggestedTravelServices;
     }
 
-    public Proposal otherTravelServices(String otherTravelServices) {
-        this.otherTravelServices = otherTravelServices;
+    public Proposal otherSuggestedTravelServices(String otherSuggestedTravelServices) {
+        this.otherSuggestedTravelServices = otherSuggestedTravelServices;
         return this;
     }
 
-    public void setOtherTravelServices(String otherTravelServices) {
-        this.otherTravelServices = otherTravelServices;
+    public void setOtherSuggestedTravelServices(String otherSuggestedTravelServices) {
+        this.otherSuggestedTravelServices = otherSuggestedTravelServices;
     }
 
     public String getState() {
@@ -217,6 +229,32 @@ public class Proposal implements Serializable {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getCustomerFeedback() {
+        return this.customerFeedback;
+    }
+
+    public Proposal customerFeedback(String customerFeedback) {
+        this.customerFeedback = customerFeedback;
+        return this;
+    }
+
+    public void setCustomerFeedback(String customerFeedback) {
+        this.customerFeedback = customerFeedback;
+    }
+
+    public String getExamplesOtherTravelServices() {
+        return this.examplesOtherTravelServices;
+    }
+
+    public Proposal examplesOtherTravelServices(String examplesOtherTravelServices) {
+        this.examplesOtherTravelServices = examplesOtherTravelServices;
+        return this;
+    }
+
+    public void setExamplesOtherTravelServices(String examplesOtherTravelServices) {
+        this.examplesOtherTravelServices = examplesOtherTravelServices;
     }
 
     public Customer getCustomer() {
@@ -243,6 +281,32 @@ public class Proposal implements Serializable {
 
     public void setTravelPlan(TravelPlan travelPlan) {
         this.travelPlan = travelPlan;
+    }
+
+    public AirlineCompany getAirlineCompany() {
+        return this.airlineCompany;
+    }
+
+    public Proposal airlineCompany(AirlineCompany airlineCompany) {
+        this.setAirlineCompany(airlineCompany);
+        return this;
+    }
+
+    public void setAirlineCompany(AirlineCompany airlineCompany) {
+        this.airlineCompany = airlineCompany;
+    }
+
+    public Hotel getHotel() {
+        return this.hotel;
+    }
+
+    public Proposal hotel(Hotel hotel) {
+        this.setHotel(hotel);
+        return this;
+    }
+
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -278,8 +342,10 @@ public class Proposal implements Serializable {
             ", travelType='" + getTravelType() + "'" +
             ", suggestedAirlines='" + getSuggestedAirlines() + "'" +
             ", suggestedHotels='" + getSuggestedHotels() + "'" +
-            ", otherTravelServices='" + getOtherTravelServices() + "'" +
+            ", otherSuggestedTravelServices='" + getOtherSuggestedTravelServices() + "'" +
             ", state='" + getState() + "'" +
+            ", customerFeedback='" + getCustomerFeedback() + "'" +
+            ", examplesOtherTravelServices='" + getExamplesOtherTravelServices() + "'" +
             "}";
     }
 }

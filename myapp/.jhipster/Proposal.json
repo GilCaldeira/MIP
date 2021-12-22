@@ -37,11 +37,19 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "otherTravelServices",
+      "fieldName": "otherSuggestedTravelServices",
       "fieldType": "String"
     },
     {
       "fieldName": "state",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerFeedback",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "examplesOtherTravelServices",
       "fieldType": "String"
     }
   ],
@@ -57,6 +65,18 @@
       "otherEntityName": "travelPlan",
       "relationshipType": "many-to-one",
       "otherEntityField": "travelName"
+    },
+    {
+      "relationshipName": "airlineCompany",
+      "otherEntityName": "airlineCompany",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipName": "hotel",
+      "otherEntityName": "hotel",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name"
     }
   ],
   "entityType": "domain",

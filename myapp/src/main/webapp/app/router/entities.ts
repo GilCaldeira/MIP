@@ -76,6 +76,18 @@ const ProposalCreationProcess_TaskSendProposalExecute = () => import('@/entities
 const ProposalCreationProcess_TaskWriteProposalDetails = () => import('@/entities/proposal-creation-process/task-write-proposal/task-write-proposal-details.vue');
 // prettier-ignore
 const ProposalCreationProcess_TaskWriteProposalExecute = () => import('@/entities/proposal-creation-process/task-write-proposal/task-write-proposal-execute.vue');
+// prettier-ignore
+const Hotel = () => import('@/entities/hotel/hotel.vue');
+// prettier-ignore
+const HotelUpdate = () => import('@/entities/hotel/hotel-update.vue');
+// prettier-ignore
+const HotelDetails = () => import('@/entities/hotel/hotel-details.vue');
+// prettier-ignore
+const AirlineCompany = () => import('@/entities/airline-company/airline-company.vue');
+// prettier-ignore
+const AirlineCompanyUpdate = () => import('@/entities/airline-company/airline-company-update.vue');
+// prettier-ignore
+const AirlineCompanyDetails = () => import('@/entities/airline-company/airline-company-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -257,6 +269,54 @@ export default [
     path: '/process-definition/ProposalCreationProcess/task/WriteProposal/:taskInstanceId/execute',
     name: 'ProposalCreationProcess_TaskWriteProposalExecute',
     component: ProposalCreationProcess_TaskWriteProposalExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/hotel',
+    name: 'Hotel',
+    component: Hotel,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/hotel/new',
+    name: 'HotelCreate',
+    component: HotelUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/hotel/:hotelId/edit',
+    name: 'HotelEdit',
+    component: HotelUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/hotel/:hotelId/view',
+    name: 'HotelView',
+    component: HotelDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/airline-company',
+    name: 'AirlineCompany',
+    component: AirlineCompany,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/airline-company/new',
+    name: 'AirlineCompanyCreate',
+    component: AirlineCompanyUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/airline-company/:airlineCompanyId/edit',
+    name: 'AirlineCompanyEdit',
+    component: AirlineCompanyUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/airline-company/:airlineCompanyId/view',
+    name: 'AirlineCompanyView',
+    component: AirlineCompanyDetails,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

@@ -56,6 +56,20 @@
                 v-model="taskContext.proposalCreationProcess.proposal.state"
               />
             </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskAnalyzeCustomerFeedback.customerFeedback')"
+                >customerFeedback</label
+              >
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="customerFeedback"
+                id="proposal-customerFeedback"
+                data-cy="customerFeedback"
+                v-model="taskContext.proposalCreationProcess.proposal.customerFeedback"
+              />
+            </div>
           </template>
         </akip-show-task-instance>
         <br />

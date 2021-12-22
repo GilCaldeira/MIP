@@ -41,16 +41,28 @@
             <column name="suggested_hotels" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="other_travel_services" type="varchar(255)">
+            <column name="other_suggested_travel_services" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="state" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_feedback" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="examples_other_travel_services" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="customer_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <column name="travel_plan_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="airline_company_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="hotel_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->

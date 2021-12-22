@@ -8,7 +8,7 @@ export interface ITravelPlan {
   travelType?: string | null;
   suggestedAirlines?: string | null;
   suggestedHotels?: string | null;
-  otherTravelServices?: string | null;
+  otherSuggestedTravelServices?: string | null;
   customer?: ICustomer | null;
 }
 
@@ -21,7 +21,7 @@ export class TravelPlan implements ITravelPlan {
     public travelType?: string | null,
     public suggestedAirlines?: string | null,
     public suggestedHotels?: string | null,
-    public otherTravelServices?: string | null,
+    public otherSuggestedTravelServices?: string | null,
     public customer?: ICustomer | null
   ) {}
 }

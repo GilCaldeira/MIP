@@ -39,8 +39,8 @@ public class TravelPlan implements Serializable {
     @Column(name = "suggested_hotels")
     private String suggestedHotels;
 
-    @Column(name = "other_travel_services")
-    private String otherTravelServices;
+    @Column(name = "other_suggested_travel_services")
+    private String otherSuggestedTravelServices;
 
     @ManyToOne
     private Customer customer;
@@ -137,17 +137,17 @@ public class TravelPlan implements Serializable {
         this.suggestedHotels = suggestedHotels;
     }
 
-    public String getOtherTravelServices() {
-        return this.otherTravelServices;
+    public String getOtherSuggestedTravelServices() {
+        return this.otherSuggestedTravelServices;
     }
 
-    public TravelPlan otherTravelServices(String otherTravelServices) {
-        this.otherTravelServices = otherTravelServices;
+    public TravelPlan otherSuggestedTravelServices(String otherSuggestedTravelServices) {
+        this.otherSuggestedTravelServices = otherSuggestedTravelServices;
         return this;
     }
 
-    public void setOtherTravelServices(String otherTravelServices) {
-        this.otherTravelServices = otherTravelServices;
+    public void setOtherSuggestedTravelServices(String otherSuggestedTravelServices) {
+        this.otherSuggestedTravelServices = otherSuggestedTravelServices;
     }
 
     public Customer getCustomer() {
@@ -193,7 +193,7 @@ public class TravelPlan implements Serializable {
             ", travelType='" + getTravelType() + "'" +
             ", suggestedAirlines='" + getSuggestedAirlines() + "'" +
             ", suggestedHotels='" + getSuggestedHotels() + "'" +
-            ", otherTravelServices='" + getOtherTravelServices() + "'" +
+            ", otherSuggestedTravelServices='" + getOtherSuggestedTravelServices() + "'" +
             "}";
     }
 }

@@ -27,10 +27,14 @@
             <th scope="row"><span v-text="$t('myappApp.proposal.travelType')">Travel Type</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.suggestedAirlines')">Suggested Airlines</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.suggestedHotels')">Suggested Hotels</span></th>
-            <th scope="row"><span v-text="$t('myappApp.proposal.otherTravelServices')">Other Travel Services</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.otherSuggestedTravelServices')">Other Suggested Travel Services</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.state')">State</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.customerFeedback')">Customer Feedback</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.examplesOtherTravelServices')">Examples Other Travel Services</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.customer')">Customer</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.travelPlan')">Travel Plan</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.airlineCompany')">Airline Company</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.hotel')">Hotel</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -48,8 +52,10 @@
             <td>{{ proposal.travelType }}</td>
             <td>{{ proposal.suggestedAirlines }}</td>
             <td>{{ proposal.suggestedHotels }}</td>
-            <td>{{ proposal.otherTravelServices }}</td>
+            <td>{{ proposal.otherSuggestedTravelServices }}</td>
             <td>{{ proposal.state }}</td>
+            <td>{{ proposal.customerFeedback }}</td>
+            <td>{{ proposal.examplesOtherTravelServices }}</td>
             <td>
               <div v-if="proposal.customer">
                 <router-link :to="{ name: 'CustomerView', params: { customerId: proposal.customer.id } }">{{
@@ -62,6 +68,18 @@
                 <router-link :to="{ name: 'TravelPlanView', params: { travelPlanId: proposal.travelPlan.id } }">{{
                   proposal.travelPlan.travelName
                 }}</router-link>
+              </div>
+            </td>
+            <td>
+              <div v-if="proposal.airlineCompany">
+                <router-link :to="{ name: 'AirlineCompanyView', params: { airlineCompanyId: proposal.airlineCompany.id } }">{{
+                  proposal.airlineCompany.name
+                }}</router-link>
+              </div>
+            </td>
+            <td>
+              <div v-if="proposal.hotel">
+                <router-link :to="{ name: 'HotelView', params: { hotelId: proposal.hotel.id } }">{{ proposal.hotel.name }}</router-link>
               </div>
             </td>
             <td class="text-right">

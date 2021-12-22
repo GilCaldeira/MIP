@@ -7,9 +7,11 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity {@link Proposal} and its DTO {@link ProposalDTO}.
  */
-@Mapper(componentModel = "spring", uses = { CustomerMapper.class, TravelPlanMapper.class })
+@Mapper(componentModel = "spring", uses = { CustomerMapper.class, TravelPlanMapper.class, AirlineCompanyMapper.class, HotelMapper.class })
 public interface ProposalMapper extends EntityMapper<ProposalDTO, Proposal> {
     @Mapping(target = "customer", source = "customer", qualifiedByName = "name")
     @Mapping(target = "travelPlan", source = "travelPlan", qualifiedByName = "travelName")
+    @Mapping(target = "airlineCompany", source = "airlineCompany", qualifiedByName = "name")
+    @Mapping(target = "hotel", source = "hotel", qualifiedByName = "name")
     ProposalDTO toDto(Proposal s);
 }

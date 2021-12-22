@@ -80,7 +80,9 @@ public class TaskCheckTravelPlanService {
         proposalDTO.setTravelType(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getTravelType());
         proposalDTO.setSuggestedAirlines(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getSuggestedAirlines());
         proposalDTO.setSuggestedHotels(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getSuggestedHotels());
-        proposalDTO.setOtherTravelServices(taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getOtherTravelServices());
+        proposalDTO.setOtherSuggestedTravelServices(
+            taskCheckTravelPlanContext.getProposalCreationProcess().getProposal().getOtherSuggestedTravelServices()
+        );
         proposalService.save(proposalDTO);
     }
 

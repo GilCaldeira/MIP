@@ -1,5 +1,11 @@
 import { Component, Vue, Inject } from 'vue-property-decorator';
 
+import AirlineCompanyService from '@/entities/airline-company/airline-company.service';
+import { IAirlineCompany } from '@/shared/model/airline-company.model';
+
+import HotelService from '@/entities/hotel/hotel.service';
+import { IHotel } from '@/shared/model/hotel.model';
+
 import TaskWriteProposalService from './task-write-proposal.service';
 import { TaskWriteProposalContext } from './task-write-proposal.model';
 
@@ -7,8 +13,11 @@ const validations: any = {
   taskContext: {
     proposalCreationProcess: {
       proposal: {
-        name: {},
-        state: {},
+        travelName: {},
+        customerName: {},
+        travelStartDate: {},
+        travelEndDate: {},
+        examplesOtherTravelServices: {},
       },
     },
   },
@@ -20,6 +29,14 @@ const validations: any = {
 export default class TaskWriteProposalExecuteComponent extends Vue {
   private taskWriteProposalService: TaskWriteProposalService = new TaskWriteProposalService();
   private taskContext: TaskWriteProposalContext = {};
+
+  @Inject('airlineCompanyService') private airlineCompanyService: () => AirlineCompanyService;
+
+  public airlineCompanies: IAirlineCompany[] = [];
+
+  @Inject('hotelService') private hotelService: () => HotelService;
+
+  public hotels: IHotel[] = [];
   public isSaving = false;
 
   beforeRouteEnter(to, from, next) {
@@ -27,6 +44,7 @@ export default class TaskWriteProposalExecuteComponent extends Vue {
       if (to.params.taskInstanceId) {
         vm.claimTaskInstance(to.params.taskInstanceId);
       }
+      vm.initRelationships();
     });
   }
 
@@ -46,5 +64,16 @@ export default class TaskWriteProposalExecuteComponent extends Vue {
     });
   }
 
-  public initRelationships(): void {}
+  public initRelationships(): void {
+    this.airlineCompanyService()
+      .retrieve()
+      .then(res => {
+        this.airlineCompanies = res.data;
+      });
+    this.hotelService()
+      .retrieve()
+      .then(res => {
+        this.hotels = res.data;
+      });
+  }
 }

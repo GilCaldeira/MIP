@@ -93,15 +93,17 @@
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.otherTravelServices')">otherTravelServices</label>
+              <label class="form-control-label" v-text="$t('myappApp.taskCheckTravelPlan.otherSuggestedTravelServices')"
+                >otherSuggestedTravelServices</label
+              >
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="otherTravelServices"
-                id="proposal-otherTravelServices"
-                data-cy="otherTravelServices"
-                v-model="taskContext.proposalCreationProcess.proposal.otherTravelServices"
+                name="otherSuggestedTravelServices"
+                id="proposal-otherSuggestedTravelServices"
+                data-cy="otherSuggestedTravelServices"
+                v-model="taskContext.proposalCreationProcess.proposal.otherSuggestedTravelServices"
               />
             </div>
           </template>

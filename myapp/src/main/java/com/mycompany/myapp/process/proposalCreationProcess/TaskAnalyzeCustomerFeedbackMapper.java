@@ -20,5 +20,6 @@ public interface TaskAnalyzeCustomerFeedbackMapper {
     @Mapping(target = "customerName", source = "customerName")
     @Mapping(target = "customerEmail", source = "customerEmail")
     @Mapping(target = "state", source = "state")
+    @Mapping(target = "customerFeedback", source = "customerFeedback")
     ProposalDTO toProposalDTO(Proposal proposal);
 }

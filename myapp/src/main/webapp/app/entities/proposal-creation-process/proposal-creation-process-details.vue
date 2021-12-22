@@ -146,17 +146,17 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
-                  <label class="form-control-label" v-text="$t('myappApp.proposalCreationProcess.otherTravelServices')"
-                    >otherTravelServices</label
+                  <label class="form-control-label" v-text="$t('myappApp.proposalCreationProcess.otherSuggestedTravelServices')"
+                    >otherSuggestedTravelServices</label
                   >
                   <input
                     readonly
                     type="text"
                     class="form-control"
-                    name="otherTravelServices"
-                    id="proposal-otherTravelServices"
-                    data-cy="otherTravelServices"
-                    v-model="proposalCreationProcess.proposal.otherTravelServices"
+                    name="otherSuggestedTravelServices"
+                    id="proposal-otherSuggestedTravelServices"
+                    data-cy="otherSuggestedTravelServices"
+                    v-model="proposalCreationProcess.proposal.otherSuggestedTravelServices"
                   />
                 </div>
               </div>
@@ -171,6 +171,38 @@
                     id="proposal-state"
                     data-cy="state"
                     v-model="proposalCreationProcess.proposal.state"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label class="form-control-label" v-text="$t('myappApp.proposalCreationProcess.customerFeedback')"
+                    >customerFeedback</label
+                  >
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="customerFeedback"
+                    id="proposal-customerFeedback"
+                    data-cy="customerFeedback"
+                    v-model="proposalCreationProcess.proposal.customerFeedback"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label class="form-control-label" v-text="$t('myappApp.proposalCreationProcess.examplesOtherTravelServices')"
+                    >examplesOtherTravelServices</label
+                  >
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="examplesOtherTravelServices"
+                    id="proposal-examplesOtherTravelServices"
+                    data-cy="examplesOtherTravelServices"
+                    v-model="proposalCreationProcess.proposal.examplesOtherTravelServices"
                   />
                 </div>
               </div>
@@ -232,6 +264,57 @@
                     data-cy="travelPlan"
                     value=""
                   />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label
+                    class="form-control-label"
+                    v-text="$t('myappApp.proposalCreationProcess.airlineCompany')"
+                    for="proposal-creation-process-airlineCompany"
+                    >Airline Company</label
+                  >
+                  <input
+                    v-if="proposalCreationProcess.proposal.airlineCompany"
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="airlineCompany"
+                    id="proposal-airlineCompany"
+                    data-cy="airlineCompany"
+                    :value="proposalCreationProcess.proposal.airlineCompany.name"
+                  />
+                  <input
+                    v-else
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="airlineCompany"
+                    id="proposal-airlineCompany"
+                    data-cy="airlineCompany"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label
+                    class="form-control-label"
+                    v-text="$t('myappApp.proposalCreationProcess.hotel')"
+                    for="proposal-creation-process-hotel"
+                    >Hotel</label
+                  >
+                  <input
+                    v-if="proposalCreationProcess.proposal.hotel"
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="hotel"
+                    id="proposal-hotel"
+                    data-cy="hotel"
+                    :value="proposalCreationProcess.proposal.hotel.name"
+                  />
+                  <input v-else readonly type="text" class="form-control" name="hotel" id="proposal-hotel" data-cy="hotel" value="" />
                 </div>
               </div>
             </div>

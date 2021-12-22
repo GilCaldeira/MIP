@@ -19,10 +19,14 @@
       "travelType": "Travel Type",
       "suggestedAirlines": "Suggested Airlines",
       "suggestedHotels": "Suggested Hotels",
-      "otherTravelServices": "Other Travel Services",
+      "otherSuggestedTravelServices": "Other Suggested Travel Services",
       "state": "State",
+      "customerFeedback": "Customer Feedback",
+      "examplesOtherTravelServices": "Examples Other Travel Services",
       "customer": "Customer",
-      "travelPlan": "Travel Plan"
+      "travelPlan": "Travel Plan",
+      "airlineCompany": "Airline Company",
+      "hotel": "Hotel"
     }
   }
 }

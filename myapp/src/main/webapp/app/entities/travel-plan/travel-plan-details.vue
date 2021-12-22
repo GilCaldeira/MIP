@@ -43,10 +43,10 @@
             <span>{{ travelPlan.suggestedHotels }}</span>
           </dd>
           <dt>
-            <span v-text="$t('myappApp.travelPlan.otherTravelServices')">Other Travel Services</span>
+            <span v-text="$t('myappApp.travelPlan.otherSuggestedTravelServices')">Other Suggested Travel Services</span>
           </dt>
           <dd>
-            <span>{{ travelPlan.otherTravelServices }}</span>
+            <span>{{ travelPlan.otherSuggestedTravelServices }}</span>
           </dd>
           <dt>
             <span v-text="$t('myappApp.travelPlan.customer')">Customer</span>

@@ -11,6 +11,7 @@ const validations: any = {
         customerName: {},
         customerEmail: {},
         state: {},
+        customerFeedback: {},
       },
     },
   },

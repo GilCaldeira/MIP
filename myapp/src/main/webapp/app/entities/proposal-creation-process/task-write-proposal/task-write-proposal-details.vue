@@ -9,28 +9,110 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('myappApp.taskWriteProposal.name')">name</label>
+              <label class="form-control-label" v-text="$t('myappApp.taskWriteProposal.travelName')">travelName</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="name"
-                id="proposal-name"
-                data-cy="name"
-                v-model="taskContext.proposalCreationProcess.proposal.name"
+                name="travelName"
+                id="proposal-travelName"
+                data-cy="travelName"
+                v-model="taskContext.proposalCreationProcess.proposal.travelName"
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('myappApp.taskWriteProposal.state')">state</label>
+              <label class="form-control-label" v-text="$t('myappApp.taskWriteProposal.customerName')">customerName</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="state"
-                id="proposal-state"
-                data-cy="state"
-                v-model="taskContext.proposalCreationProcess.proposal.state"
+                name="customerName"
+                id="proposal-customerName"
+                data-cy="customerName"
+                v-model="taskContext.proposalCreationProcess.proposal.customerName"
               />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskWriteProposal.travelStartDate')">travelStartDate</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="travelStartDate"
+                id="proposal-travelStartDate"
+                data-cy="travelStartDate"
+                v-model="taskContext.proposalCreationProcess.proposal.travelStartDate"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskWriteProposal.travelEndDate')">travelEndDate</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="travelEndDate"
+                id="proposal-travelEndDate"
+                data-cy="travelEndDate"
+                v-model="taskContext.proposalCreationProcess.proposal.travelEndDate"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskWriteProposal.examplesOtherTravelServices')"
+                >examplesOtherTravelServices</label
+              >
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="examplesOtherTravelServices"
+                id="proposal-examplesOtherTravelServices"
+                data-cy="examplesOtherTravelServices"
+                v-model="taskContext.proposalCreationProcess.proposal.examplesOtherTravelServices"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-control-label"
+                v-text="$t('myappApp.taskWriteProposal.airlineCompany')"
+                for="task-write-proposal-airlineCompany"
+                >Airline Company</label
+              >
+              <input
+                v-if="taskContext.proposalCreationProcess.proposal.airlineCompany"
+                readonly
+                type="text"
+                class="form-control"
+                name="airlineCompany"
+                id="proposal-airlineCompany"
+                data-cy="airlineCompany"
+                :value="taskContext.proposalCreationProcess.proposal.airlineCompany.name"
+              />
+              <input
+                v-else
+                readonly
+                type="text"
+                class="form-control"
+                name="airlineCompany"
+                id="proposal-airlineCompany"
+                data-cy="airlineCompany"
+                value=""
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('myappApp.taskWriteProposal.hotel')" for="task-write-proposal-hotel"
+                >Hotel</label
+              >
+              <input
+                v-if="taskContext.proposalCreationProcess.proposal.hotel"
+                readonly
+                type="text"
+                class="form-control"
+                name="hotel"
+                id="proposal-hotel"
+                data-cy="hotel"
+                :value="taskContext.proposalCreationProcess.proposal.hotel.name"
+              />
+              <input v-else readonly type="text" class="form-control" name="hotel" id="proposal-hotel" data-cy="hotel" value="" />
             </div>
           </template>
         </akip-show-task-instance>

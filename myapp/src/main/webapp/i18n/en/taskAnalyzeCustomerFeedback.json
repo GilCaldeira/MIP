@@ -21,7 +21,8 @@
       "name": "Name",
       "customerName": "Customer Name",
       "customerEmail": "Customer Email",
-      "state": "State"
+      "state": "State",
+      "customerFeedback": "Customer Feedback"
     }
   }
 }

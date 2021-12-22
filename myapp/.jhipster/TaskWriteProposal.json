@@ -1,16 +1,44 @@
 {
   "fields": [
     {
-      "fieldName": "name",
+      "fieldName": "travelName",
       "fieldType": "String",
       "fieldReadOnly": true
     },
     {
-      "fieldName": "state",
+      "fieldName": "customerName",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "travelStartDate",
+      "fieldType": "LocalDate",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "travelEndDate",
+      "fieldType": "LocalDate",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "examplesOtherTravelServices",
       "fieldType": "String"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipName": "airlineCompany",
+      "otherEntityName": "airlineCompany",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipName": "hotel",
+      "otherEntityName": "hotel",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name"
+    }
+  ],
   "entityType": "user-task-form",
   "processBpmnId": "ProposalCreationProcess",
   "processEntityName": "ProposalCreationProcess",

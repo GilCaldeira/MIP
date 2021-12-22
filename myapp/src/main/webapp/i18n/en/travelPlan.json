@@ -24,7 +24,7 @@
       "travelType": "Travel Type",
       "suggestedAirlines": "Suggested Airlines",
       "suggestedHotels": "Suggested Hotels",
-      "otherTravelServices": "Other Travel Services",
+      "otherSuggestedTravelServices": "Other Suggested Travel Services",
       "customer": "Customer"
     }
   }
