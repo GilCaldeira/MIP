@@ -24,6 +24,8 @@
         "hotel": "Hotel",
         "airlineCompany": "Airline Company",
         "taskProposalReview": "Task Proposal Review",
+        "taskChooseFlight": "Task Choose Flight",
+        "taskBookHotel": "Task Book Hotel",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

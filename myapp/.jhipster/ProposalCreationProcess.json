@@ -51,6 +51,14 @@
     {
       "fieldName": "examplesOtherTravelServices",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "airlineTicketNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hotelBookingNumber",
+      "fieldType": "String"
     }
   ],
   "relationships": [

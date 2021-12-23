@@ -37,6 +37,10 @@ public class ProposalDTO implements Serializable {
 
     private String examplesOtherTravelServices;
 
+    private String airlineTicketNumber;
+
+    private String hotelBookingNumber;
+
     private CustomerDTO customer;
 
     private TravelPlanDTO travelPlan;
@@ -157,6 +161,22 @@ public class ProposalDTO implements Serializable {
         this.examplesOtherTravelServices = examplesOtherTravelServices;
     }
 
+    public String getAirlineTicketNumber() {
+        return airlineTicketNumber;
+    }
+
+    public void setAirlineTicketNumber(String airlineTicketNumber) {
+        this.airlineTicketNumber = airlineTicketNumber;
+    }
+
+    public String getHotelBookingNumber() {
+        return hotelBookingNumber;
+    }
+
+    public void setHotelBookingNumber(String hotelBookingNumber) {
+        this.hotelBookingNumber = hotelBookingNumber;
+    }
+
     public CustomerDTO getCustomer() {
         return customer;
     }
@@ -228,6 +248,8 @@ public class ProposalDTO implements Serializable {
             ", state='" + getState() + "'" +
             ", customerFeedback='" + getCustomerFeedback() + "'" +
             ", examplesOtherTravelServices='" + getExamplesOtherTravelServices() + "'" +
+            ", airlineTicketNumber='" + getAirlineTicketNumber() + "'" +
+            ", hotelBookingNumber='" + getHotelBookingNumber() + "'" +
             ", customer=" + getCustomer() +
             ", travelPlan=" + getTravelPlan() +
             ", airlineCompany=" + getAirlineCompany() +

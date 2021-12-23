@@ -85,6 +85,18 @@
             <span>{{ proposal.examplesOtherTravelServices }}</span>
           </dd>
           <dt>
+            <span v-text="$t('myappApp.proposal.airlineTicketNumber')">Airline Ticket Number</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.airlineTicketNumber }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.hotelBookingNumber')">Hotel Booking Number</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.hotelBookingNumber }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('myappApp.proposal.customer')">Customer</span>
           </dt>
           <dd>

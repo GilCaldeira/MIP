@@ -18,6 +18,8 @@ export interface IProposal {
   state?: string | null;
   customerFeedback?: string | null;
   examplesOtherTravelServices?: string | null;
+  airlineTicketNumber?: string | null;
+  hotelBookingNumber?: string | null;
   customer?: ICustomer | null;
   travelPlan?: ITravelPlan | null;
   airlineCompany?: IAirlineCompany | null;
@@ -40,6 +42,8 @@ export class Proposal implements IProposal {
     public state?: string | null,
     public customerFeedback?: string | null,
     public examplesOtherTravelServices?: string | null,
+    public airlineTicketNumber?: string | null,
+    public hotelBookingNumber?: string | null,
     public customer?: ICustomer | null,
     public travelPlan?: ITravelPlan | null,
     public airlineCompany?: IAirlineCompany | null,

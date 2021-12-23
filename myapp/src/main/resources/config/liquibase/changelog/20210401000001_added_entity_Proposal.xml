@@ -53,6 +53,12 @@
             <column name="examples_other_travel_services" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="airline_ticket_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="hotel_booking_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="customer_id" type="bigint">
                 <constraints nullable="true" />
             </column>

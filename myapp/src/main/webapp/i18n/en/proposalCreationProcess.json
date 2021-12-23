@@ -31,6 +31,8 @@
       "state": "State",
       "customerFeedback": "Customer Feedback",
       "examplesOtherTravelServices": "Examples Other Travel Services",
+      "airlineTicketNumber": "Airline Ticket Number",
+      "hotelBookingNumber": "Hotel Booking Number",
       "customer": "Customer",
       "travelPlan": "Travel Plan",
       "airlineCompany": "Airline Company",

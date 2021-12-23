@@ -61,6 +61,12 @@ public class Proposal implements Serializable {
     @Column(name = "examples_other_travel_services")
     private String examplesOtherTravelServices;
 
+    @Column(name = "airline_ticket_number")
+    private String airlineTicketNumber;
+
+    @Column(name = "hotel_booking_number")
+    private String hotelBookingNumber;
+
     @ManyToOne
     private Customer customer;
 
@@ -257,6 +263,32 @@ public class Proposal implements Serializable {
         this.examplesOtherTravelServices = examplesOtherTravelServices;
     }
 
+    public String getAirlineTicketNumber() {
+        return this.airlineTicketNumber;
+    }
+
+    public Proposal airlineTicketNumber(String airlineTicketNumber) {
+        this.airlineTicketNumber = airlineTicketNumber;
+        return this;
+    }
+
+    public void setAirlineTicketNumber(String airlineTicketNumber) {
+        this.airlineTicketNumber = airlineTicketNumber;
+    }
+
+    public String getHotelBookingNumber() {
+        return this.hotelBookingNumber;
+    }
+
+    public Proposal hotelBookingNumber(String hotelBookingNumber) {
+        this.hotelBookingNumber = hotelBookingNumber;
+        return this;
+    }
+
+    public void setHotelBookingNumber(String hotelBookingNumber) {
+        this.hotelBookingNumber = hotelBookingNumber;
+    }
+
     public Customer getCustomer() {
         return this.customer;
     }
@@ -346,6 +378,8 @@ public class Proposal implements Serializable {
             ", state='" + getState() + "'" +
             ", customerFeedback='" + getCustomerFeedback() + "'" +
             ", examplesOtherTravelServices='" + getExamplesOtherTravelServices() + "'" +
+            ", airlineTicketNumber='" + getAirlineTicketNumber() + "'" +
+            ", hotelBookingNumber='" + getHotelBookingNumber() + "'" +
             "}";
     }
 }

@@ -31,6 +31,8 @@
             <th scope="row"><span v-text="$t('myappApp.proposal.state')">State</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.customerFeedback')">Customer Feedback</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.examplesOtherTravelServices')">Examples Other Travel Services</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.airlineTicketNumber')">Airline Ticket Number</span></th>
+            <th scope="row"><span v-text="$t('myappApp.proposal.hotelBookingNumber')">Hotel Booking Number</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.customer')">Customer</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.travelPlan')">Travel Plan</span></th>
             <th scope="row"><span v-text="$t('myappApp.proposal.airlineCompany')">Airline Company</span></th>
@@ -56,6 +58,8 @@
             <td>{{ proposal.state }}</td>
             <td>{{ proposal.customerFeedback }}</td>
             <td>{{ proposal.examplesOtherTravelServices }}</td>
+            <td>{{ proposal.airlineTicketNumber }}</td>
+            <td>{{ proposal.hotelBookingNumber }}</td>
             <td>
               <div v-if="proposal.customer">
                 <router-link :to="{ name: 'CustomerView', params: { customerId: proposal.customer.id } }">{{

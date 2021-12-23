@@ -72,6 +72,12 @@ class ProposalResourceIT {
     private static final String DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES = "AAAAAAAAAA";
     private static final String UPDATED_EXAMPLES_OTHER_TRAVEL_SERVICES = "BBBBBBBBBB";
 
+    private static final String DEFAULT_AIRLINE_TICKET_NUMBER = "AAAAAAAAAA";
+    private static final String UPDATED_AIRLINE_TICKET_NUMBER = "BBBBBBBBBB";
+
+    private static final String DEFAULT_HOTEL_BOOKING_NUMBER = "AAAAAAAAAA";
+    private static final String UPDATED_HOTEL_BOOKING_NUMBER = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/proposals";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -112,7 +118,9 @@ class ProposalResourceIT {
             .otherSuggestedTravelServices(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES)
             .state(DEFAULT_STATE)
             .customerFeedback(DEFAULT_CUSTOMER_FEEDBACK)
-            .examplesOtherTravelServices(DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES);
+            .examplesOtherTravelServices(DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES)
+            .airlineTicketNumber(DEFAULT_AIRLINE_TICKET_NUMBER)
+            .hotelBookingNumber(DEFAULT_HOTEL_BOOKING_NUMBER);
         return proposal;
     }
 
@@ -136,7 +144,9 @@ class ProposalResourceIT {
             .otherSuggestedTravelServices(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES)
             .state(UPDATED_STATE)
             .customerFeedback(UPDATED_CUSTOMER_FEEDBACK)
-            .examplesOtherTravelServices(UPDATED_EXAMPLES_OTHER_TRAVEL_SERVICES);
+            .examplesOtherTravelServices(UPDATED_EXAMPLES_OTHER_TRAVEL_SERVICES)
+            .airlineTicketNumber(UPDATED_AIRLINE_TICKET_NUMBER)
+            .hotelBookingNumber(UPDATED_HOTEL_BOOKING_NUMBER);
         return proposal;
     }
 
@@ -169,7 +179,9 @@ class ProposalResourceIT {
             .andExpect(jsonPath("$.[*].otherSuggestedTravelServices").value(hasItem(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES)))
             .andExpect(jsonPath("$.[*].state").value(hasItem(DEFAULT_STATE)))
             .andExpect(jsonPath("$.[*].customerFeedback").value(hasItem(DEFAULT_CUSTOMER_FEEDBACK)))
-            .andExpect(jsonPath("$.[*].examplesOtherTravelServices").value(hasItem(DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES)));
+            .andExpect(jsonPath("$.[*].examplesOtherTravelServices").value(hasItem(DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES)))
+            .andExpect(jsonPath("$.[*].airlineTicketNumber").value(hasItem(DEFAULT_AIRLINE_TICKET_NUMBER)))
+            .andExpect(jsonPath("$.[*].hotelBookingNumber").value(hasItem(DEFAULT_HOTEL_BOOKING_NUMBER)));
     }
 
     @Test
@@ -196,7 +208,9 @@ class ProposalResourceIT {
             .andExpect(jsonPath("$.otherSuggestedTravelServices").value(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES))
             .andExpect(jsonPath("$.state").value(DEFAULT_STATE))
             .andExpect(jsonPath("$.customerFeedback").value(DEFAULT_CUSTOMER_FEEDBACK))
-            .andExpect(jsonPath("$.examplesOtherTravelServices").value(DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES));
+            .andExpect(jsonPath("$.examplesOtherTravelServices").value(DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES))
+            .andExpect(jsonPath("$.airlineTicketNumber").value(DEFAULT_AIRLINE_TICKET_NUMBER))
+            .andExpect(jsonPath("$.hotelBookingNumber").value(DEFAULT_HOTEL_BOOKING_NUMBER));
     }
 
     @Test

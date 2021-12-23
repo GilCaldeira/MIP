@@ -1,0 +1,29 @@
+{
+  "myappApp": {
+    "taskBookHotel": {
+      "home": {
+        "title": "Task Book Hotels",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Task Book Hotel",
+        "createOrEditLabel": "Create or edit a Task Book Hotel",
+        "notFound": "No Task Book Hotels found"
+      },
+      "created": "A new Task Book Hotel is created with identifier {{ param }}",
+      "updated": "A Task Book Hotel is updated with identifier {{ param }}",
+      "deleted": "A Task Book Hotel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Task Book Hotel {{ id }}?"
+      },
+      "detail": {
+        "title": "Task Book Hotel"
+      },
+      "id": "ID",
+      "travelName": "Travel Name",
+      "travelStartDate": "Travel Start Date",
+      "travelEndDate": "Travel End Date",
+      "airlineTicketNumber": "Airline Ticket Number",
+      "hotelBookingNumber": "Hotel Booking Number",
+      "hotel": "Hotel"
+    }
+  }
+}

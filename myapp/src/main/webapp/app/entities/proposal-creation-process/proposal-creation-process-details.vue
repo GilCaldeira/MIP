@@ -208,6 +208,38 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
+                  <label class="form-control-label" v-text="$t('myappApp.proposalCreationProcess.airlineTicketNumber')"
+                    >airlineTicketNumber</label
+                  >
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="airlineTicketNumber"
+                    id="proposal-airlineTicketNumber"
+                    data-cy="airlineTicketNumber"
+                    v-model="proposalCreationProcess.proposal.airlineTicketNumber"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label class="form-control-label" v-text="$t('myappApp.proposalCreationProcess.hotelBookingNumber')"
+                    >hotelBookingNumber</label
+                  >
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="hotelBookingNumber"
+                    id="proposal-hotelBookingNumber"
+                    data-cy="hotelBookingNumber"
+                    v-model="proposalCreationProcess.proposal.hotelBookingNumber"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
                   <label
                     class="form-control-label"
                     v-text="$t('myappApp.proposalCreationProcess.customer')"

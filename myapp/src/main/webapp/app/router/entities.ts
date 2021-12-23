@@ -92,6 +92,14 @@ const AirlineCompanyDetails = () => import('@/entities/airline-company/airline-c
 const ProposalCreationProcess_TaskProposalReviewDetails = () => import('@/entities/proposal-creation-process/task-proposal-review/task-proposal-review-details.vue');
 // prettier-ignore
 const ProposalCreationProcess_TaskProposalReviewExecute = () => import('@/entities/proposal-creation-process/task-proposal-review/task-proposal-review-execute.vue');
+// prettier-ignore
+const ProposalCreationProcess_TaskBookHotelDetails = () => import('@/entities/proposal-creation-process/task-book-hotel/task-book-hotel-details.vue');
+// prettier-ignore
+const ProposalCreationProcess_TaskBookHotelExecute = () => import('@/entities/proposal-creation-process/task-book-hotel/task-book-hotel-execute.vue');
+// prettier-ignore
+const ProposalCreationProcess_TaskChooseFlightDetails = () => import('@/entities/proposal-creation-process/task-choose-flight/task-choose-flight-details.vue');
+// prettier-ignore
+const ProposalCreationProcess_TaskChooseFlightExecute = () => import('@/entities/proposal-creation-process/task-choose-flight/task-choose-flight-execute.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -333,6 +341,30 @@ export default [
     path: '/process-definition/ProposalCreationProcess/task/ProposalReview/:taskInstanceId/execute',
     name: 'ProposalCreationProcess_TaskProposalReviewExecute',
     component: ProposalCreationProcess_TaskProposalReviewExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/ProposalCreationProcess/task/BookHotel/:taskInstanceId/view',
+    name: 'ProposalCreationProcess_TaskBookHotelDetails',
+    component: ProposalCreationProcess_TaskBookHotelDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/ProposalCreationProcess/task/BookHotel/:taskInstanceId/execute',
+    name: 'ProposalCreationProcess_TaskBookHotelExecute',
+    component: ProposalCreationProcess_TaskBookHotelExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/ProposalCreationProcess/task/ChooseFlight/:taskInstanceId/view',
+    name: 'ProposalCreationProcess_TaskChooseFlightDetails',
+    component: ProposalCreationProcess_TaskChooseFlightDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/ProposalCreationProcess/task/ChooseFlight/:taskInstanceId/execute',
+    name: 'ProposalCreationProcess_TaskChooseFlightExecute',
+    component: ProposalCreationProcess_TaskChooseFlightExecute,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here
