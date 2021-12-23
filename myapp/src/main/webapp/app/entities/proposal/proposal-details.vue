@@ -97,6 +97,30 @@
             <span>{{ proposal.hotelBookingNumber }}</span>
           </dd>
           <dt>
+            <span v-text="$t('myappApp.proposal.carBookingNumber')">Car Booking Number</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.carBookingNumber }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.carRentalIncluded')">Car Rental Included</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.carRentalIncluded }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.applicationUserName')">Application User Name</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.applicationUserName }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.applicationPassword')">Application Password</span>
+          </dt>
+          <dd>
+            <span>{{ proposal.applicationPassword }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('myappApp.proposal.customer')">Customer</span>
           </dt>
           <dd>
@@ -132,6 +156,16 @@
           <dd>
             <div v-if="proposal.hotel">
               <router-link :to="{ name: 'HotelView', params: { hotelId: proposal.hotel.id } }">{{ proposal.hotel.name }}</router-link>
+            </div>
+          </dd>
+          <dt>
+            <span v-text="$t('myappApp.proposal.rentalCarCompany')">Rental Car Company</span>
+          </dt>
+          <dd>
+            <div v-if="proposal.rentalCarCompany">
+              <router-link :to="{ name: 'RentalCarCompanyView', params: { rentalCarCompanyId: proposal.rentalCarCompany.id } }">{{
+                proposal.rentalCarCompany.name
+              }}</router-link>
             </div>
           </dd>
         </dl>

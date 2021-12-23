@@ -59,6 +59,22 @@
     {
       "fieldName": "hotelBookingNumber",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "carBookingNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "carRentalIncluded",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "applicationUserName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "applicationPassword",
+      "fieldType": "String"
     }
   ],
   "relationships": [
@@ -83,6 +99,12 @@
     {
       "relationshipName": "hotel",
       "otherEntityName": "hotel",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipName": "rentalCarCompany",
+      "otherEntityName": "rentalCarCompany",
       "relationshipType": "many-to-one",
       "otherEntityField": "name"
     }

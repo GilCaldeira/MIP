@@ -67,6 +67,18 @@ public class Proposal implements Serializable {
     @Column(name = "hotel_booking_number")
     private String hotelBookingNumber;
 
+    @Column(name = "car_booking_number")
+    private String carBookingNumber;
+
+    @Column(name = "car_rental_included")
+    private Boolean carRentalIncluded;
+
+    @Column(name = "application_user_name")
+    private String applicationUserName;
+
+    @Column(name = "application_password")
+    private String applicationPassword;
+
     @ManyToOne
     private Customer customer;
 
@@ -79,6 +91,9 @@ public class Proposal implements Serializable {
 
     @ManyToOne
     private Hotel hotel;
+
+    @ManyToOne
+    private RentalCarCompany rentalCarCompany;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -289,6 +304,58 @@ public class Proposal implements Serializable {
         this.hotelBookingNumber = hotelBookingNumber;
     }
 
+    public String getCarBookingNumber() {
+        return this.carBookingNumber;
+    }
+
+    public Proposal carBookingNumber(String carBookingNumber) {
+        this.carBookingNumber = carBookingNumber;
+        return this;
+    }
+
+    public void setCarBookingNumber(String carBookingNumber) {
+        this.carBookingNumber = carBookingNumber;
+    }
+
+    public Boolean getCarRentalIncluded() {
+        return this.carRentalIncluded;
+    }
+
+    public Proposal carRentalIncluded(Boolean carRentalIncluded) {
+        this.carRentalIncluded = carRentalIncluded;
+        return this;
+    }
+
+    public void setCarRentalIncluded(Boolean carRentalIncluded) {
+        this.carRentalIncluded = carRentalIncluded;
+    }
+
+    public String getApplicationUserName() {
+        return this.applicationUserName;
+    }
+
+    public Proposal applicationUserName(String applicationUserName) {
+        this.applicationUserName = applicationUserName;
+        return this;
+    }
+
+    public void setApplicationUserName(String applicationUserName) {
+        this.applicationUserName = applicationUserName;
+    }
+
+    public String getApplicationPassword() {
+        return this.applicationPassword;
+    }
+
+    public Proposal applicationPassword(String applicationPassword) {
+        this.applicationPassword = applicationPassword;
+        return this;
+    }
+
+    public void setApplicationPassword(String applicationPassword) {
+        this.applicationPassword = applicationPassword;
+    }
+
     public Customer getCustomer() {
         return this.customer;
     }
@@ -341,6 +408,19 @@ public class Proposal implements Serializable {
         this.hotel = hotel;
     }
 
+    public RentalCarCompany getRentalCarCompany() {
+        return this.rentalCarCompany;
+    }
+
+    public Proposal rentalCarCompany(RentalCarCompany rentalCarCompany) {
+        this.setRentalCarCompany(rentalCarCompany);
+        return this;
+    }
+
+    public void setRentalCarCompany(RentalCarCompany rentalCarCompany) {
+        this.rentalCarCompany = rentalCarCompany;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -380,6 +460,10 @@ public class Proposal implements Serializable {
             ", examplesOtherTravelServices='" + getExamplesOtherTravelServices() + "'" +
             ", airlineTicketNumber='" + getAirlineTicketNumber() + "'" +
             ", hotelBookingNumber='" + getHotelBookingNumber() + "'" +
+            ", carBookingNumber='" + getCarBookingNumber() + "'" +
+            ", carRentalIncluded='" + getCarRentalIncluded() + "'" +
+            ", applicationUserName='" + getApplicationUserName() + "'" +
+            ", applicationPassword='" + getApplicationPassword() + "'" +
             "}";
     }
 }

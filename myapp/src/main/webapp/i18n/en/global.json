@@ -26,6 +26,9 @@
         "taskProposalReview": "Task Proposal Review",
         "taskChooseFlight": "Task Choose Flight",
         "taskBookHotel": "Task Book Hotel",
+        "rentalCarCompany": "Rental Car Company",
+        "taskRentCar": "Task Rent Car",
+        "taskAddAccessCredentials": "Task Add Access Credentials",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

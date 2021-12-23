@@ -49,6 +49,12 @@
             <span>{{ travelPlan.otherSuggestedTravelServices }}</span>
           </dd>
           <dt>
+            <span v-text="$t('myappApp.travelPlan.carRentalIncluded')">Car Rental Included</span>
+          </dt>
+          <dd>
+            <span>{{ travelPlan.carRentalIncluded }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('myappApp.travelPlan.customer')">Customer</span>
           </dt>
           <dd>

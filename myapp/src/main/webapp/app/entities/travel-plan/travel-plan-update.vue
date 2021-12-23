@@ -147,6 +147,20 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('myappApp.travelPlan.carRentalIncluded')" for="travel-plan-carRentalIncluded"
+              >Car Rental Included</label
+            >
+            <input
+              type="checkbox"
+              class="form-check"
+              name="carRentalIncluded"
+              id="travel-plan-carRentalIncluded"
+              data-cy="carRentalIncluded"
+              :class="{ valid: !$v.travelPlan.carRentalIncluded.$invalid, invalid: $v.travelPlan.carRentalIncluded.$invalid }"
+              v-model="$v.travelPlan.carRentalIncluded.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('myappApp.travelPlan.customer')" for="travel-plan-customer">Customer</label>
             <select class="form-control" id="travel-plan-customer" data-cy="customer" name="customer" v-model="travelPlan.customer">
               <option v-bind:value="null"></option>

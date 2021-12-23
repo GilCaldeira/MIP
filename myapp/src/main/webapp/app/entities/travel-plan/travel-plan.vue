@@ -38,6 +38,7 @@
             <th scope="row">
               <span v-text="$t('myappApp.travelPlan.otherSuggestedTravelServices')">Other Suggested Travel Services</span>
             </th>
+            <th scope="row"><span v-text="$t('myappApp.travelPlan.carRentalIncluded')">Car Rental Included</span></th>
             <th scope="row"><span v-text="$t('myappApp.travelPlan.customer')">Customer</span></th>
             <th scope="row"></th>
           </tr>
@@ -54,6 +55,7 @@
             <td>{{ travelPlan.suggestedAirlines }}</td>
             <td>{{ travelPlan.suggestedHotels }}</td>
             <td>{{ travelPlan.otherSuggestedTravelServices }}</td>
+            <td>{{ travelPlan.carRentalIncluded }}</td>
             <td>
               <div v-if="travelPlan.customer">
                 <router-link :to="{ name: 'CustomerView', params: { customerId: travelPlan.customer.id } }">{{

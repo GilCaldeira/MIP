@@ -240,6 +240,70 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
+                  <label class="form-control-label" v-text="$t('myappApp.proposalCreationProcess.carBookingNumber')"
+                    >carBookingNumber</label
+                  >
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="carBookingNumber"
+                    id="proposal-carBookingNumber"
+                    data-cy="carBookingNumber"
+                    v-model="proposalCreationProcess.proposal.carBookingNumber"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label class="form-control-label" v-text="$t('myappApp.proposalCreationProcess.carRentalIncluded')"
+                    >carRentalIncluded</label
+                  >
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="carRentalIncluded"
+                    id="proposal-carRentalIncluded"
+                    data-cy="carRentalIncluded"
+                    v-model="proposalCreationProcess.proposal.carRentalIncluded"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label class="form-control-label" v-text="$t('myappApp.proposalCreationProcess.applicationUserName')"
+                    >applicationUserName</label
+                  >
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="applicationUserName"
+                    id="proposal-applicationUserName"
+                    data-cy="applicationUserName"
+                    v-model="proposalCreationProcess.proposal.applicationUserName"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label class="form-control-label" v-text="$t('myappApp.proposalCreationProcess.applicationPassword')"
+                    >applicationPassword</label
+                  >
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="applicationPassword"
+                    id="proposal-applicationPassword"
+                    data-cy="applicationPassword"
+                    v-model="proposalCreationProcess.proposal.applicationPassword"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
                   <label
                     class="form-control-label"
                     v-text="$t('myappApp.proposalCreationProcess.customer')"
@@ -347,6 +411,36 @@
                     :value="proposalCreationProcess.proposal.hotel.name"
                   />
                   <input v-else readonly type="text" class="form-control" name="hotel" id="proposal-hotel" data-cy="hotel" value="" />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label
+                    class="form-control-label"
+                    v-text="$t('myappApp.proposalCreationProcess.rentalCarCompany')"
+                    for="proposal-creation-process-rentalCarCompany"
+                    >Rental Car Company</label
+                  >
+                  <input
+                    v-if="proposalCreationProcess.proposal.rentalCarCompany"
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="rentalCarCompany"
+                    id="proposal-rentalCarCompany"
+                    data-cy="rentalCarCompany"
+                    :value="proposalCreationProcess.proposal.rentalCarCompany.name"
+                  />
+                  <input
+                    v-else
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="rentalCarCompany"
+                    id="proposal-rentalCarCompany"
+                    data-cy="rentalCarCompany"
+                    value=""
+                  />
                 </div>
               </div>
             </div>

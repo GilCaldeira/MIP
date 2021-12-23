@@ -100,6 +100,20 @@ const ProposalCreationProcess_TaskBookHotelExecute = () => import('@/entities/pr
 const ProposalCreationProcess_TaskChooseFlightDetails = () => import('@/entities/proposal-creation-process/task-choose-flight/task-choose-flight-details.vue');
 // prettier-ignore
 const ProposalCreationProcess_TaskChooseFlightExecute = () => import('@/entities/proposal-creation-process/task-choose-flight/task-choose-flight-execute.vue');
+// prettier-ignore
+const RentalCarCompany = () => import('@/entities/rental-car-company/rental-car-company.vue');
+// prettier-ignore
+const RentalCarCompanyUpdate = () => import('@/entities/rental-car-company/rental-car-company-update.vue');
+// prettier-ignore
+const RentalCarCompanyDetails = () => import('@/entities/rental-car-company/rental-car-company-details.vue');
+// prettier-ignore
+const ProposalCreationProcess_TaskRentCarDetails = () => import('@/entities/proposal-creation-process/task-rent-car/task-rent-car-details.vue');
+// prettier-ignore
+const ProposalCreationProcess_TaskRentCarExecute = () => import('@/entities/proposal-creation-process/task-rent-car/task-rent-car-execute.vue');
+// prettier-ignore
+const ProposalCreationProcess_TaskAddAccessCredentialsDetails = () => import('@/entities/proposal-creation-process/task-add-access-credentials/task-add-access-credentials-details.vue');
+// prettier-ignore
+const ProposalCreationProcess_TaskAddAccessCredentialsExecute = () => import('@/entities/proposal-creation-process/task-add-access-credentials/task-add-access-credentials-execute.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -365,6 +379,54 @@ export default [
     path: '/process-definition/ProposalCreationProcess/task/ChooseFlight/:taskInstanceId/execute',
     name: 'ProposalCreationProcess_TaskChooseFlightExecute',
     component: ProposalCreationProcess_TaskChooseFlightExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/rental-car-company',
+    name: 'RentalCarCompany',
+    component: RentalCarCompany,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/rental-car-company/new',
+    name: 'RentalCarCompanyCreate',
+    component: RentalCarCompanyUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/rental-car-company/:rentalCarCompanyId/edit',
+    name: 'RentalCarCompanyEdit',
+    component: RentalCarCompanyUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/rental-car-company/:rentalCarCompanyId/view',
+    name: 'RentalCarCompanyView',
+    component: RentalCarCompanyDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/ProposalCreationProcess/task/RentCar/:taskInstanceId/view',
+    name: 'ProposalCreationProcess_TaskRentCarDetails',
+    component: ProposalCreationProcess_TaskRentCarDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/ProposalCreationProcess/task/RentCar/:taskInstanceId/execute',
+    name: 'ProposalCreationProcess_TaskRentCarExecute',
+    component: ProposalCreationProcess_TaskRentCarExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/ProposalCreationProcess/task/AddAccessCredentials/:taskInstanceId/view',
+    name: 'ProposalCreationProcess_TaskAddAccessCredentialsDetails',
+    component: ProposalCreationProcess_TaskAddAccessCredentialsDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/ProposalCreationProcess/task/AddAccessCredentials/:taskInstanceId/execute',
+    name: 'ProposalCreationProcess_TaskAddAccessCredentialsExecute',
+    component: ProposalCreationProcess_TaskAddAccessCredentialsExecute,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

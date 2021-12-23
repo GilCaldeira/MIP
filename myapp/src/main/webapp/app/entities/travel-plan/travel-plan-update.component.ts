@@ -15,6 +15,7 @@ const validations: any = {
     suggestedAirlines: {},
     suggestedHotels: {},
     otherSuggestedTravelServices: {},
+    carRentalIncluded: {},
   },
 };
 

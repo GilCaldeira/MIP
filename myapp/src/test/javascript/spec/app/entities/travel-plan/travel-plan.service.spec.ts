@@ -33,7 +33,7 @@ describe('Service Tests', () => {
     beforeEach(() => {
       service = new TravelPlanService();
       currentDate = new Date();
-      elemDefault = new TravelPlan(0, 'AAAAAAA', currentDate, currentDate, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new TravelPlan(0, 'AAAAAAA', currentDate, currentDate, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false);
     });
 
     describe('Service methods', () => {
@@ -106,6 +106,7 @@ describe('Service Tests', () => {
             suggestedAirlines: 'BBBBBB',
             suggestedHotels: 'BBBBBB',
             otherSuggestedTravelServices: 'BBBBBB',
+            carRentalIncluded: true,
           },
           elemDefault
         );
@@ -182,6 +183,7 @@ describe('Service Tests', () => {
             suggestedAirlines: 'BBBBBB',
             suggestedHotels: 'BBBBBB',
             otherSuggestedTravelServices: 'BBBBBB',
+            carRentalIncluded: true,
           },
           elemDefault
         );

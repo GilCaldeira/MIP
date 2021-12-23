@@ -1,0 +1,28 @@
+{
+  "myappApp": {
+    "taskRentCar": {
+      "home": {
+        "title": "Task Rent Cars",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Task Rent Car",
+        "createOrEditLabel": "Create or edit a Task Rent Car",
+        "notFound": "No Task Rent Cars found"
+      },
+      "created": "A new Task Rent Car is created with identifier {{ param }}",
+      "updated": "A Task Rent Car is updated with identifier {{ param }}",
+      "deleted": "A Task Rent Car is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Task Rent Car {{ id }}?"
+      },
+      "detail": {
+        "title": "Task Rent Car"
+      },
+      "id": "ID",
+      "travelName": "Travel Name",
+      "travelStartDate": "Travel Start Date",
+      "travelEndDate": "Travel End Date",
+      "carBookingNumber": "Car Booking Number",
+      "rentalCarCompany": "Rental Car Company"
+    }
+  }
+}

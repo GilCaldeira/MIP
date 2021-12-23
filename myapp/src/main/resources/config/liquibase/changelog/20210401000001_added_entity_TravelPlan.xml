@@ -35,6 +35,9 @@
             <column name="other_suggested_travel_services" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="car_rental_included" type="boolean">
+                <constraints nullable="true" />
+            </column>
             <column name="customer_id" type="bigint">
                 <constraints nullable="true" />
             </column>

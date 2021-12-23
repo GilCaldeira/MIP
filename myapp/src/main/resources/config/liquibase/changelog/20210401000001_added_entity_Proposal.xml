@@ -59,6 +59,18 @@
             <column name="hotel_booking_number" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="car_booking_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="car_rental_included" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="application_user_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="application_password" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="customer_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -69,6 +81,9 @@
                 <constraints nullable="true" />
             </column>
             <column name="hotel_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="rental_car_company_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->

@@ -78,6 +78,18 @@ class ProposalResourceIT {
     private static final String DEFAULT_HOTEL_BOOKING_NUMBER = "AAAAAAAAAA";
     private static final String UPDATED_HOTEL_BOOKING_NUMBER = "BBBBBBBBBB";
 
+    private static final String DEFAULT_CAR_BOOKING_NUMBER = "AAAAAAAAAA";
+    private static final String UPDATED_CAR_BOOKING_NUMBER = "BBBBBBBBBB";
+
+    private static final Boolean DEFAULT_CAR_RENTAL_INCLUDED = false;
+    private static final Boolean UPDATED_CAR_RENTAL_INCLUDED = true;
+
+    private static final String DEFAULT_APPLICATION_USER_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_APPLICATION_USER_NAME = "BBBBBBBBBB";
+
+    private static final String DEFAULT_APPLICATION_PASSWORD = "AAAAAAAAAA";
+    private static final String UPDATED_APPLICATION_PASSWORD = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/proposals";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -120,7 +132,11 @@ class ProposalResourceIT {
             .customerFeedback(DEFAULT_CUSTOMER_FEEDBACK)
             .examplesOtherTravelServices(DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES)
             .airlineTicketNumber(DEFAULT_AIRLINE_TICKET_NUMBER)
-            .hotelBookingNumber(DEFAULT_HOTEL_BOOKING_NUMBER);
+            .hotelBookingNumber(DEFAULT_HOTEL_BOOKING_NUMBER)
+            .carBookingNumber(DEFAULT_CAR_BOOKING_NUMBER)
+            .carRentalIncluded(DEFAULT_CAR_RENTAL_INCLUDED)
+            .applicationUserName(DEFAULT_APPLICATION_USER_NAME)
+            .applicationPassword(DEFAULT_APPLICATION_PASSWORD);
         return proposal;
     }
 
@@ -146,7 +162,11 @@ class ProposalResourceIT {
             .customerFeedback(UPDATED_CUSTOMER_FEEDBACK)
             .examplesOtherTravelServices(UPDATED_EXAMPLES_OTHER_TRAVEL_SERVICES)
             .airlineTicketNumber(UPDATED_AIRLINE_TICKET_NUMBER)
-            .hotelBookingNumber(UPDATED_HOTEL_BOOKING_NUMBER);
+            .hotelBookingNumber(UPDATED_HOTEL_BOOKING_NUMBER)
+            .carBookingNumber(UPDATED_CAR_BOOKING_NUMBER)
+            .carRentalIncluded(UPDATED_CAR_RENTAL_INCLUDED)
+            .applicationUserName(UPDATED_APPLICATION_USER_NAME)
+            .applicationPassword(UPDATED_APPLICATION_PASSWORD);
         return proposal;
     }
 
@@ -181,7 +201,11 @@ class ProposalResourceIT {
             .andExpect(jsonPath("$.[*].customerFeedback").value(hasItem(DEFAULT_CUSTOMER_FEEDBACK)))
             .andExpect(jsonPath("$.[*].examplesOtherTravelServices").value(hasItem(DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES)))
             .andExpect(jsonPath("$.[*].airlineTicketNumber").value(hasItem(DEFAULT_AIRLINE_TICKET_NUMBER)))
-            .andExpect(jsonPath("$.[*].hotelBookingNumber").value(hasItem(DEFAULT_HOTEL_BOOKING_NUMBER)));
+            .andExpect(jsonPath("$.[*].hotelBookingNumber").value(hasItem(DEFAULT_HOTEL_BOOKING_NUMBER)))
+            .andExpect(jsonPath("$.[*].carBookingNumber").value(hasItem(DEFAULT_CAR_BOOKING_NUMBER)))
+            .andExpect(jsonPath("$.[*].carRentalIncluded").value(hasItem(DEFAULT_CAR_RENTAL_INCLUDED.booleanValue())))
+            .andExpect(jsonPath("$.[*].applicationUserName").value(hasItem(DEFAULT_APPLICATION_USER_NAME)))
+            .andExpect(jsonPath("$.[*].applicationPassword").value(hasItem(DEFAULT_APPLICATION_PASSWORD)));
     }
 
     @Test
@@ -210,7 +234,11 @@ class ProposalResourceIT {
             .andExpect(jsonPath("$.customerFeedback").value(DEFAULT_CUSTOMER_FEEDBACK))
             .andExpect(jsonPath("$.examplesOtherTravelServices").value(DEFAULT_EXAMPLES_OTHER_TRAVEL_SERVICES))
             .andExpect(jsonPath("$.airlineTicketNumber").value(DEFAULT_AIRLINE_TICKET_NUMBER))
-            .andExpect(jsonPath("$.hotelBookingNumber").value(DEFAULT_HOTEL_BOOKING_NUMBER));
+            .andExpect(jsonPath("$.hotelBookingNumber").value(DEFAULT_HOTEL_BOOKING_NUMBER))
+            .andExpect(jsonPath("$.carBookingNumber").value(DEFAULT_CAR_BOOKING_NUMBER))
+            .andExpect(jsonPath("$.carRentalIncluded").value(DEFAULT_CAR_RENTAL_INCLUDED.booleanValue()))
+            .andExpect(jsonPath("$.applicationUserName").value(DEFAULT_APPLICATION_USER_NAME))
+            .andExpect(jsonPath("$.applicationPassword").value(DEFAULT_APPLICATION_PASSWORD));
     }
 
     @Test

@@ -1,0 +1,44 @@
+{
+  "fields": [
+    {
+      "fieldName": "travelName",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "travelStartDate",
+      "fieldType": "LocalDate",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "travelEndDate",
+      "fieldType": "LocalDate",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "carBookingNumber",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "rentalCarCompany",
+      "otherEntityName": "rentalCarCompany",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityType": "user-task-form",
+  "processBpmnId": "ProposalCreationProcess",
+  "processEntityName": "ProposalCreationProcess",
+  "taskBpmnId": "RentCar",
+  "domainEntityName": "Proposal",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "skipFakeData": true,
+  "name": "TaskRentCar",
+  "changelogDate": "20210401000004"
+}

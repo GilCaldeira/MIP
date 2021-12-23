@@ -54,6 +54,9 @@ class TravelPlanResourceIT {
     private static final String DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES = "AAAAAAAAAA";
     private static final String UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES = "BBBBBBBBBB";
 
+    private static final Boolean DEFAULT_CAR_RENTAL_INCLUDED = false;
+    private static final Boolean UPDATED_CAR_RENTAL_INCLUDED = true;
+
     private static final String ENTITY_API_URL = "/api/travel-plans";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -88,7 +91,8 @@ class TravelPlanResourceIT {
             .travelType(DEFAULT_TRAVEL_TYPE)
             .suggestedAirlines(DEFAULT_SUGGESTED_AIRLINES)
             .suggestedHotels(DEFAULT_SUGGESTED_HOTELS)
-            .otherSuggestedTravelServices(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES);
+            .otherSuggestedTravelServices(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES)
+            .carRentalIncluded(DEFAULT_CAR_RENTAL_INCLUDED);
         return travelPlan;
     }
 
@@ -106,7 +110,8 @@ class TravelPlanResourceIT {
             .travelType(UPDATED_TRAVEL_TYPE)
             .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
             .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
-            .otherSuggestedTravelServices(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
+            .otherSuggestedTravelServices(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES)
+            .carRentalIncluded(UPDATED_CAR_RENTAL_INCLUDED);
         return travelPlan;
     }
 
@@ -136,6 +141,7 @@ class TravelPlanResourceIT {
         assertThat(testTravelPlan.getSuggestedAirlines()).isEqualTo(DEFAULT_SUGGESTED_AIRLINES);
         assertThat(testTravelPlan.getSuggestedHotels()).isEqualTo(DEFAULT_SUGGESTED_HOTELS);
         assertThat(testTravelPlan.getOtherSuggestedTravelServices()).isEqualTo(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES);
+        assertThat(testTravelPlan.getCarRentalIncluded()).isEqualTo(DEFAULT_CAR_RENTAL_INCLUDED);
     }
 
     @Test
@@ -175,7 +181,8 @@ class TravelPlanResourceIT {
             .andExpect(jsonPath("$.[*].travelType").value(hasItem(DEFAULT_TRAVEL_TYPE)))
             .andExpect(jsonPath("$.[*].suggestedAirlines").value(hasItem(DEFAULT_SUGGESTED_AIRLINES)))
             .andExpect(jsonPath("$.[*].suggestedHotels").value(hasItem(DEFAULT_SUGGESTED_HOTELS)))
-            .andExpect(jsonPath("$.[*].otherSuggestedTravelServices").value(hasItem(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES)));
+            .andExpect(jsonPath("$.[*].otherSuggestedTravelServices").value(hasItem(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES)))
+            .andExpect(jsonPath("$.[*].carRentalIncluded").value(hasItem(DEFAULT_CAR_RENTAL_INCLUDED.booleanValue())));
     }
 
     @Test
@@ -196,7 +203,8 @@ class TravelPlanResourceIT {
             .andExpect(jsonPath("$.travelType").value(DEFAULT_TRAVEL_TYPE))
             .andExpect(jsonPath("$.suggestedAirlines").value(DEFAULT_SUGGESTED_AIRLINES))
             .andExpect(jsonPath("$.suggestedHotels").value(DEFAULT_SUGGESTED_HOTELS))
-            .andExpect(jsonPath("$.otherSuggestedTravelServices").value(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES));
+            .andExpect(jsonPath("$.otherSuggestedTravelServices").value(DEFAULT_OTHER_SUGGESTED_TRAVEL_SERVICES))
+            .andExpect(jsonPath("$.carRentalIncluded").value(DEFAULT_CAR_RENTAL_INCLUDED.booleanValue()));
     }
 
     @Test
@@ -225,7 +233,8 @@ class TravelPlanResourceIT {
             .travelType(UPDATED_TRAVEL_TYPE)
             .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
             .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
-            .otherSuggestedTravelServices(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
+            .otherSuggestedTravelServices(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES)
+            .carRentalIncluded(UPDATED_CAR_RENTAL_INCLUDED);
         TravelPlanDTO travelPlanDTO = travelPlanMapper.toDto(updatedTravelPlan);
 
         restTravelPlanMockMvc
@@ -247,6 +256,7 @@ class TravelPlanResourceIT {
         assertThat(testTravelPlan.getSuggestedAirlines()).isEqualTo(UPDATED_SUGGESTED_AIRLINES);
         assertThat(testTravelPlan.getSuggestedHotels()).isEqualTo(UPDATED_SUGGESTED_HOTELS);
         assertThat(testTravelPlan.getOtherSuggestedTravelServices()).isEqualTo(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
+        assertThat(testTravelPlan.getCarRentalIncluded()).isEqualTo(UPDATED_CAR_RENTAL_INCLUDED);
     }
 
     @Test
@@ -351,6 +361,7 @@ class TravelPlanResourceIT {
         assertThat(testTravelPlan.getSuggestedAirlines()).isEqualTo(UPDATED_SUGGESTED_AIRLINES);
         assertThat(testTravelPlan.getSuggestedHotels()).isEqualTo(UPDATED_SUGGESTED_HOTELS);
         assertThat(testTravelPlan.getOtherSuggestedTravelServices()).isEqualTo(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
+        assertThat(testTravelPlan.getCarRentalIncluded()).isEqualTo(DEFAULT_CAR_RENTAL_INCLUDED);
     }
 
     @Test
@@ -372,7 +383,8 @@ class TravelPlanResourceIT {
             .travelType(UPDATED_TRAVEL_TYPE)
             .suggestedAirlines(UPDATED_SUGGESTED_AIRLINES)
             .suggestedHotels(UPDATED_SUGGESTED_HOTELS)
-            .otherSuggestedTravelServices(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
+            .otherSuggestedTravelServices(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES)
+            .carRentalIncluded(UPDATED_CAR_RENTAL_INCLUDED);
 
         restTravelPlanMockMvc
             .perform(
@@ -393,6 +405,7 @@ class TravelPlanResourceIT {
         assertThat(testTravelPlan.getSuggestedAirlines()).isEqualTo(UPDATED_SUGGESTED_AIRLINES);
         assertThat(testTravelPlan.getSuggestedHotels()).isEqualTo(UPDATED_SUGGESTED_HOTELS);
         assertThat(testTravelPlan.getOtherSuggestedTravelServices()).isEqualTo(UPDATED_OTHER_SUGGESTED_TRAVEL_SERVICES);
+        assertThat(testTravelPlan.getCarRentalIncluded()).isEqualTo(UPDATED_CAR_RENTAL_INCLUDED);
     }
 
     @Test

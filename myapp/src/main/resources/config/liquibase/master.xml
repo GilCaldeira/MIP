@@ -29,6 +29,9 @@
     <include file="config/liquibase/changelog/20210401000004_added_entity_TaskProposalReview.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210401000004_added_entity_TaskChooseFlight.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210401000004_added_entity_TaskBookHotel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211109000002_added_entity_RentalCarCompany.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000004_added_entity_TaskRentCar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000004_added_entity_TaskAddAccessCredentials.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20210401000004_added_entity_constraints_TaskCheckTravelPlan.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210401000001_added_entity_constraints_Proposal.xml" relativeToChangelogFile="false"/>
@@ -39,6 +42,7 @@
     <include file="config/liquibase/changelog/20210401000004_added_entity_constraints_TaskProposalReview.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210401000004_added_entity_constraints_TaskChooseFlight.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210401000004_added_entity_constraints_TaskBookHotel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000004_added_entity_constraints_TaskRentCar.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

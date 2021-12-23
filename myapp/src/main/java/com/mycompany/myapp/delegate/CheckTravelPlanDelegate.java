@@ -25,5 +25,6 @@ public class CheckTravelPlanDelegate implements JavaDelegate {
         proposal.setSuggestedAirlines(travelPlan.getSuggestedAirlines());
         proposal.setSuggestedHotels(travelPlan.getSuggestedHotels());
         proposal.setOtherSuggestedTravelServices(travelPlan.getOtherSuggestedTravelServices());
+        proposal.setCarRentalIncluded(travelPlan.getCarRentalIncluded());
     }
 }

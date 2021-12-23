@@ -31,5 +31,11 @@
                                  constraintName="fk_proposal__hotel_id"
                                  referencedColumnNames="id"
                                  referencedTableName="hotel"/>
+
+        <addForeignKeyConstraint baseColumnNames="rental_car_company_id"
+                                 baseTableName="proposal"
+                                 constraintName="fk_proposal__rental_car_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rental_car_company"/>
     </changeSet>
 </databaseChangeLog>

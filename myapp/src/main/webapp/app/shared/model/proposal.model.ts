@@ -2,6 +2,7 @@ import { ICustomer } from '@/shared/model/customer.model';
 import { ITravelPlan } from '@/shared/model/travel-plan.model';
 import { IAirlineCompany } from '@/shared/model/airline-company.model';
 import { IHotel } from '@/shared/model/hotel.model';
+import { IRentalCarCompany } from '@/shared/model/rental-car-company.model';
 
 export interface IProposal {
   id?: number;
@@ -20,10 +21,15 @@ export interface IProposal {
   examplesOtherTravelServices?: string | null;
   airlineTicketNumber?: string | null;
   hotelBookingNumber?: string | null;
+  carBookingNumber?: string | null;
+  carRentalIncluded?: boolean | null;
+  applicationUserName?: string | null;
+  applicationPassword?: string | null;
   customer?: ICustomer | null;
   travelPlan?: ITravelPlan | null;
   airlineCompany?: IAirlineCompany | null;
   hotel?: IHotel | null;
+  rentalCarCompany?: IRentalCarCompany | null;
 }
 
 export class Proposal implements IProposal {
@@ -44,9 +50,16 @@ export class Proposal implements IProposal {
     public examplesOtherTravelServices?: string | null,
     public airlineTicketNumber?: string | null,
     public hotelBookingNumber?: string | null,
+    public carBookingNumber?: string | null,
+    public carRentalIncluded?: boolean | null,
+    public applicationUserName?: string | null,
+    public applicationPassword?: string | null,
     public customer?: ICustomer | null,
     public travelPlan?: ITravelPlan | null,
     public airlineCompany?: IAirlineCompany | null,
-    public hotel?: IHotel | null
-  ) {}
+    public hotel?: IHotel | null,
+    public rentalCarCompany?: IRentalCarCompany | null
+  ) {
+    this.carRentalIncluded = this.carRentalIncluded ?? false;
+  }
 }

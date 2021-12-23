@@ -33,10 +33,15 @@
       "examplesOtherTravelServices": "Examples Other Travel Services",
       "airlineTicketNumber": "Airline Ticket Number",
       "hotelBookingNumber": "Hotel Booking Number",
+      "carBookingNumber": "Car Booking Number",
+      "carRentalIncluded": "Car Rental Included",
+      "applicationUserName": "Application User Name",
+      "applicationPassword": "Application Password",
       "customer": "Customer",
       "travelPlan": "Travel Plan",
       "airlineCompany": "Airline Company",
-      "hotel": "Hotel"
+      "hotel": "Hotel",
+      "rentalCarCompany": "Rental Car Company"
     }
   }
 }

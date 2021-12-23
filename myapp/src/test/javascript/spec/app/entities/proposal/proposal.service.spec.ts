@@ -49,6 +49,10 @@ describe('Service Tests', () => {
         'AAAAAAA',
         'AAAAAAA',
         'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        false,
+        'AAAAAAA',
         'AAAAAAA'
       );
     });
@@ -97,6 +101,10 @@ describe('Service Tests', () => {
             examplesOtherTravelServices: 'BBBBBB',
             airlineTicketNumber: 'BBBBBB',
             hotelBookingNumber: 'BBBBBB',
+            carBookingNumber: 'BBBBBB',
+            carRentalIncluded: true,
+            applicationUserName: 'BBBBBB',
+            applicationPassword: 'BBBBBB',
           },
           elemDefault
         );

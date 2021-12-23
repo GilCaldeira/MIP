@@ -27,6 +27,10 @@
     {
       "fieldName": "otherSuggestedTravelServices",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "carRentalIncluded",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [

@@ -41,6 +41,14 @@ public class ProposalDTO implements Serializable {
 
     private String hotelBookingNumber;
 
+    private String carBookingNumber;
+
+    private Boolean carRentalIncluded;
+
+    private String applicationUserName;
+
+    private String applicationPassword;
+
     private CustomerDTO customer;
 
     private TravelPlanDTO travelPlan;
@@ -48,6 +56,8 @@ public class ProposalDTO implements Serializable {
     private AirlineCompanyDTO airlineCompany;
 
     private HotelDTO hotel;
+
+    private RentalCarCompanyDTO rentalCarCompany;
 
     public Long getId() {
         return id;
@@ -177,6 +187,38 @@ public class ProposalDTO implements Serializable {
         this.hotelBookingNumber = hotelBookingNumber;
     }
 
+    public String getCarBookingNumber() {
+        return carBookingNumber;
+    }
+
+    public void setCarBookingNumber(String carBookingNumber) {
+        this.carBookingNumber = carBookingNumber;
+    }
+
+    public Boolean getCarRentalIncluded() {
+        return carRentalIncluded;
+    }
+
+    public void setCarRentalIncluded(Boolean carRentalIncluded) {
+        this.carRentalIncluded = carRentalIncluded;
+    }
+
+    public String getApplicationUserName() {
+        return applicationUserName;
+    }
+
+    public void setApplicationUserName(String applicationUserName) {
+        this.applicationUserName = applicationUserName;
+    }
+
+    public String getApplicationPassword() {
+        return applicationPassword;
+    }
+
+    public void setApplicationPassword(String applicationPassword) {
+        this.applicationPassword = applicationPassword;
+    }
+
     public CustomerDTO getCustomer() {
         return customer;
     }
@@ -207,6 +249,14 @@ public class ProposalDTO implements Serializable {
 
     public void setHotel(HotelDTO hotel) {
         this.hotel = hotel;
+    }
+
+    public RentalCarCompanyDTO getRentalCarCompany() {
+        return rentalCarCompany;
+    }
+
+    public void setRentalCarCompany(RentalCarCompanyDTO rentalCarCompany) {
+        this.rentalCarCompany = rentalCarCompany;
     }
 
     @Override
@@ -250,10 +300,15 @@ public class ProposalDTO implements Serializable {
             ", examplesOtherTravelServices='" + getExamplesOtherTravelServices() + "'" +
             ", airlineTicketNumber='" + getAirlineTicketNumber() + "'" +
             ", hotelBookingNumber='" + getHotelBookingNumber() + "'" +
+            ", carBookingNumber='" + getCarBookingNumber() + "'" +
+            ", carRentalIncluded='" + getCarRentalIncluded() + "'" +
+            ", applicationUserName='" + getApplicationUserName() + "'" +
+            ", applicationPassword='" + getApplicationPassword() + "'" +
             ", customer=" + getCustomer() +
             ", travelPlan=" + getTravelPlan() +
             ", airlineCompany=" + getAirlineCompany() +
             ", hotel=" + getHotel() +
+            ", rentalCarCompany=" + getRentalCarCompany() +
             "}";
     }
 }

@@ -42,6 +42,9 @@ public class TravelPlan implements Serializable {
     @Column(name = "other_suggested_travel_services")
     private String otherSuggestedTravelServices;
 
+    @Column(name = "car_rental_included")
+    private Boolean carRentalIncluded;
+
     @ManyToOne
     private Customer customer;
 
@@ -150,6 +153,19 @@ public class TravelPlan implements Serializable {
         this.otherSuggestedTravelServices = otherSuggestedTravelServices;
     }
 
+    public Boolean getCarRentalIncluded() {
+        return this.carRentalIncluded;
+    }
+
+    public TravelPlan carRentalIncluded(Boolean carRentalIncluded) {
+        this.carRentalIncluded = carRentalIncluded;
+        return this;
+    }
+
+    public void setCarRentalIncluded(Boolean carRentalIncluded) {
+        this.carRentalIncluded = carRentalIncluded;
+    }
+
     public Customer getCustomer() {
         return this.customer;
     }
@@ -194,6 +210,7 @@ public class TravelPlan implements Serializable {
             ", suggestedAirlines='" + getSuggestedAirlines() + "'" +
             ", suggestedHotels='" + getSuggestedHotels() + "'" +
             ", otherSuggestedTravelServices='" + getOtherSuggestedTravelServices() + "'" +
+            ", carRentalIncluded='" + getCarRentalIncluded() + "'" +
             "}";
     }
 }

@@ -25,6 +25,8 @@ public class TravelPlanDTO implements Serializable {
 
     private String otherSuggestedTravelServices;
 
+    private Boolean carRentalIncluded;
+
     private CustomerDTO customer;
 
     public Long getId() {
@@ -91,6 +93,14 @@ public class TravelPlanDTO implements Serializable {
         this.otherSuggestedTravelServices = otherSuggestedTravelServices;
     }
 
+    public Boolean getCarRentalIncluded() {
+        return carRentalIncluded;
+    }
+
+    public void setCarRentalIncluded(Boolean carRentalIncluded) {
+        this.carRentalIncluded = carRentalIncluded;
+    }
+
     public CustomerDTO getCustomer() {
         return customer;
     }
@@ -132,6 +142,7 @@ public class TravelPlanDTO implements Serializable {
             ", suggestedAirlines='" + getSuggestedAirlines() + "'" +
             ", suggestedHotels='" + getSuggestedHotels() + "'" +
             ", otherSuggestedTravelServices='" + getOtherSuggestedTravelServices() + "'" +
+            ", carRentalIncluded='" + getCarRentalIncluded() + "'" +
             ", customer=" + getCustomer() +
             "}";
     }
