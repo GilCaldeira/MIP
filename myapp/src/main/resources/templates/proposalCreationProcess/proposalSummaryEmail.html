@@ -6,14 +6,15 @@
   </head>
   <body>
     <p>Dear <span th:text="${proposal.customerName}">customerName</span></p>
-    <p>Here is a summary of your travel <b th:text="${proposal.name}">name</b></p>
+    <p>Here is a summary of your travel proposal <b th:text="${proposal.name}">name</b></p>
     <ul>
+      <li><b>Travel Name</b>: <span th:text="${proposal.travelName}"></span></li>
+      <li><b>Travel Type</b>: <span th:text="${proposal.travelType}"></span></li>
+      <li><b>Start</b>: <span th:text="${proposal.travelStartDate }"></span></li>
+      <li><b>End</b>: <span th:text="${proposal.travelEndDate }"></span></li>
+      <li><b>Airline Company</b>: <span th:text="${proposal.airlineCompany.name}"></span></li>
+      <li><b>Hotel</b>: <span th:text="${proposal.hotel.name}"></span></li>
       <li><b>Travel Services</b>: <span th:text="${proposal.examplesOtherTravelServices}"></span></li>
-      <!-- <li><b>Start</b>: <span th:text="${travelPlan.startDate }"></span></li>
-        <li><b>End</b>: <span th:text="${travelPlan.endDate }"></span></li>
-        <li><b>Flight</b>: <span th:text="${travelPlan.airlineCompanyName}"></span> / <span th:text="${travelPlan.airlineTicketNumber}"></span></li>
-        <li><b>Hotel</b>: <span th:text="${travelPlan.hotelName}"></span> / <span th:text="${travelPlan.hotelBookingNumber}"></span></li>
-        <li><b>Rental Car</b>: <span th:text="${travelPlan.carCompanyName}"></span> / <span th:text="${travelPlan.carBookingNumber}"></span></li> -->
     </ul>
     <p>
       Regards,

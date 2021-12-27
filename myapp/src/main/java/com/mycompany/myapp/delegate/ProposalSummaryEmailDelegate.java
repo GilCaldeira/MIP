@@ -31,7 +31,7 @@ public class ProposalSummaryEmailDelegate implements JavaDelegate {
         System.out.println(proposal);
 
         String to = proposal.getCustomerEmail();
-        String subject = "[AgileKip] Summary of your travel " + proposal.getName();
+        String subject = "[AgileKip] Summary of your travel proposal " + proposal.getName();
 
         Context context = new Context(Locale.getDefault());
         context.setVariable("proposal", proposal);
